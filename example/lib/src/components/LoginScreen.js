@@ -16,7 +16,7 @@ const defaultBackground =
   "https://images.unsplash.com/photo-1543637005-4d639a4e16de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1481&q=80";
 
 const LoginScreen = props => {
-  const { example } = props;
+  const { onPress } = props;
   return (
     <View
       style={{ backgroundColor: "#282828", height, width, marginBottom: 32 }}
@@ -51,7 +51,7 @@ const LoginScreen = props => {
                 justifyContent: "center"
               }}
             >
-              <Text style={{ color: "white", fontSize: 55 }}>{example}</Text>
+              <Text style={{ color: "white", fontSize: 55 }}>{5}</Text>
             </View>
           </SafeAreaView>
         </View>
@@ -66,6 +66,7 @@ const LoginScreen = props => {
           alignItems: "center",
           justifyContent: "center"
         }}
+        onPress={onPress}
       >
         <Text
           style={{
@@ -81,12 +82,8 @@ const LoginScreen = props => {
   );
 };
 
-LoginScreen.propTypes = {
-  example: PropTypes.number
-};
+LoginScreen.propTypes = {};
 
-LoginScreen.defaultProps = {
-  example: 1
-};
+LoginScreen.defaultProps = {};
 
 export default LoginScreen;
