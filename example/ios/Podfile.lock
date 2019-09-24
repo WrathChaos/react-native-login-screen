@@ -217,6 +217,8 @@ PODS:
     - React-cxxreact (= 0.61.0)
     - React-jsi (= 0.61.0)
     - ReactCommon/jscallinvoker (= 0.61.0)
+  - RNVectorIcons (6.6.0):
+    - React
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -247,6 +249,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -302,6 +305,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -331,6 +336,7 @@ SPEC CHECKSUMS:
   React-RCTText: beb19a6c50072a1a2f617490ea967237c98d1dfc
   React-RCTVibration: c8e67f140a83a14a1ad9042950cca08ab29423fd
   ReactCommon: 584ef683c340894c1c82be43ce760390493ae8bf
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: 3f70bbd9aa01e04eefec36e2a085b2fc0ff1dd98
 
 PODFILE CHECKSUM: 79310af6b976c356911a8a833e9b99c3399fdda3

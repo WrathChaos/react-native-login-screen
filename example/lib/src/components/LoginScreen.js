@@ -5,8 +5,10 @@ import {
   View,
   Dimensions,
   StyleSheet,
+  SafeAreaView,
   ImageBackground
 } from "react-native";
+import Logo from "./Logo/Logo";
 
 const { width, height } = Dimensions.get("window");
 const defaultBackground =
@@ -28,14 +30,25 @@ const LoginScreen = props => {
     >
       <View
         style={{
-          height,
           width,
-          backgroundColor: "rgba(0,0,0,0.1)",
-          alignItems: "center",
-          justifyContent: "center"
+          height,
+          backgroundColor: "rgba(0,0,0,0.1)"
         }}
       >
-        <Text style={{ color: "white", fontSize: 50 }}>{example}</Text>
+        <SafeAreaView style={{ flex: 1 }}>
+          <View style={{ marginTop: 24 }}>
+            <Logo />
+          </View>
+          <View
+            style={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 50 }}>{example}</Text>
+          </View>
+        </SafeAreaView>
       </View>
     </ImageBackground>
   );
