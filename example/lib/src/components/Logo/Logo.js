@@ -2,39 +2,36 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
+import styles from "./Logo.style";
 
 const Logo = props => {
-  const { example } = props;
+  const { logoText, logoComponent } = props;
   return (
-    <View
-      style={{
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row"
-      }}
-    >
-      <Text
-        style={{
-          color: "white",
-          fontSize: 25,
-          fontWeight: "700"
-        }}
-      >
-        Github
-      </Text>
-      <View style={{ marginLeft: 12 }}>
-        <Icon name="github" type="AntDesign" size={30} color="white" />
-      </View>
+    <View style={styles.container}>
+      {logoComponent || (
+        <View style={styles.row}>
+          <Text style={styles.textStyle}>{logoText}</Text>
+          <View style={styles.iconStyle}>
+            <Icon
+              name="github"
+              type="AntDesign"
+              size={30}
+              color="white"
+              {...props}
+            />
+          </View>
+        </View>
+      )}
     </View>
   );
 };
 
 Logo.propTypes = {
-  example: PropTypes.number
+  logoText: PropTypes.string
 };
 
 Logo.defaultProps = {
-  example: 5
+  logoText: "GITHUB"
 };
 
 export default Logo;

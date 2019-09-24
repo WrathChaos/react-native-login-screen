@@ -6,7 +6,8 @@ import {
   Dimensions,
   StyleSheet,
   SafeAreaView,
-  ImageBackground
+  ImageBackground,
+  TouchableOpacity
 } from "react-native";
 import Logo from "./Logo/Logo";
 
@@ -17,40 +18,66 @@ const defaultBackground =
 const LoginScreen = props => {
   const { example } = props;
   return (
-    <ImageBackground
-      style={{
-        width,
-        height,
-        flex: 1,
-        zIndex: -1,
-        ...StyleSheet.absoluteFillObject
-      }}
-      resizeMode="cover"
-      source={{ uri: defaultBackground }}
+    <View
+      style={{ backgroundColor: "#282828", height, width, marginBottom: 32 }}
     >
-      <View
+      <ImageBackground
         style={{
           width,
-          height,
-          backgroundColor: "rgba(0,0,0,0.1)"
+          height: height * 0.9,
+          flex: 1,
+          zIndex: -1,
+          ...StyleSheet.absoluteFillObject
+        }}
+        borderRadius={24}
+        resizeMode="cover"
+        source={{ uri: defaultBackground }}
+      >
+        <View
+          style={{
+            width,
+            height,
+            backgroundColor: "rgba(0,0,0,0.1)"
+          }}
+        >
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={{ marginTop: 24 }}>
+              <Logo />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Text style={{ color: "white", fontSize: 55 }}>{example}</Text>
+            </View>
+          </SafeAreaView>
+        </View>
+      </ImageBackground>
+      <TouchableOpacity
+        style={{
+          left: 0,
+          right: 0,
+          bottom: 24,
+          height: 50,
+          position: "absolute",
+          alignItems: "center",
+          justifyContent: "center"
         }}
       >
-        <SafeAreaView style={{ flex: 1 }}>
-          <View style={{ marginTop: 24 }}>
-            <Logo />
-          </View>
-          <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-          >
-            <Text style={{ color: "white", fontSize: 50 }}>{example}</Text>
-          </View>
-        </SafeAreaView>
-      </View>
-    </ImageBackground>
+        <Text
+          style={{
+            color: "white",
+            fontSize: 15,
+            fontFamily: "Montserrat-Bold"
+          }}
+        >
+          LOGIN
+        </Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
