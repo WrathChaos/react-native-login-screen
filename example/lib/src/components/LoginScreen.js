@@ -10,6 +10,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import Logo from "./Logo/Logo";
+import BottomContainer from "./BottomContainer/BottomContainer";
 
 const { width, height } = Dimensions.get("window");
 const defaultBackground =
@@ -17,45 +18,9 @@ const defaultBackground =
 
 const LoginScreen = props => {
   const { onPress } = props;
-  return (
-    <View
-      style={{ backgroundColor: "#282828", height, width, marginBottom: 32 }}
-    >
-      <ImageBackground
-        style={{
-          width,
-          height: height * 0.9,
-          flex: 1,
-          zIndex: -1,
-          ...StyleSheet.absoluteFillObject
-        }}
-        borderRadius={24}
-        resizeMode="cover"
-        source={{ uri: defaultBackground }}
-      >
-        <View
-          style={{
-            width,
-            height,
-            backgroundColor: "rgba(0,0,0,0.1)"
-          }}
-        >
-          <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ marginTop: 24 }}>
-              <Logo />
-            </View>
-            <View
-              style={{
-                flex: 1,
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
-              <Text style={{ color: "white", fontSize: 55 }}>{5}</Text>
-            </View>
-          </SafeAreaView>
-        </View>
-      </ImageBackground>
+
+  function renderBottomButton() {
+    return (
       <TouchableOpacity
         style={{
           left: 0,
@@ -78,6 +43,40 @@ const LoginScreen = props => {
           LOGIN
         </Text>
       </TouchableOpacity>
+    );
+  }
+  return (
+    <View
+      style={{ backgroundColor: "#282828", height, width, marginBottom: 32 }}
+    >
+      <ImageBackground
+        style={{
+          width,
+          flex: 1,
+          zIndex: -1,
+          height: height * 0.9,
+          ...StyleSheet.absoluteFillObject
+        }}
+        borderRadius={24}
+        resizeMode="cover"
+        source={{ uri: defaultBackground }}
+      >
+        <View
+          style={{
+            width,
+            height,
+            backgroundColor: "rgba(0,0,0,0.1)"
+          }}
+        >
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={{ marginTop: 24 }}>
+              <Logo />
+            </View>
+            <BottomContainer />
+          </SafeAreaView>
+        </View>
+      </ImageBackground>
+      {renderBottomButton()}
     </View>
   );
 };
