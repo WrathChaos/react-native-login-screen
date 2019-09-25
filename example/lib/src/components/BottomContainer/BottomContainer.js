@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, Dimensions, TextInput } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
+import { Text, View, Dimensions } from "react-native";
+import Card from "../Card/Card";
 
 const { width, height } = Dimensions.get("window");
 
@@ -19,38 +19,9 @@ const BottomContainer = props => {
         backgroundColor: "rgba(255,255,255,0.3)"
       }}
     >
-      <View
-        style={{
-          margin: 8,
-          height: 75,
-          width: "95%",
-          borderRadius: 24,
-          justifyContent: "center",
-          backgroundColor: "white"
-        }}
-      >
-        <View
-          style={{
-            marginLeft: 24,
-            marginRight: 24,
-            flexDirection: "row"
-          }}
-        >
-          <Icon name="user" type="AntDesign" size={30} color="black" />
-          <View
-            style={{ flexDirection: "column", marginLeft: 12, width: "90%" }}
-          >
-            <Text style={{ color: "#c7c5c6", fontSize: 12, fontWeight: "700" }}>
-              User Name
-            </Text>
-            <TextInput
-              style={{ marginTop: 3, fontSize: 18 }}
-              placeholderTextColor="black"
-              placeholderStyle={{ fontSize: 12 }}
-              placeholder="John Doe"
-            ></TextInput>
-          </View>
-        </View>
+      <View style={{ marginTop: 12 }}>
+        <Card />
+        <Card />
       </View>
     </View>
   );
