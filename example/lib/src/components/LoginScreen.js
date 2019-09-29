@@ -5,7 +5,8 @@ import {
   View,
   SafeAreaView,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView
 } from "react-native";
 import Logo from "./Logo/Logo";
 import BottomContainer from "./BottomContainer/BottomContainer";
@@ -29,26 +30,32 @@ const LoginScreen = props => {
       </TouchableOpacity>
     );
   }
+  // const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
 
   return (
-    <View style={container(loginButtonBackgroundColor)}>
-      <ImageBackground
-        borderRadius={24}
-        resizeMode="cover"
-        style={styles.imagebackgroundStyle}
-        source={{ uri: defaultBackground }}
-      >
-        <View style={styles.blackoverlay}>
-          <SafeAreaView style={styles.safeAreaViewStyle}>
-            <View style={styles.loginContainer}>
-              <Logo {...props} />
-            </View>
-            <BottomContainer {...props} />
-          </SafeAreaView>
-        </View>
-      </ImageBackground>
-      {renderLoginButton()}
-    </View>
+    <KeyboardAvoidingView
+      behavior="position"
+      style={container(loginButtonBackgroundColor)}
+    >
+      <View style={container(loginButtonBackgroundColor)}>
+        <ImageBackground
+          borderRadius={24}
+          resizeMode="cover"
+          style={styles.imagebackgroundStyle}
+          source={{ uri: defaultBackground }}
+        >
+          <View style={styles.blackoverlay}>
+            <SafeAreaView style={styles.safeAreaViewStyle}>
+              <View style={styles.loginContainer}>
+                <Logo {...props} />
+              </View>
+              <BottomContainer {...props} />
+            </SafeAreaView>
+          </View>
+        </ImageBackground>
+        {renderLoginButton()}
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
