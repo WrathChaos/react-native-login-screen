@@ -17,7 +17,9 @@ const defaultBackground =
 
 const LoginScreen = props => {
   const {
+    source,
     onPress,
+    children,
     loginText,
     loginButtonTextStyle,
     loginButtonBackgroundColor
@@ -30,7 +32,6 @@ const LoginScreen = props => {
       </TouchableOpacity>
     );
   }
-  // const keyboardVerticalOffset = Platform.OS === "ios" ? 40 : 0;
 
   return (
     <KeyboardAvoidingView
@@ -42,13 +43,14 @@ const LoginScreen = props => {
           borderRadius={24}
           resizeMode="cover"
           style={styles.imagebackgroundStyle}
-          source={{ uri: defaultBackground }}
+          source={source}
         >
           <View style={styles.blackoverlay}>
             <SafeAreaView style={styles.safeAreaViewStyle}>
               <View style={styles.loginContainer}>
                 <Logo {...props} />
               </View>
+              {children}
               <BottomContainer {...props} />
             </SafeAreaView>
           </View>
@@ -66,6 +68,7 @@ LoginScreen.propTypes = {
 
 LoginScreen.defaultProps = {
   loginText: "LOGIN",
+  source: { uri: defaultBackground },
   loginButtonBackgroundColor: "#282828",
   loginButtonTextStyle: styles.loginButtonTextStyle
 };

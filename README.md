@@ -35,52 +35,69 @@ npm i react-native-login-screen
 ```
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
+"react-native-vector-icons": ">= 6.6.0",
+"react-native-improved-text-input": ">= 0.0.1",
+"react-native-dynamic-vector-icons": ">= 0.2.1"
 ```
-
-# Your Component Options
-
-- Option 1 Component
-- Option 2 Component
 
 ## Import
 
 ```js
-import { Component1, Component2 } from "react-native-login-screen";
+import LoginScreen from "react-native-login-screen";
 ```
 
-# Component1 Usage 
+# Usage
+
+## One Line Code to Get A Login Screen !
 
 ```js
-<Component1 />
+<LoginScreen />
 ```
 
 
-# Component2 Usage 
+# Customizable Advanced Usage
 
 ```js
-<Component2 />
+<LoginScreen
+  source={{
+    uri: bgImage
+  }}
+  onPress={loginPressed}
+  loginButtonBackgroundColor="#a2a5a9"
+  logoComponent={your-logo-component}
+  passwordIconComponent={your-icon-component-for-password}
+  usernameIconComponent={your-icon-component-for-username}
+  onSwitchValueChange={switchValue => {
+    setSwitchValue(switchValue);
+  }}
+  switchValue={switchValue}
+  usernameOnChangeText={username => setUsername(username)}
+  passwordOnChangeText={password => alert("Password: ", password)}
+>
+  <View
+    style={{
+      position: "relative",
+      alignSelf: "center",
+      marginTop: 64
+    }}
+  >
+    <Text style={{ color: "white", fontSize: 30 }}>{switchValue}</Text>
+  </View>
+</LoginScreen>
 ```
 
 
 ### Configuration - Props
 
-
-| Property |  Type   | Default | Description                                             |
-| -------- | :-----: | :-----: | ------------------------------------------------------- |
-| outline  | boolean |  true   | make the button outline                                 |
-| solid    | boolean |  false  | make the button with a solid background and a shadow    |
-| gradient | boolean |  false  | make the button with a gradient background and a shadow |
-| width    | number  |   150   | change the button's width                               |
+ #### Coming Soon !
 
 
-### ToDos
+### Future Plans
 
-- [x] LICENSE
+- [ ] Configuration - Props COMING SOON
+- [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
 
-# Change Log
-
-Change log will be here !
 
 ## Author
 
