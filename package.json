@@ -1,8 +1,13 @@
 {
-  "name": "react-native-library-boilerplate",
-  "version": "0.0.11",
-  "description": "Description for library",
+  "name": "react-native-login-screen",
+  "version": "0.0.1",
+  "description": "Ready to use Login Screen for React Native",
   "keywords": [
+    "login",
+    "sign-up",
+    "sign-in",
+    "login-screen",
+    "screen",
     "FreakyCoder",
     "freakycoder",
     "kuray",
@@ -14,13 +19,16 @@
     "rn"
   ],
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-library-boilerplate/issues",
-  "main": "./lib/src/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-library-boilerplate.git",
+  "bugs": "https://github.com/WrathChaos/react-native-login-screen/issues",
+  "main": "./lib/src/LoginScreen.js",
+  "repository": "git@github.com:WrathChaos/react-native-login-screen.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-native": ">= 0.55.x"
+    "react-native": ">= 0.55.x",
+    "react-native-vector-icons": ">= 6.6.0",
+    "react-native-improved-text-input": ">= 0.0.1",
+    "react-native-dynamic-vector-icons": ">= 0.2.1"
   }
 }
