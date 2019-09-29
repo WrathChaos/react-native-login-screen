@@ -14,8 +14,8 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 <p align="center">
-  <img alt="React Native Login Screen"
-        src="assets/Screenshots/example.png" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" />
 </p>
 
 ## Installation
