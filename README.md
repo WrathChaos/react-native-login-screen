@@ -57,7 +57,7 @@ import LoginScreen from "react-native-login-screen";
 
 # Customizable Advanced Usage
 
-Fully Customizable & Ready to Use Login Screen. You can customize anything on the login screen
+Fully Customizable & Ready to Use Login Screen. You can customize anything on the login screen. Check the example :) 
 
 <p align="center">
   <img alt="React Native Login Screen" src="assets/Screenshots/custom-example.png" />
