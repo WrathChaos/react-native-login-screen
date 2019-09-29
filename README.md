@@ -4,7 +4,7 @@
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
 
 
-[![React Native Login Screen](https://img.shields.io/badge/-React%20Native%20Library%20Boilerplate-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
+[![Fully Customizable & React Native Login Screen](https://img.shields.io/badge/-React%20Native%20Library%20Boilerplate-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
 
 
 [![npm version](https://img.shields.io/npm/v/react-native-login-screen.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-login-screen)
@@ -57,6 +57,12 @@ import LoginScreen from "react-native-login-screen";
 
 # Customizable Advanced Usage
 
+Fully Customizable & Ready to Use Login Screen. You can customize anything on the login screen
+
+<p align="center">
+  <img alt="React Native Login Screen" src="assets/Screenshots/custom-example.png" />
+</p>
+
 ```js
 <LoginScreen
   source={{
@@ -85,6 +91,7 @@ import LoginScreen from "react-native-login-screen";
   </View>
 </LoginScreen>
 ```
+
 
 
 ### Configuration - Props

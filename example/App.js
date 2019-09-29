@@ -16,7 +16,7 @@ const App = () => {
   return (
     <View>
       <StatusBar barStyle="light-content" />
-      {/* <LoginScreen /> Default One */}
+      {/* <LoginScreen /> */}
       <LoginScreen
         source={{
           uri: bgImage
