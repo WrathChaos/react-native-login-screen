@@ -15,19 +15,22 @@ const Card = props => {
     titleColor,
     placeholder,
     onChangeText,
-    selectionColor
+    selectionColor,
+    iconComponent
   } = props;
   return (
     <View style={styles.container}>
       <View style={styles.containerGlue}>
         <View style={{ width: 35 }}>
-          <Icon
-            name="user"
-            type="AntDesign"
-            size={30}
-            color="black"
-            {...props}
-          />
+          {iconComponent || (
+            <Icon
+              name="user"
+              type="AntDesign"
+              size={30}
+              color="black"
+              {...props}
+            />
+          )}
         </View>
         <View style={styles.textContainer}>
           <Text style={titleStyle || _textStyle(titleColor)}>{title}</Text>

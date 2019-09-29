@@ -70,9 +70,9 @@ const LoginScreen = props => {
         >
           <SafeAreaView style={{ flex: 1 }}>
             <View style={{ marginTop: 24 }}>
-              <Logo />
+              <Logo {...props} />
             </View>
-            <BottomContainer />
+            <BottomContainer {...props} />
           </SafeAreaView>
         </View>
       </ImageBackground>

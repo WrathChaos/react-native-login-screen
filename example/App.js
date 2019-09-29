@@ -1,6 +1,6 @@
-import React from 'react';
-import {View, StatusBar} from 'react-native';
-import LoginScreen from './lib/src/components/LoginScreen';
+import React from "react";
+import { View, StatusBar } from "react-native";
+import LoginScreen from "./lib/src/components/LoginScreen";
 
 const App = () => {
   return (

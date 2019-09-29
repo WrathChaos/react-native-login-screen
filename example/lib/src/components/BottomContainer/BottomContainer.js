@@ -1,37 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Switch, Text, View, Dimensions } from "react-native";
+import { Switch, Text, View } from "react-native";
 import Card from "../Card/Card";
-
-const { width, height } = Dimensions.get("window");
+import styles, { container } from "./BottomContainer.style";
 
 const BottomContainer = props => {
   const {
     switchText,
     switchValue,
+    backgroundColor,
+    switchTextStyle,
     onSwitchValueChange,
     usernameOnChangeText,
     passwordOnChangeText,
+    usernameIconComponent,
+    passwordIconComponent,
     usernameTextinputValue,
     passwordTextinputValue
   } = props;
   return (
-    <View
-      style={{
-        height: 250,
-        bottom: 100,
-        borderRadius: 24,
-        width: width * 0.9,
-        alignSelf: "center",
-        position: "absolute",
-        backgroundColor: "rgba(255,255,255,0.45)"
-      }}
-    >
-      <View style={{ marginTop: 12 }}>
+    <View style={container(backgroundColor)}>
+      <View style={styles.containerGlue}>
         <Card
-          {...props}
           value={usernameTextinputValue}
           onChangeText={usernameOnChangeText}
+          iconComponent={usernameIconComponent}
+          {...props}
         />
         <Card
           name="key"
@@ -40,26 +34,12 @@ const BottomContainer = props => {
           value={passwordTextinputValue}
           placeholder="Your Password is here"
           onChangeText={passwordOnChangeText}
+          iconComponent={passwordIconComponent}
           {...props}
         />
       </View>
-      <View
-        style={{
-          position: "absolute",
-          bottom: 24,
-          right: 32,
-          flexDirection: "row",
-          alignItems: "center"
-        }}
-      >
-        <Text
-          style={{
-            color: "white",
-            marginRight: 8,
-            fontWeight: "700",
-            fontFamily: "Montserrat-SemiBold"
-          }}
-        >
+      <View style={styles.footerContainer}>
+        <Text style={switchTextStyle || styles.switchTextStyle}>
           {switchText}
         </Text>
         <Switch
@@ -75,11 +55,13 @@ const BottomContainer = props => {
 };
 
 BottomContainer.propTypes = {
-  switchText: PropTypes.string
+  switchText: PropTypes.string,
+  backgroundColor: PropTypes.string
 };
 
 BottomContainer.defaultProps = {
-  switchText: "Remember me"
+  switchText: "Remember me",
+  backgroundColor: "rgba(255,255,255,0.45)"
 };
 
 export default BottomContainer;
