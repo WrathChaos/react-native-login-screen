@@ -1,12 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, Dimensions } from "react-native";
+import { Switch, Text, View, Dimensions } from "react-native";
 import Card from "../Card/Card";
 
 const { width, height } = Dimensions.get("window");
 
 const BottomContainer = props => {
-  const { example } = props;
+  const {
+    switchText,
+    switchValue,
+    onSwitchValueChange,
+    usernameOnChangeText,
+    passwordOnChangeText,
+    usernameTextinputValue,
+    passwordTextinputValue
+  } = props;
   return (
     <View
       style={{
@@ -16,23 +24,62 @@ const BottomContainer = props => {
         width: width * 0.9,
         alignSelf: "center",
         position: "absolute",
-        backgroundColor: "rgba(255,255,255,0.3)"
+        backgroundColor: "rgba(255,255,255,0.45)"
       }}
     >
       <View style={{ marginTop: 12 }}>
-        <Card />
-        <Card />
+        <Card
+          {...props}
+          value={usernameTextinputValue}
+          onChangeText={usernameOnChangeText}
+        />
+        <Card
+          name="key"
+          title="Password"
+          type="FontAwesome"
+          value={passwordTextinputValue}
+          placeholder="Your Password is here"
+          onChangeText={passwordOnChangeText}
+          {...props}
+        />
+      </View>
+      <View
+        style={{
+          position: "absolute",
+          bottom: 24,
+          right: 32,
+          flexDirection: "row",
+          alignItems: "center"
+        }}
+      >
+        <Text
+          style={{
+            color: "white",
+            marginRight: 8,
+            fontWeight: "700",
+            fontFamily: "Montserrat-SemiBold"
+          }}
+        >
+          {switchText}
+        </Text>
+        <Switch
+          value={switchValue}
+          ios_backgroundColor="black"
+          onValueChange={onSwitchValueChange}
+          trackColor={{ true: "default", false: "black" }}
+          {...props}
+        />
       </View>
     </View>
   );
 };
 
 BottomContainer.propTypes = {
-  example: PropTypes.number
+  switchText: PropTypes.string
 };
 
 BottomContainer.defaultProps = {
-  example: 5
+  switchText: "Remember me"
 };
 
 export default BottomContainer;

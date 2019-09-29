@@ -3,46 +3,41 @@ import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 import TextInput from "react-native-improved-text-input";
+import styles, { _textStyle, _textInputStyle } from "./Card.style";
 
 const Card = props => {
-  const { example } = props;
+  const {
+    title,
+    value,
+    textStyle,
+    textColor,
+    titleStyle,
+    titleColor,
+    placeholder,
+    onChangeText,
+    selectionColor
+  } = props;
   return (
-    <View
-      style={{
-        margin: 8,
-        height: 75,
-        width: "95%",
-        marginTop: 0,
-        borderRadius: 24,
-        justifyContent: "center",
-        backgroundColor: "white"
-      }}
-    >
-      <View
-        style={{
-          marginLeft: 24,
-          marginRight: 24,
-          flexDirection: "row"
-        }}
-      >
-        <Icon name="user" type="AntDesign" size={30} color="black" />
-        <View
-          style={{
-            flexDirection: "column",
-            marginLeft: 12,
-            width: "90%"
-          }}
-        >
-          <Text style={{ color: "#c7c5c6", fontSize: 12, fontWeight: "700" }}>
-            User Name
-          </Text>
+    <View style={styles.container}>
+      <View style={styles.containerGlue}>
+        <View style={{ width: 35 }}>
+          <Icon
+            name="user"
+            type="AntDesign"
+            size={30}
+            color="black"
+            {...props}
+          />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={titleStyle || _textStyle(titleColor)}>{title}</Text>
           <TextInput
-            placeholderStyle={{
-              color: "black"
-            }}
-            selectionColor="#ccc"
-            style={{ marginTop: 3, fontSize: 16, fontWeight: "800" }}
-            placeholder="John Doe"
+            value={value}
+            placeholder={placeholder}
+            placeholderTextColor="#ccc"
+            onChangeText={onChangeText}
+            selectionColor={selectionColor}
+            style={textStyle || _textInputStyle(textColor)}
           />
         </View>
       </View>
@@ -51,11 +46,19 @@ const Card = props => {
 };
 
 Card.propTypes = {
-  example: PropTypes.number
+  title: PropTypes.string,
+  textColor: PropTypes.string,
+  titleColor: PropTypes.string,
+  placeholder: PropTypes.string,
+  selectionColor: PropTypes.string
 };
 
 Card.defaultProps = {
-  example: 5
+  title: "User Name",
+  textColor: "black",
+  titleColor: "#c7c5c6",
+  placeholder: "John Doe",
+  selectionColor: "#757575"
 };
 
 export default Card;
