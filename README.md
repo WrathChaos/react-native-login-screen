@@ -14,8 +14,8 @@
 
 <p align="center">
   <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" />
-  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" />
-</p>
+  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" height="740" />
+</p
 
 ## Installation
 
