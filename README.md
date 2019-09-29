@@ -15,7 +15,7 @@
 
 <p align="center">
   <img alt="React Native Login Screen"
-        src="https://github.com/WrathChaos/react-native-login-screen/blob/master/assets/Screenshots/JSLibraryBoilerplate.png" />
+        src="assets/Screenshots/example.png" />
 </p>
 
 ## Installation
