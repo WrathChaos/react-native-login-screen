@@ -48,7 +48,7 @@ import LoginScreen from "react-native-login-screen";
 
 # Usage
 
-## One Line Code to Get A Login Screen !
+#### 😍 One Line Code to Get The Whole Login Screen ! 🎉
 
 ```js
 <LoginScreen />
