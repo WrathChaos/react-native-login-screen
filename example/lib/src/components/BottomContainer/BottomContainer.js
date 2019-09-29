@@ -29,10 +29,11 @@ const BottomContainer = props => {
         />
         <Card
           name="key"
+          secureTextEntry
           title="Password"
           type="FontAwesome"
           value={passwordTextinputValue}
-          placeholder="Your Password is here"
+          placeholder="Your Password"
           onChangeText={passwordOnChangeText}
           iconComponent={passwordIconComponent}
           {...props}
