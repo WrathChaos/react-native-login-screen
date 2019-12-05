@@ -16,8 +16,8 @@ const App = () => {
   return (
     <View>
       <StatusBar barStyle="light-content" />
-      {/* <LoginScreen /> */}
-      <LoginScreen
+      <LoginScreen />
+      {/* <LoginScreen
         source={{
           uri: bgImage
         }}
@@ -39,7 +39,7 @@ const App = () => {
         >
           <Text style={{ color: "white", fontSize: 30 }}>{username}</Text>
         </View>
-      </LoginScreen>
+      </LoginScreen> */}
     </View>
   );
 };
