@@ -10,11 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@freakycoder/react-native-helpers": "^0.1.0",
     "react": "16.9.0",
-    "react-native": "0.61.0",
+    "react-native": "0.61.5",
     "react-native-dynamic-vector-icons": "^0.2.1",
     "react-native-improved-text-input": "0.0.1",
-    "react-native-login-screen": "0.1.12",
+    "react-native-login-screen": "0.2.0",
     "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {

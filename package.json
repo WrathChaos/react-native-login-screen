@@ -1,6 +1,6 @@
 {
   "name": "react-native-login-screen",
-  "version": "0.1.12",
+  "version": "0.2.0",
   "description": "Fully Customizable & Ready to use Login Screen for React Native",
   "keywords": [
     "login",
@@ -30,5 +30,8 @@
     "react-native-vector-icons": ">= 6.6.0",
     "react-native-improved-text-input": ">= 0.0.1",
     "react-native-dynamic-vector-icons": ">= 0.2.1"
+  },
+  "dependencies": {
+    "@freakycoder/react-native-helpers": "^0.1.0"
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StatusBar } from "react-native";
+import { View, StatusBar } from "react-native";
 import LoginScreen from "react-native-login-screen";
 
 const bgImage =
@@ -16,8 +16,8 @@ const App = () => {
   return (
     <View>
       <StatusBar barStyle="light-content" />
-      <LoginScreen />
-      {/* <LoginScreen
+      {/* <LoginScreen /> */}
+      <LoginScreen
         source={{
           uri: bgImage
         }}
@@ -28,18 +28,8 @@ const App = () => {
         }}
         switchValue={switchValue}
         usernameOnChangeText={username => setUsername(username)}
-        passwordOnChangeText={password => alert("Password: ", password)}
-      >
-        <View
-          style={{
-            position: "relative",
-            alignSelf: "center",
-            marginTop: 64
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 30 }}>{username}</Text>
-        </View>
-      </LoginScreen> */}
+        passwordOnChangeText={password => console.log("Password: ", password)}
+      />
     </View>
   );
 };
