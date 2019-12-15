@@ -1,4 +1,4 @@
-<img alt="React Native Login Screen" src="https://github.com/WrathChaos/react-native-login-screen/blob/master/assets/logo.png" width="1050"/>
+<img alt="React Native Login Screen" src="assets/logo.png" width="1050"/>
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
 
