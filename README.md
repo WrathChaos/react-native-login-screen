@@ -32,6 +32,7 @@ npm i react-native-login-screen
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 6.6.0",
+"@freakycoder/react-native-helpers": "0.1.0",
 "react-native-improved-text-input": ">= 0.0.1",
 "react-native-dynamic-vector-icons": ">= 0.2.1"
 ```
