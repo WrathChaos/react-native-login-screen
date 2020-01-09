@@ -2,7 +2,7 @@
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
 
-[![Fully Customizable & React Native Login Screen](https://img.shields.io/badge/-Fully%20Customizable%20%26%20Ready%20to%20Use%20Login%20Screen-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
+[![One Line of Code to Plug & Play | Fully Customizable Beautiful React Native Login Screen](https://img.shields.io/badge/-One%20Line%20of%20Code%20to%20Plug%20%26%20Play%20%7C%20Fully%20Customizable%20Beautiful%20React%20Native%20Login%20Screen-lightgrey?style=for-the-badge)](https://github.com/WrathChaos/react-native-login-screen)
 
 [![npm version](https://img.shields.io/npm/v/react-native-login-screen.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-login-screen)
 [![npm](https://img.shields.io/npm/dt/react-native-login-screen.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-login-screen)
@@ -18,9 +18,7 @@
 
 Add the dependency:
 
-### React Native:
-
-```ruby
+```js
 npm i react-native-login-screen
 ```
 
@@ -28,7 +26,7 @@ npm i react-native-login-screen
 
 ###### IMPORTANT! You need install them.
 
-```
+```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
 "react-native-vector-icons": ">= 6.6.0",
@@ -125,6 +123,31 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 | passwordTextInputValue |   value   |        default         | set password's text input value                                |
 
 # Change Log
+
+## [0.3.0](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.0) (2020-01-09)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.5...0.3.0)
+⚠ BREAKING CHANGE: onPressLogin & onPressSettings 🥳🤩
+
+- Battle Tested 💪
+- New settings button 😏
+- onPress is not available anymore, `onPressLogin` is available instead.
+
+## [0.2.5](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.5) (2019-12-16)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.4...0.2.5)
+
+## [0.2.4](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.4) (2019-12-15)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.2...0.2.4)
+
+## [0.2.2](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.2) (2019-12-15)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.1...0.2.2)
+
+## [0.2.1](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.1) (2019-12-12)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.0...0.2.1)
 
 ## [0.2.0](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.0) (2019-12-09)
 
