@@ -163,9 +163,9 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 ### Roadmap
 
-- [ ] Configuration - Props COMING SOON
 - [x] ~~LICENSE~~
 - [x] ~~Android Design Bug Fixes~~
+- [x] ~~Configuration - Props COMING SOON~~
 - [ ] Write an article about the lib on Medium
 
 ## Author
