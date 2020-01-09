@@ -124,6 +124,10 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 # Change Log
 
+## [0.3.2](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.2) (2020-01-09)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.3.1...0.3.2)
+
 ## [0.3.1](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.1) (2020-01-09)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.3.0...0.3.1)
