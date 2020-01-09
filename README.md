@@ -59,6 +59,8 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
   <img alt="React Native Login Screen" src="assets/Screenshots/custom-example.png" />
 </p>
 
+# Advanced Usage with Custom Children
+
 ```jsx
 <LoginScreen
   source={{
@@ -66,17 +68,16 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
   }}
   onPressLogin={() => alert("Login Button is pressed")}
   onPressSettings={() => alert("Settings Button is pressed")}
-  switchValue={switchValue} 
+  switchValue={switchValue}
+  onSwitchValueChange={switchValue => setSwitchValue(switchValue) }
   usernameOnChangeText={username => setUsername(username)}
   passwordOnChangeText={password => alert("Password: ", password)}
   loginButtonBackgroundColor="#a2a5a9"  // Optional
-  logoComponent={your-logo-component}   // Optional 
+  logoComponent={your-logo-component}   // Optional
   IconComponent={your-icon-component}   // Optional
   passwordIconComponent={your-icon-component-for-password} // Optional
   usernameIconComponent={your-icon-component-for-username} // Optional
-  onSwitchValueChange={switchValue => {
-    setSwitchValue(switchValue);
-  }}
+
 >
   <View
     style={{
@@ -92,7 +93,36 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 ### Configuration - Props
 
-#### Coming Soon !
+#### Fundamentals
+
+| Property                   |   Type    |    Default     | Description                                                           |
+| -------------------------- | :-------: | :------------: | --------------------------------------------------------------------- |
+| source                     | local/uri | unsplash image | change the background image with local or uri prop                    |
+| onPressLogin               | function  |   undefined    | set your own functional logic for `login button` is pressed           |
+| onPressSettings            | function  |   undefined    | set your own functional logic for `settings button` is pressed        |
+| switchValue                |  boolean  |     false      | set the `remember me` switch's value                                  |
+| onSwitchValueChange        | function  |   undefined    | set your own functional logic for `remember me` switch onChange value |
+| usernameOnChangeText       | function  |   undefined    | set your own functional logic for `username` onChange value           |
+| passwordOnChangeText       | function  |   undefined    | set your own functional logic for `password` onChange value           |
+| loginButtonBackgroundColor |   color   |    #282828     | change the login button's background color                            |
+| loginText                  |  string   |     LOGIN      | change the login button's text                                        |
+| loginButtonTextStyle       |   style   |    default     | set your own style for the login button's text style                  |
+| logoText                   |  string   |     GITHUB     | change the logo's text                                                |
+| logoComponent              | component |      Icon      | set your own logo component instead of default Icon                   |
+
+#### Bottom Container Props
+
+| Property               |   Type    |        Default         | Description                                                    |
+| ---------------------- | :-------: | :--------------------: | -------------------------------------------------------------- |
+| switchText             |  string   |      Remember me       | change the `remember me` switch text                           |
+| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component |
+| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                 |
+| switchTextStyle        |   style   |        default         | set your own style instead of switch's text style              |
+| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it              |
+| usernameIconComponent  | component |        default         | set any component instead of username icon component           |
+| passwordIconComponent  | component |        default         | set any component instead of password icon component           |
+| usernameTextInputValue |   value   |        default         | set username's text input value                                |
+| passwordTextInputValue |   value   |        default         | set password's text input value                                |
 
 # Change Log
 
