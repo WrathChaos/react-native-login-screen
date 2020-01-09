@@ -45,9 +45,9 @@ import LoginScreen from "react-native-login-screen";
 
 # Usage
 
-#### 😍 One Line Code to Get The Whole Login Screen ! 🎉
+### 😍 One Line Code to Get The Whole Login Screen 🎉
 
-```js
+```jsx
 <LoginScreen />
 ```
 
@@ -59,22 +59,24 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
   <img alt="React Native Login Screen" src="assets/Screenshots/custom-example.png" />
 </p>
 
-```js
+```jsx
 <LoginScreen
   source={{
     uri: bgImage
   }}
-  onPress={loginPressed}
-  loginButtonBackgroundColor="#a2a5a9"
-  logoComponent={your-logo-component}
-  passwordIconComponent={your-icon-component-for-password}
-  usernameIconComponent={your-icon-component-for-username}
+  onPressLogin={() => alert("Login Button is pressed")}
+  onPressSettings={() => alert("Settings Button is pressed")}
+  switchValue={switchValue} 
+  usernameOnChangeText={username => setUsername(username)}
+  passwordOnChangeText={password => alert("Password: ", password)}
+  loginButtonBackgroundColor="#a2a5a9"  // Optional
+  logoComponent={your-logo-component}   // Optional 
+  IconComponent={your-icon-component}   // Optional
+  passwordIconComponent={your-icon-component-for-password} // Optional
+  usernameIconComponent={your-icon-component-for-username} // Optional
   onSwitchValueChange={switchValue => {
     setSwitchValue(switchValue);
   }}
-  switchValue={switchValue}
-  usernameOnChangeText={username => setUsername(username)}
-  passwordOnChangeText={password => alert("Password: ", password)}
 >
   <View
     style={{

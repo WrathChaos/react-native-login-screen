@@ -8,11 +8,6 @@ const App = () => {
   const [username, setUsername] = useState(null);
   const [switchValue, setSwitchValue] = useState(false);
 
-  loginPressed = () => {
-    // login button is pressed
-    alert("Login Pressed");
-  };
-
   return (
     <View>
       <StatusBar barStyle="light-content" />
@@ -21,7 +16,8 @@ const App = () => {
         source={{
           uri: bgImage
         }}
-        onPress={loginPressed}
+        onPressLogin={() => alert("Login Button is pressed")}
+        onPressSettings={() => alert("Settings Button is pressed")}
         loginButtonBackgroundColor="#a2a5a9"
         onSwitchValueChange={switchValue => {
           setSwitchValue(switchValue);
