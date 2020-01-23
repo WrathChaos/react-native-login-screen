@@ -29,6 +29,7 @@ npm i react-native-login-screen
 ```js
 "react": ">= 16.x.x",
 "react-native": ">= 0.55.x",
+"react-native-spinkit": ">= 1.5.0",
 "react-native-vector-icons": ">= 6.6.0",
 "@freakycoder/react-native-helpers": "0.1.0",
 "react-native-improved-text-input": ">= 0.0.1",
@@ -61,13 +62,13 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 ```jsx
 <LoginScreen
-  source={{
-    uri: bgImage
-  }}
+  spinnerEnable
+  spinnerVisibility
+  source={source}
+  switchValue={switchValue}
   onPressLogin={() => alert("Login Button is pressed")}
   onPressSettings={() => alert("Settings Button is pressed")}
-  switchValue={switchValue}
-  onSwitchValueChange={switchValue => setSwitchValue(switchValue) }
+  onSwitchValueChange={switchValue => setSwitchValue(switchValue)}
   usernameOnChangeText={username => setUsername(username)}
   passwordOnChangeText={password => alert("Password: ", password)}
   loginButtonBackgroundColor="#a2a5a9"  // Optional
@@ -93,20 +94,26 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 #### Fundamentals
 
-| Property                   |   Type    |    Default     | Description                                                           |
-| -------------------------- | :-------: | :------------: | --------------------------------------------------------------------- |
-| source                     | local/uri | unsplash image | change the background image with local or uri prop                    |
-| onPressLogin               | function  |   undefined    | set your own functional logic for `login button` is pressed           |
-| onPressSettings            | function  |   undefined    | set your own functional logic for `settings button` is pressed        |
-| switchValue                |  boolean  |     false      | set the `remember me` switch's value                                  |
-| onSwitchValueChange        | function  |   undefined    | set your own functional logic for `remember me` switch onChange value |
-| usernameOnChangeText       | function  |   undefined    | set your own functional logic for `username` onChange value           |
-| passwordOnChangeText       | function  |   undefined    | set your own functional logic for `password` onChange value           |
-| loginButtonBackgroundColor |   color   |    #282828     | change the login button's background color                            |
-| loginText                  |  string   |     LOGIN      | change the login button's text                                        |
-| loginButtonTextStyle       |   style   |    default     | set your own style for the login button's text style                  |
-| logoText                   |  string   |     GITHUB     | change the logo's text                                                |
-| logoComponent              | component |      Icon      | set your own logo component instead of default Icon                   |
+| Property                   |   Type    |    Default     | Description                                                              |
+| -------------------------- | :-------: | :------------: | ------------------------------------------------------------------------ |
+| source                     | local/uri | unsplash image | change the background image with local or uri prop                       |
+| onPressLogin               | function  |   undefined    | set your own functional logic for `login button` is pressed              |
+| onPressSettings            | function  |   undefined    | set your own functional logic for `settings button` is pressed           |
+| switchValue                |  boolean  |     false      | set the `remember me` switch's value                                     |
+| onSwitchValueChange        | function  |   undefined    | set your own functional logic for `remember me` switch onChange value    |
+| usernameOnChangeText       | function  |   undefined    | set your own functional logic for `username` onChange value              |
+| passwordOnChangeText       | function  |   undefined    | set your own functional logic for `password` onChange value              |
+| loginButtonBackgroundColor |   color   |    #282828     | change the login button's background color                               |
+| loginText                  |  string   |     LOGIN      | change the login button's text                                           |
+| loginButtonTextStyle       |   style   |    default     | set your own style for the login button's text style                     |
+| logoText                   |  string   |     GITHUB     | change the logo's text                                                   |
+| logoComponent              | component |      Icon      | set your own logo component instead of default Icon                      |
+| spinnerEnable              |   bool    |     false      | set the spinner enable this is **required** to use spinner               |
+| spinnerVisibility          |   bool    |     false      | set the logic for spinner enabling / disabling for the login text button |
+| spinnerColor               |   color   |    #fdfdfd     | change the spinner color                                                 |
+| spinnerSize                |  number   |       30       | change the spinner size                                                  |
+| spinnerType                |   bool    |     false      | change the spinner type                                                  |
+| spinnerStyle               |   bool    |     false      | set your own style for the spinner itself                                |
 
 #### Bottom Container Props
 
