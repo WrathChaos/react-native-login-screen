@@ -117,17 +117,18 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 #### Bottom Container Props
 
-| Property               |   Type    |        Default         | Description                                                    |
-| ---------------------- | :-------: | :--------------------: | -------------------------------------------------------------- |
-| switchText             |  string   |      Remember me       | change the `remember me` switch text                           |
-| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component |
-| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                 |
-| switchTextStyle        |   style   |        default         | set your own style instead of switch's text style              |
-| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it              |
-| usernameIconComponent  | component |        default         | set any component instead of username icon component           |
-| passwordIconComponent  | component |        default         | set any component instead of password icon component           |
-| usernameTextInputValue |   value   |        default         | set username's text input value                                |
-| passwordTextInputValue |   value   |        default         | set password's text input value                                |
+| Property               |   Type    |        Default         | Description                                                       |
+| ---------------------- | :-------: | :--------------------: | ----------------------------------------------------------------- |
+| switchText             |  string   |      Remember me       | change the `switch` aka remember me switch text                   |
+| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component    |
+| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                    |
+| switchTextStyle        |   style   |        default         | set your own style instead of switch's text style                 |
+| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it                 |
+| disableSwitch          |  boolean  |         false          | disable the `switch` aka remember me button if you do not want it |
+| usernameIconComponent  | component |        default         | set any component instead of username icon component              |
+| passwordIconComponent  | component |        default         | set any component instead of password icon component              |
+| usernameTextInputValue |   value   |        default         | set username's text input value                                   |
+| passwordTextInputValue |   value   |        default         | set password's text input value                                   |
 
 # Change Log
 
