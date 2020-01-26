@@ -1,5 +1,17 @@
 # Change Log
 
+## [Unreleased](https://github.com/WrathChaos/react-native-login-screen/tree/HEAD)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.3.5...HEAD)
+
+**Implemented enhancements:**
+
+- More Customizable Props [\#2](https://github.com/WrathChaos/react-native-login-screen/issues/2)
+
+## [0.3.5](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.5) (2020-01-26)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.3.4...0.3.5)
+
 ## [0.3.4](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.4) (2020-01-24)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.3.3...0.3.4)
@@ -19,10 +31,6 @@
 ## [0.3.0](https://github.com/WrathChaos/react-native-login-screen/tree/0.3.0) (2020-01-09)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/0.2.5...0.3.0)
-
-- Battle Tested 💪
-- New settings button 😏
-- onPress is not available anymore, `onPressLogin` is available instead.
 
 ## [0.2.5](https://github.com/WrathChaos/react-native-login-screen/tree/0.2.5) (2019-12-16)
 
