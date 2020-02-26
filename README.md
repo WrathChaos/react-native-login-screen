@@ -129,6 +129,10 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 | passwordIconComponent  | component |        default         | set any component instead of password icon component              |
 | usernameTextInputValue |   value   |        default         | set username's text input value                                   |
 | passwordTextInputValue |   value   |        default         | set password's text input value                                   |
+| usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                      |
+| passwordPlaceholder    |  string   |        Password        | change the password text input's placeholder                      |
+| usernameTitle          |  string   |        Username        | change the username title                                         |
+| passwordTitle          |  string   |        Password        | change the password title                                         |
 
 # Change Log
 
