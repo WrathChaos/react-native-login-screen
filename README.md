@@ -11,7 +11,7 @@
 
 <p align="center">
   <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" />
-  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" height="735" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" />
 </p>
 
 ## Installation
@@ -60,30 +60,54 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 # Advanced Usage with Custom Children
 
+Pretty advanced and fully customizable example of login screen
+
 ```jsx
 <LoginScreen
   spinnerEnable
-  spinnerVisibility
-  source={source}
-  onPressLogin={() => alert("Login Button is pressed")}
+  spinnerVisibility={spinnerVisibility}
+  titleStyle={{
+    fontSize: 12,
+    color: "#adadad",
+    fontFamily: "GoodTimesRg-Regular",
+  }}
+  logoTextStyle={{
+    fontSize: 27,
+    color: "#fdfdfd",
+    fontFamily: "GoodTimesRg-Regular",
+  }}
+  loginButtonTextStyle={{
+    color: "#fdfdfd",
+    fontFamily: "GoodTimesRg-Regular",
+  }}
+  textStyle={{
+    color: "#757575",
+    fontFamily: "GoodTimesRg-Regular",
+  }}
+  signupStyle={{
+    color: "#fdfdfd",
+    fontFamily: "GoodTimesRg-Regular",
+  }}
+  onPressLogin={() => {
+    setSpinnerVisibility(true);
+    setTimeout(() => {
+      setSpinnerVisibility(false);
+    }, 2000);
+  }}
+  usernameOnChangeText={(username) => setUsername(username)}
   onPressSettings={() => alert("Settings Button is pressed")}
-  usernameOnChangeText={username => setUsername(username)}
-  passwordOnChangeText={password => alert("Password: ", password)}
-  loginButtonBackgroundColor="#a2a5a9"  // Optional
-  logoComponent={your-logo-component}   // Optional
-  IconComponent={your-icon-component}   // Optional
-  passwordIconComponent={your-icon-component-for-password} // Optional
-  usernameIconComponent={your-icon-component-for-username} // Optional
-
+  passwordOnChangeText={(password) => console.log("Password: ", password)}
 >
   <View
     style={{
       position: "relative",
       alignSelf: "center",
-      marginTop: 64
+      marginTop: 64,
     }}
   >
-    <Text style={{ color: "white", fontSize: 30 }}>{Inside Login Screen Component}</Text>
+    <Text style={{ color: "white", fontSize: 30 }}>
+      Inside Login Screen Component
+    </Text>
   </View>
 </LoginScreen>
 ```

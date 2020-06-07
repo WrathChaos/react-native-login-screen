@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
   Text,
@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   ImageBackground,
   TouchableOpacity,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
 } from "react-native";
 import Spinner from "react-native-spinkit";
 /**
@@ -19,20 +19,24 @@ import BottomContainer from "./components/BottomContainer/BottomContainer";
 const defaultBackground =
   "https://images.unsplash.com/photo-1543637005-4d639a4e16de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1481&q=80";
 
-const LoginScreen = props => {
+const LoginScreen = (props) => {
   const {
     source,
     loginText,
+    signupText,
     spinnerType,
     spinnerSize,
     spinnerColor,
     onPressLogin,
     spinnerStyle,
     spinnerEnable,
+    onPressSignup,
     spinnerVisibility,
     loginButtonTextStyle,
-    loginButtonBackgroundColor
+    loginButtonBackgroundColor,
   } = props;
+
+  const [cardState, setCardState] = useState(true);
 
   renderSpinner = () => (
     <View style={styles.spinnerStyle}>
@@ -48,7 +52,9 @@ const LoginScreen = props => {
 
   renderLoginButton = () => (
     <TouchableOpacity style={styles.loginButtonStyle} onPress={onPressLogin}>
-      <Text style={loginButtonTextStyle}>{loginText}</Text>
+      <Text style={loginButtonTextStyle}>
+        {cardState ? loginText : signupText.toUpperCase()}
+      </Text>
     </TouchableOpacity>
   );
 
@@ -69,7 +75,14 @@ const LoginScreen = props => {
               <View style={styles.loginContainer}>
                 <Logo {...props} />
               </View>
-              <BottomContainer {...props} />
+              <BottomContainer
+                cardState={cardState}
+                onPressSignup={() => {
+                  setCardState(!cardState);
+                  onPressSignup && onPressSignup();
+                }}
+                {...props}
+              />
             </SafeAreaView>
           </View>
         </ImageBackground>
@@ -88,7 +101,7 @@ LoginScreen.propTypes = {
   spinnerSize: PropTypes.number,
   spinnerColor: PropTypes.string,
   spinnerVisibility: PropTypes.bool,
-  loginButtonBackgroundColor: PropTypes.string
+  loginButtonBackgroundColor: PropTypes.string,
 };
 
 LoginScreen.defaultProps = {
@@ -96,11 +109,12 @@ LoginScreen.defaultProps = {
   loginText: "LOGIN",
   spinnerEnable: false,
   spinnerColor: "#fdfdfd",
+  signupText: "Sign Me Up",
   spinnerVisibility: false,
   spinnerType: "ThreeBounce",
   source: { uri: defaultBackground },
   loginButtonBackgroundColor: "#282828",
-  loginButtonTextStyle: styles.loginButtonTextStyle
+  loginButtonTextStyle: styles.loginButtonTextStyle,
 };
 
 export default LoginScreen;

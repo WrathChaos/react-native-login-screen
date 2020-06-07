@@ -10,6 +10,7 @@ const bgImage = {
 const App = () => {
   const [username, setUsername] = useState(null);
   const [switchValue, setSwitchValue] = useState(false);
+  const [spinnerVisibility, setSpinnerVisibility] = useState(false);
 
   return (
     <View>
@@ -20,15 +21,38 @@ const App = () => {
        */}
       <LoginScreen
         spinnerEnable
-        switchValue={switchValue}
-        spinnerVisibility={false}
-        onPressLogin={() => alert("Login Button is pressed")}
+        spinnerVisibility={spinnerVisibility}
+        titleStyle={{
+          fontSize: 12,
+          color: "#adadad",
+          fontFamily: "GoodTimesRg-Regular",
+        }}
+        logoTextStyle={{
+          fontSize: 27,
+          color: "#fdfdfd",
+          fontFamily: "GoodTimesRg-Regular",
+        }}
+        loginButtonTextStyle={{
+          color: "#fdfdfd",
+          fontFamily: "GoodTimesRg-Regular",
+        }}
+        textStyle={{
+          color: "#757575",
+          fontFamily: "GoodTimesRg-Regular",
+        }}
+        signupStyle={{
+          color: "#fdfdfd",
+          fontFamily: "GoodTimesRg-Regular",
+        }}
+        onPressLogin={() => {
+          setSpinnerVisibility(true);
+          setTimeout(() => {
+            setSpinnerVisibility(false);
+          }, 2000);
+        }}
         usernameOnChangeText={(username) => setUsername(username)}
         onPressSettings={() => alert("Settings Button is pressed")}
         passwordOnChangeText={(password) => console.log("Password: ", password)}
-        onSwitchValueChange={(switchValue) => {
-          setSwitchValue(switchValue);
-        }}
       />
     </View>
   );

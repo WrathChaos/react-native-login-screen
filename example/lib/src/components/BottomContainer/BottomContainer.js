@@ -6,12 +6,8 @@ import Icon from "react-native-dynamic-vector-icons";
 import styles, { container } from "./BottomContainer.style";
 
 const BottomContainer = (props) => {
-  const capitalizeFirstLetter = (str) => {
-    return str && str.length ? str.charAt(0).toUpperCase() + str.slice(1) : str;
-  };
-
-  const [cardState, setCardState] = useState(true);
   const {
+    cardState,
     onPressSignup,
     IconComponent,
     usernameTitle,
@@ -28,16 +24,15 @@ const BottomContainer = (props) => {
     passwordIconComponent,
     usernameTextInputValue,
     passwordTextInputValue,
-
-    loginButtonText,
     signupText,
     signupStyle,
     disableSignupButton,
+    loginButtonText,
     emailTitle,
-    emailTextInputValue,
     emailPlaceholder,
     emailOnChangeText,
     emailIconComponent,
+    emailTextInputValue,
     repasswordTitle,
     repasswordTextInputValue,
     repasswordPlaceholder,
@@ -132,10 +127,7 @@ const BottomContainer = (props) => {
         {!disableSignupButton && (
           <TouchableOpacity
             style={styles.signupButtonStyle}
-            onPress={() => {
-              setCardState(!cardState);
-              onPressSignup && onPressSignup();
-            }}
+            onPress={() => onPressSignup()}
           >
             <Text style={signupStyle || styles.signupTextStyle}>
               {cardState ? signupText : loginButtonText}

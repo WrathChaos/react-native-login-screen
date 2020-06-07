@@ -4,13 +4,13 @@ import { Text, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 import styles from "./Logo.style";
 
-const Logo = props => {
-  const { logoText, logoComponent } = props;
+const Logo = (props) => {
+  const { logoText, logoComponent, logoTextStyle } = props;
   return (
     <View style={styles.container}>
       {logoComponent || (
         <View style={styles.row}>
-          <Text style={styles.textStyle}>{logoText}</Text>
+          <Text style={logoTextStyle || styles.textStyle}>{logoText}</Text>
           <View style={styles.iconStyle}>
             <Icon
               size={30}
@@ -27,11 +27,11 @@ const Logo = props => {
 };
 
 Logo.propTypes = {
-  logoText: PropTypes.string
+  logoText: PropTypes.string,
 };
 
 Logo.defaultProps = {
-  logoText: "GITHUB"
+  logoText: "GITHUB",
 };
 
 export default Logo;
