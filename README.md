@@ -65,10 +65,8 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
   spinnerEnable
   spinnerVisibility
   source={source}
-  switchValue={switchValue}
   onPressLogin={() => alert("Login Button is pressed")}
   onPressSettings={() => alert("Settings Button is pressed")}
-  onSwitchValueChange={switchValue => setSwitchValue(switchValue)}
   usernameOnChangeText={username => setUsername(username)}
   passwordOnChangeText={password => alert("Password: ", password)}
   loginButtonBackgroundColor="#a2a5a9"  // Optional
@@ -85,7 +83,7 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
       marginTop: 64
     }}
   >
-    <Text style={{ color: "white", fontSize: 30 }}>{switchValue}</Text>
+    <Text style={{ color: "white", fontSize: 30 }}>{Inside Login Screen Component}</Text>
   </View>
 </LoginScreen>
 ```
@@ -99,8 +97,6 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 | source                     | local/uri | unsplash image | change the background image with local or uri prop                       |
 | onPressLogin               | function  |   undefined    | set your own functional logic for `login button` is pressed              |
 | onPressSettings            | function  |   undefined    | set your own functional logic for `settings button` is pressed           |
-| switchValue                |  boolean  |     false      | set the `remember me` switch's value                                     |
-| onSwitchValueChange        | function  |   undefined    | set your own functional logic for `remember me` switch onChange value    |
 | usernameOnChangeText       | function  |   undefined    | set your own functional logic for `username` onChange value              |
 | passwordOnChangeText       | function  |   undefined    | set your own functional logic for `password` onChange value              |
 | loginButtonBackgroundColor |   color   |    #282828     | change the login button's background color                               |
@@ -117,22 +113,19 @@ Fully Customizable & Ready to Use Login Screen. You can customize anything on th
 
 #### Bottom Container Props
 
-| Property               |   Type    |        Default         | Description                                                       |
-| ---------------------- | :-------: | :--------------------: | ----------------------------------------------------------------- |
-| switchText             |  string   |      Remember me       | change the `switch` aka remember me switch text                   |
-| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component    |
-| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                    |
-| switchTextStyle        |   style   |        default         | set your own style instead of switch's text style                 |
-| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it                 |
-| disableSwitch          |  boolean  |         false          | disable the `switch` aka remember me button if you do not want it |
-| usernameIconComponent  | component |        default         | set any component instead of username icon component              |
-| passwordIconComponent  | component |        default         | set any component instead of password icon component              |
-| usernameTextInputValue |   value   |        default         | set username's text input value                                   |
-| passwordTextInputValue |   value   |        default         | set password's text input value                                   |
-| usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                      |
-| passwordPlaceholder    |  string   |        Password        | change the password text input's placeholder                      |
-| usernameTitle          |  string   |        Username        | change the username title                                         |
-| passwordTitle          |  string   |        Password        | change the password title                                         |
+| Property               |   Type    |        Default         | Description                                                    |
+| ---------------------- | :-------: | :--------------------: | -------------------------------------------------------------- |
+| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component |
+| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                 |
+| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it              |
+| usernameIconComponent  | component |        default         | set any component instead of username icon component           |
+| passwordIconComponent  | component |        default         | set any component instead of password icon component           |
+| usernameTextInputValue |   value   |        default         | set username's text input value                                |
+| passwordTextInputValue |   value   |        default         | set password's text input value                                |
+| usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                   |
+| passwordPlaceholder    |  string   |        Password        | change the password text input's placeholder                   |
+| usernameTitle          |  string   |        Username        | change the username title                                      |
+| passwordTitle          |  string   |        Password        | change the password title                                      |
 
 # Change Log
 

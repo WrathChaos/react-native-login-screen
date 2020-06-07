@@ -6,6 +6,10 @@ import Icon from "react-native-dynamic-vector-icons";
 import styles, { container } from "./BottomContainer.style";
 
 const BottomContainer = (props) => {
+  const capitalizeFirstLetter = (str) => {
+    return str && str.length ? str.charAt(0).toUpperCase() + str.slice(1) : str;
+  };
+
   const [cardState, setCardState] = useState(true);
   const {
     onPressSignup,
@@ -25,6 +29,7 @@ const BottomContainer = (props) => {
     usernameTextInputValue,
     passwordTextInputValue,
 
+    loginButtonText,
     signupText,
     signupStyle,
     disableSignupButton,
@@ -112,8 +117,8 @@ const BottomContainer = (props) => {
       <View style={styles.footerContainer}>
         {!disableSettings && (
           <TouchableOpacity
-            style={{ marginRight: "auto" }}
             onPress={onPressSettings}
+            style={{ marginRight: "auto" }}
           >
             <IconComponent
               size={35}
@@ -126,24 +131,14 @@ const BottomContainer = (props) => {
         )}
         {!disableSignupButton && (
           <TouchableOpacity
-            style={{
-              padding: 12,
-              minHeight: 30,
-              borderRadius: 16,
-              marginLeft: "auto",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "rgba(0,0,0,0.2)",
-            }}
+            style={styles.signupButtonStyle}
             onPress={() => {
               setCardState(!cardState);
               onPressSignup && onPressSignup();
             }}
           >
-            <Text
-              style={signupStyle || { color: "#fdfdfd", fontWeight: "700" }}
-            >
-              {signupText}
+            <Text style={signupStyle || styles.signupTextStyle}>
+              {cardState ? signupText : loginButtonText}
             </Text>
           </TouchableOpacity>
         )}
@@ -166,6 +161,7 @@ BottomContainer.propTypes = {
 
 BottomContainer.defaultProps = {
   IconComponent: Icon,
+  loginButtonText: "Already Have Account",
   disableSwitch: false,
   disableSettings: false,
   usernameTitle: "Username",

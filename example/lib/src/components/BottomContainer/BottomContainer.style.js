@@ -28,7 +28,16 @@ export default {
     marginLeft: "auto",
   },
   signupTextStyle: {
-    color: "white",
+    color: "#fdfdfd",
     fontWeight: "700",
+  },
+  signupButtonStyle: {
+    padding: 12,
+    minHeight: 30,
+    borderRadius: 16,
+    marginLeft: "auto",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(0,0,0,0.2)",
   },
 };
