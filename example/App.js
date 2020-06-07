@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, StatusBar } from "react-native";
-// import LoginScreen from "react-native-login-screen";
-import LoginScreen from "./lib/src/LoginScreen";
+import LoginScreen from "react-native-login-screen";
+// import LoginScreen from "./lib/src/LoginScreen";
 
 const bgImage = {
   uri:
