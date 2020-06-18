@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" height="850" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" height="750" />
   <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" />
 </p>
 
