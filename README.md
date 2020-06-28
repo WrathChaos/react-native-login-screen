@@ -142,6 +142,7 @@ Pretty advanced and fully customizable example of login screen
 | IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component |
 | backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                 |
 | disableSettings        |  boolean  |         false          | disable the settings button if you do not want it              |
+| disableSignupButton    |  boolean  |         false          | disable the signup button if you do not want it                |
 | usernameIconComponent  | component |        default         | set any component instead of username icon component           |
 | passwordIconComponent  | component |        default         | set any component instead of password icon component           |
 | usernameTextInputValue |   value   |        default         | set username's text input value                                |
