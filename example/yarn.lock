@@ -4045,9 +4045,9 @@ lodash.unescape@4.0.1:
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
 lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -5233,10 +5233,10 @@ react-native-improved-text-input@0.0.1:
   resolved "https://registry.yarnpkg.com/react-native-improved-text-input/-/react-native-improved-text-input-0.0.1.tgz#ff6f2c77ce86c12d55d7c34a8941bd8cf1443b42"
   integrity sha512-va5Wgj8SYvUqn/WraYH1npmTWb8gjknHUFYbSNMw7dneZZRPSq6Uzku7wCiAhk6psIEljOUFobi0wmripOfoFQ==
 
-react-native-login-screen@0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/react-native-login-screen/-/react-native-login-screen-0.3.3.tgz#26ad4999032a8ad09a0698be00c5b50639c3c350"
-  integrity sha512-yFfPxNi3OxmQg9OAHeWzdgpuuVqG3faBUNuWVQnlyJbmD76BKXfQZeMrpfr0opOHeVjILYXGpECmuHi/TfUZuQ==
+react-native-login-screen@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-login-screen/-/react-native-login-screen-1.0.0.tgz#80dc9b7ca7da5316141f0b9dfc2dab4944bbedd7"
+  integrity sha512-wdNuU6I5hxzFEpNv2Iq8473Vegh69GXqJsdm4+C+gnLNEGTJHigNtUtx5MQzrdsr2yOMh+WWOaWh0bLZLA9HVw==
   dependencies:
     "@freakycoder/react-native-helpers" "^0.1.0"
 
