@@ -5,20 +5,23 @@ interface Style {
   container: ViewStyle;
   containerGlue: ViewStyle;
   textContainer: ViewStyle;
+  iconContainer: ViewStyle;
 }
 
-export const _textInputStyle = (textColor: string): TextStyle => {
+export const _textInputStyle = (textColor?: string): TextStyle => {
   return {
     fontSize: 14,
     color: textColor,
     fontWeight: "800",
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 0.3,
     right: isAndroid ? 5 : 0,
     marginTop: isAndroid ? 0 : 3,
     height: isAndroid ? 35 : undefined,
   };
 };
 
-export const _textStyle = (titleColor: string): TextStyle => {
+export const _textStyle = (titleColor?: string): TextStyle => {
   return {
     fontSize: 12,
     fontWeight: "700",
@@ -42,10 +45,15 @@ export default StyleSheet.create<Style>({
     flexDirection: "row",
   },
   textContainer: {
-    width: "90%",
+    bottom: 3,
+    width: "80%",
     marginLeft: 12,
     flexDirection: "column",
     justifyContent: "center",
     marginTop: isAndroid ? 10 : undefined,
+  },
+  iconContainer: {
+    width: 35,
+    justifyContent: "center",
   },
 });

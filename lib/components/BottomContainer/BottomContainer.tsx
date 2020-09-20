@@ -33,7 +33,7 @@ interface IBottomContainerProps {
   usernameTextInputValue?: string;
   passwordTextInputValue?: string;
   repasswordTextInputValue?: string;
-  onPressSignup?: () => void;
+  onSignUpPress?: () => void;
   onPressSettings?: () => void;
   emailOnChangeText?: (text: string) => void;
   usernameOnChangeText?: (text: string) => void;
@@ -44,7 +44,7 @@ interface IBottomContainerProps {
 const BottomContainer = (props: IBottomContainerProps) => {
   const {
     cardState,
-    onPressSignup,
+    onSignUpPress,
     IconComponent,
     usernameTitle,
     passwordTitle,
@@ -80,7 +80,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
     return (
       <View>
         <Card
-          title={usernameTitle}
           value={usernameTextInputValue}
           placeholder={usernamePlaceholder}
           onChangeText={usernameOnChangeText}
@@ -91,11 +90,12 @@ const BottomContainer = (props: IBottomContainerProps) => {
           name="key"
           secureTextEntry
           type="FontAwesome"
-          title={passwordTitle}
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
-          onChangeText={(text) => passwordOnChangeText(text)}
           iconComponent={passwordIconComponent}
+          onChangeText={(text: string) =>
+            passwordOnChangeText && passwordOnChangeText(text)
+          }
           {...props}
         />
       </View>
@@ -106,7 +106,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
     return (
       <View>
         <Card
-          title={emailTitle}
           value={emailTextInputValue}
           placeholder={emailPlaceholder}
           onChangeText={emailOnChangeText}
@@ -114,7 +113,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
           {...props}
         />
         <Card
-          title={passwordTitle}
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
           onChangeText={passwordOnChangeText}
@@ -124,7 +122,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
           {...props}
         />
         <Card
-          title={repasswordTitle}
           value={repasswordTextInputValue}
           placeholder={repasswordPlaceholder}
           onChangeText={repasswordOnChangeText}
@@ -163,7 +160,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
         {!disableSignupButton && (
           <TouchableOpacity
             style={styles.signupButtonStyle}
-            onPress={() => onPressSignup()}
+            onPress={() => onSignUpPress()}
           >
             <Text style={signupStyle || styles.signupTextStyle}>
               {cardState ? signupText : loginButtonText}

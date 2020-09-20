@@ -93,7 +93,7 @@ const LoginScreen = (props: ILoginProps) => {
               <BottomContainer
                 {...props}
                 cardState={cardState}
-                onPressSignup={() => {
+                onSignUpPress={() => {
                   setCardState(!cardState);
                   onPressSignup && onPressSignup();
                 }}

@@ -1,6 +1,6 @@
 {
   "name": "react-native-login-screen",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fully Customizable & Ready to use Login Screen for React Native",
   "keywords": [
     "login",
@@ -40,8 +40,8 @@
     "react-native-spinkit": ">= 1.5.0",
     "react-native-vector-icons": ">= 6.6.0",
     "@freakycoder/react-native-helpers": "0.1.0",
-    "react-native-improved-text-input": ">= 0.0.1",
-    "react-native-dynamic-vector-icons": ">= 0.2.1"
+    "react-native-dynamic-vector-icons": ">= 0.2.1",
+    "react-native-material-textfield": "https://github.com/WrathChaos/react-native-material-textfield.git"
   },
   "devDependencies": {
     "@types/react": "^16.9.22",

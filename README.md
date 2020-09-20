@@ -27,13 +27,11 @@ npm i react-native-login-screen
 ###### IMPORTANT! You need install them.
 
 ```js
-"react": ">= 16.x.x",
-"react-native": ">= 0.55.x",
 "react-native-spinkit": ">= 1.5.0",
 "react-native-vector-icons": ">= 6.6.0",
 "@freakycoder/react-native-helpers": "0.1.0",
-"react-native-improved-text-input": ">= 0.0.1",
-"react-native-dynamic-vector-icons": ">= 0.2.1"
+"react-native-dynamic-vector-icons": ">= 0.2.1",
+"react-native-material-textfield": "https://github.com/WrathChaos/react-native-material-textfield.git"
 ```
 
 ## Import
@@ -62,37 +60,39 @@ Pretty advanced and fully customizable example of login screen
 <LoginScreen
   spinnerEnable
   spinnerVisibility={spinnerVisibility}
-  titleStyle={{
-    fontSize: 12,
+  labelTextStyle={{
     color: "#adadad",
-    fontFamily: "GoodTimesRg-Regular",
+    fontFamily: "Now-Bold",
   }}
   logoTextStyle={{
     fontSize: 27,
     color: "#fdfdfd",
-    fontFamily: "GoodTimesRg-Regular",
+    fontFamily: "Now-Black",
   }}
   loginButtonTextStyle={{
     color: "#fdfdfd",
-    fontFamily: "GoodTimesRg-Regular",
+    fontFamily: "Now-Bold",
   }}
   textStyle={{
     color: "#757575",
-    fontFamily: "GoodTimesRg-Regular",
+    fontFamily: "Now-Regular",
   }}
   signupStyle={{
     color: "#fdfdfd",
-    fontFamily: "GoodTimesRg-Regular",
+    fontFamily: "Now-Bold",
   }}
+  usernameOnChangeText={(username) => console.log("Username: ", username)}
+  onPressSettings={() => alert("Settings Button is pressed")}
+  passwordOnChangeText={(password) => console.log("Password: ", password)}
   onPressLogin={() => {
     setSpinnerVisibility(true);
     setTimeout(() => {
       setSpinnerVisibility(false);
     }, 2000);
   }}
-  usernameOnChangeText={(username) => setUsername(username)}
-  onPressSettings={() => alert("Settings Button is pressed")}
-  passwordOnChangeText={(password) => console.log("Password: ", password)}
+  onPressSignup={() => {
+    console.log("onPressSignUp is pressed");
+  }}
 >
   <View
     style={{
@@ -133,20 +133,21 @@ Pretty advanced and fully customizable example of login screen
 
 #### Bottom Container Props
 
-| Property               |   Type    |        Default         | Description                                                    |
-| ---------------------- | :-------: | :--------------------: | -------------------------------------------------------------- |
-| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component |
-| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                 |
-| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it              |
-| disableSignupButton    |  boolean  |         false          | disable the signup button if you do not want it                |
-| usernameIconComponent  | component |        default         | set any component instead of username icon component           |
-| passwordIconComponent  | component |        default         | set any component instead of password icon component           |
-| usernameTextInputValue |   value   |        default         | set username's text input value                                |
-| passwordTextInputValue |   value   |        default         | set password's text input value                                |
-| usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                   |
-| passwordPlaceholder    |  string   |        Password        | change the password text input's placeholder                   |
-| usernameTitle          |  string   |        Username        | change the username title                                      |
-| passwordTitle          |  string   |        Password        | change the password title                                      |
+| Property               |   Type    |        Default         | Description                                                                  |
+| ---------------------- | :-------: | :--------------------: | ---------------------------------------------------------------------------- |
+| placeholder            |  string   |        default         | set the placeholder of the text input with both title and placeholder itself |
+| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component               |
+| backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                               |
+| disableSettings        |  boolean  |         false          | disable the settings button if you do not want it                            |
+| disableSignupButton    |  boolean  |         false          | disable the signup button if you do not want it                              |
+| usernameIconComponent  | component |        default         | set any component instead of username icon component                         |
+| passwordIconComponent  | component |        default         | set any component instead of password icon component                         |
+| usernameTextInputValue |   value   |        default         | set username's text input value                                              |
+| passwordTextInputValue |   value   |        default         | set password's text input value                                              |
+| usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                                 |
+| passwordPlaceholder    |  string   |        Password        | change the password text input's placeholder                                 |
+| usernameTitle          |  string   |        Username        | change the username title                                                    |
+| passwordTitle          |  string   |        Password        | change the password title                                                    |
 
 # Change Log
 
@@ -219,7 +220,7 @@ Pretty advanced and fully customizable example of login screen
 - [x] ~~LICENSE~~
 - [x] ~~Android Design Bug Fixes~~
 - [x] ~~Configuration - Props COMING SOON~~
-- [ ] Typescript Challenge !
+- [x] ~~Typescript Challenge!~~
 - [ ] Write an article about the lib on Medium
 
 ## Author
