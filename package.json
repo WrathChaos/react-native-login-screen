@@ -20,7 +20,7 @@
   ],
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-native-login-screen/issues",
-  "main": "./lib/src/LoginScreen.js",
+  "main": "./build/dist/LoginScreen.js",
   "repository": "git@github.com:WrathChaos/react-native-login-screen.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",

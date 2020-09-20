@@ -1,22 +1,21 @@
-import React from "react";
-import { Text, View } from "react-native";
+import * as React from "react";
+import { Text, View, TextInput } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
-import TextInput from "react-native-improved-text-input";
 /**
  * ? Local Imports
  */
 import styles, { _textStyle, _textInputStyle } from "./Card.style";
 
 export interface ICardProps {
-  title: string;
-  textStyle: any;
-  titleStyle: any;
-  textColor: string;
-  iconComponent: any;
-  titleColor: string;
-  placeholder: string;
-  selectionColor: string;
-  onChangeText: (text: string) => void;
+  title?: string;
+  textStyle?: any;
+  titleStyle?: any;
+  textColor?: string;
+  iconComponent?: any;
+  titleColor?: string;
+  placeholder?: string;
+  selectionColor?: string;
+  onChangeText?: (text: string) => void;
 }
 
 const Card = (props: ICardProps) => {

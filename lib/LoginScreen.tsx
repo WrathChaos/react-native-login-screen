@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import {
   Text,
   View,
@@ -16,10 +15,26 @@ import Logo from "./components/Logo/Logo";
 import styles, { container } from "./LoginScreen.style";
 import BottomContainer from "./components/BottomContainer/BottomContainer";
 
+export interface ILoginProps {
+  source: any;
+  loginText?: string;
+  spinnerStyle?: any;
+  signupText: string;
+  spinnerType?: string;
+  spinnerSize?: number;
+  spinnerColor?: string;
+  spinnerEnable?: boolean;
+  onPressLogin?: () => void;
+  onPressSignup?: () => void;
+  loginButtonTextStyle?: any;
+  spinnerVisibility?: boolean;
+  loginButtonBackgroundColor?: any;
+}
+
 const defaultBackground =
   "https://images.unsplash.com/photo-1543637005-4d639a4e16de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1481&q=80";
 
-const LoginScreen = (props) => {
+const LoginScreen = (props: ILoginProps) => {
   const {
     source,
     loginText,
@@ -36,9 +51,9 @@ const LoginScreen = (props) => {
     loginButtonBackgroundColor,
   } = props;
 
-  const [cardState, setCardState] = useState(true);
+  const [cardState, setCardState] = React.useState(true);
 
-  renderSpinner = () => (
+  const renderSpinner = () => (
     <View style={styles.spinnerStyle}>
       <Spinner
         size={spinnerSize}
@@ -50,7 +65,7 @@ const LoginScreen = (props) => {
     </View>
   );
 
-  renderLoginButton = () => (
+  const renderLoginButton = () => (
     <TouchableOpacity style={styles.loginButtonStyle} onPress={onPressLogin}>
       <Text style={loginButtonTextStyle}>
         {cardState ? loginText : signupText.toUpperCase()}
@@ -68,7 +83,7 @@ const LoginScreen = (props) => {
           source={source}
           borderRadius={24}
           resizeMode="cover"
-          style={styles.imagebackgroundStyle}
+          style={styles.imageBackgroundStyle}
         >
           <View style={styles.blackoverlay}>
             <SafeAreaView style={styles.safeAreaViewStyle}>
@@ -76,12 +91,12 @@ const LoginScreen = (props) => {
                 <Logo {...props} />
               </View>
               <BottomContainer
+                {...props}
                 cardState={cardState}
                 onPressSignup={() => {
                   setCardState(!cardState);
                   onPressSignup && onPressSignup();
                 }}
-                {...props}
               />
             </SafeAreaView>
           </View>
@@ -92,16 +107,6 @@ const LoginScreen = (props) => {
       </View>
     </KeyboardAvoidingView>
   );
-};
-
-LoginScreen.propTypes = {
-  loginText: PropTypes.string,
-  spinnerEnable: PropTypes.bool,
-  spinnerType: PropTypes.string,
-  spinnerSize: PropTypes.number,
-  spinnerColor: PropTypes.string,
-  spinnerVisibility: PropTypes.bool,
-  loginButtonBackgroundColor: PropTypes.string,
 };
 
 LoginScreen.defaultProps = {

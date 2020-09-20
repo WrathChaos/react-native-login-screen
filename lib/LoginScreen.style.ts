@@ -1,10 +1,20 @@
-import { StyleSheet } from "react-native";
+import { ViewStyle, ImageStyle, TextStyle, StyleSheet } from "react-native";
 import {
   isAndroid,
   ScreenWidth,
   ScreenHeight,
   isIPhoneXFamily,
 } from "@freakycoder/react-native-helpers";
+
+interface Style {
+  spinnerStyle: ViewStyle;
+  loginButtonStyle: ViewStyle;
+  loginButtonTextStyle: TextStyle;
+  imageBackgroundStyle: ViewStyle;
+  blackoverlay: ViewStyle;
+  safeAreaViewStyle: ViewStyle;
+  loginContainer: ViewStyle;
+}
 
 export const container = (loginButtonBackgroundColor) => {
   return {
@@ -15,7 +25,7 @@ export const container = (loginButtonBackgroundColor) => {
   };
 };
 
-export default {
+export default StyleSheet.create<Style>({
   spinnerStyle: {
     left: 0,
     right: 0,
@@ -40,7 +50,7 @@ export default {
     color: "white",
     fontSize: 15,
   },
-  imagebackgroundStyle: {
+  imageBackgroundStyle: {
     flex: 1,
     zIndex: -1,
     width: ScreenWidth,
@@ -58,4 +68,4 @@ export default {
   loginContainer: {
     marginTop: 24,
   },
-};
+});
