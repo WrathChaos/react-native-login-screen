@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { View, StatusBar, Alert } from "react-native";
 import LoginScreen from "react-native-login-screen";
 
+const backgroundImage = {
+  uri:
+    "https://images.unsplash.com/photo-1532517891316-72a08e5c03a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
+};
+
 const App = () => {
   const [username, setUsername] = useState(null);
   const [switchValue, setSwitchValue] = useState(false);
@@ -15,6 +20,7 @@ const App = () => {
        * <LoginScreen />
        */}
       <LoginScreen
+        source={backgroundImage}
         spinnerEnable
         spinnerVisibility={spinnerVisibility}
         labelTextStyle={{

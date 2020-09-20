@@ -46,8 +46,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
     cardState,
     onSignUpPress,
     IconComponent,
-    usernameTitle,
-    passwordTitle,
     backgroundColor,
     onPressSettings,
     disableSettings,
@@ -160,7 +158,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
         {!disableSignupButton && (
           <TouchableOpacity
             style={styles.signupButtonStyle}
-            onPress={() => onSignUpPress()}
+            onPress={() => onSignUpPress && onSignUpPress()}
           >
             <Text style={signupStyle || styles.signupTextStyle}>
               {cardState ? signupText : loginButtonText}

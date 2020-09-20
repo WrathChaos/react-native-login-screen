@@ -46,6 +46,6 @@ export default StyleSheet.create<Style>({
     marginLeft: "auto",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.2)",
+    backgroundColor: "rgba(0,0,0,0.45)",
   },
 });
