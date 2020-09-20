@@ -24,6 +24,16 @@
   "repository": "git@github.com:WrathChaos/react-native-login-screen.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "@freakycoder/react-native-helpers": "^0.1.0"
+  },
+  "scripts": {
+    "build": "cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
   "peerDependencies": {
     "react": ">= 16.x.x",
     "react-native": ">= 0.55.x",
@@ -33,7 +43,27 @@
     "react-native-improved-text-input": ">= 0.0.1",
     "react-native-dynamic-vector-icons": ">= 0.2.1"
   },
-  "dependencies": {
-    "@freakycoder/react-native-helpers": "^0.1.0"
+  "devDependencies": {
+    "@types/react": "^16.9.22",
+    "@types/react-native": "^0.63.0",
+    "react-native-typescript-transformer": "^1.2.13",
+    "typescript": "^3.7.4",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
   }
 }

@@ -1,11 +1,47 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
-import Card from "../Card/Card";
 import Icon from "react-native-dynamic-vector-icons";
+/**
+ * ? Local Imports
+ */
+import Card from "../Card/Card";
 import styles, { container } from "./BottomContainer.style";
 
-const BottomContainer = (props) => {
+interface IBottomContainerProps {
+  cardState: boolean;
+  onPressSignup: () => void;
+  IconComponent: any;
+  usernameTitle: string;
+  passwordTitle: string;
+  backgroundColor: string;
+  onPressSettings: () => void;
+  disableSettings: boolean;
+  contentComponent: any;
+  usernamePlaceholder: string;
+  passwordPlaceholder: string;
+  usernameOnChangeText: (text: string) => void;
+  passwordOnChangeText: (text: string) => void;
+  usernameIconComponent: any;
+  passwordIconComponent: any;
+  usernameTextInputValue: string;
+  passwordTextInputValue: string;
+  signupText: string;
+  signupStyle: any;
+  disableSignupButton: boolean;
+  loginButtonText: string;
+  emailTitle: string;
+  emailPlaceholder: string;
+  emailOnChangeText: (text: string) => void;
+  emailIconComponent: any;
+  emailTextInputValue: string;
+  repasswordTitle: string;
+  repasswordTextInputValue: string;
+  repasswordPlaceholder: string;
+  repasswordOnChangeText: (text: string) => void;
+  repasswordIconComponent: any;
+}
+
+const BottomContainer = (props: IBottomContainerProps) => {
   const {
     cardState,
     onPressSignup,
@@ -40,7 +76,7 @@ const BottomContainer = (props) => {
     repasswordIconComponent,
   } = props;
 
-  renderLoginCards = () => {
+  const renderLoginCards = () => {
     return (
       <View>
         <Card
@@ -66,7 +102,7 @@ const BottomContainer = (props) => {
     );
   };
 
-  renderSignupCards = () => {
+  const renderSignupCards = () => {
     return (
       <View>
         <Card
@@ -101,7 +137,7 @@ const BottomContainer = (props) => {
     );
   };
 
-  renderCardContent = () => {
+  const renderCardContent = () => {
     return cardState ? renderLoginCards() : renderSignupCards();
   };
 
@@ -137,18 +173,6 @@ const BottomContainer = (props) => {
       </View>
     </View>
   );
-};
-
-BottomContainer.propTypes = {
-  signupText: PropTypes.string,
-  disableSwitch: PropTypes.bool,
-  passwordTitle: PropTypes.string,
-  usernameTitle: PropTypes.string,
-  disableSettings: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  usernamePlaceholder: PropTypes.string,
-  passwordPlaceholder: PropTypes.string,
-  repasswordPlaceholder: PropTypes.string,
 };
 
 BottomContainer.defaultProps = {

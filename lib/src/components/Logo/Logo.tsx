@@ -2,9 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
+/**
+ * ? Local Imports
+ */
 import styles from "./Logo.style";
 
-const Logo = (props) => {
+export interface ILogoProps {
+  logoText: string;
+  logoComponent: any;
+  logoTextStyle: any;
+}
+
+const Logo = (props: ILogoProps) => {
   const { logoText, logoComponent, logoTextStyle } = props;
   return (
     <View style={styles.container}>
@@ -24,10 +33,6 @@ const Logo = (props) => {
       )}
     </View>
   );
-};
-
-Logo.propTypes = {
-  logoText: PropTypes.string,
 };
 
 Logo.defaultProps = {

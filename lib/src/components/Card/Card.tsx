@@ -1,14 +1,27 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Text, View } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 import TextInput from "react-native-improved-text-input";
+/**
+ * ? Local Imports
+ */
 import styles, { _textStyle, _textInputStyle } from "./Card.style";
 
-const Card = (props) => {
+export interface ICardProps {
+  title: string;
+  textStyle: any;
+  titleStyle: any;
+  textColor: string;
+  iconComponent: any;
+  titleColor: string;
+  placeholder: string;
+  selectionColor: string;
+  onChangeText: (text: string) => void;
+}
+
+const Card = (props: ICardProps) => {
   const {
     title,
-    value,
     textStyle,
     textColor,
     titleStyle,
@@ -35,25 +48,17 @@ const Card = (props) => {
         <View style={styles.textContainer}>
           <Text style={titleStyle || _textStyle(titleColor)}>{title}</Text>
           <TextInput
-            placeholder={placeholder}
-            placeholderTextColor="#ccc"
-            selectionColor={selectionColor}
-            onChangeText={onChangeText}
-            style={textStyle || _textInputStyle(textColor)}
             {...props}
+            placeholderTextColor="#ccc"
+            placeholder={placeholder}
+            selectionColor={selectionColor}
+            style={textStyle || _textInputStyle(textColor)}
+            onChangeText={onChangeText}
           />
         </View>
       </View>
     </View>
   );
-};
-
-Card.propTypes = {
-  title: PropTypes.string,
-  textColor: PropTypes.string,
-  titleColor: PropTypes.string,
-  placeholder: PropTypes.string,
-  selectionColor: PropTypes.string,
 };
 
 Card.defaultProps = {

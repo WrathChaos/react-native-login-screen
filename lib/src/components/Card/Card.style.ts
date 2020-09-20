@@ -1,25 +1,32 @@
+import { ViewStyle, TextStyle, StyleSheet } from "react-native";
 import { isAndroid } from "@freakycoder/react-native-helpers";
 
-export const _textInputStyle = textColor => {
+interface Style {
+  container: ViewStyle;
+  containerGlue: ViewStyle;
+  textContainer: ViewStyle;
+}
+
+export const _textInputStyle = (textColor: string): TextStyle => {
   return {
     fontSize: 14,
     color: textColor,
     fontWeight: "800",
     right: isAndroid ? 5 : 0,
     marginTop: isAndroid ? 0 : 3,
-    height: isAndroid ? 35 : null
+    height: isAndroid ? 35 : undefined,
   };
 };
 
-export const _textStyle = titleColor => {
+export const _textStyle = (titleColor: string): TextStyle => {
   return {
     fontSize: 12,
     fontWeight: "700",
-    color: titleColor
+    color: titleColor,
   };
 };
 
-export default {
+export default StyleSheet.create<Style>({
   container: {
     margin: 8,
     height: 75,
@@ -27,18 +34,18 @@ export default {
     marginTop: 0,
     borderRadius: 24,
     justifyContent: "center",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   containerGlue: {
     marginLeft: 24,
     marginRight: 24,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   textContainer: {
     width: "90%",
     marginLeft: 12,
     flexDirection: "column",
     justifyContent: "center",
-    marginTop: isAndroid ? 10 : null
-  }
-};
+    marginTop: isAndroid ? 10 : undefined,
+  },
+});

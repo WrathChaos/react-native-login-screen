@@ -1,7 +1,15 @@
-import { Dimensions } from "react-native";
+import { ViewStyle, TextStyle, StyleSheet, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-export const container = (backgroundColor, cardState) => {
+interface Style {
+  containerGlue: ViewStyle;
+  footerContainer: ViewStyle;
+  signupContainer: ViewStyle;
+  signupTextStyle: TextStyle;
+  signupButtonStyle: TextStyle;
+}
+
+export const container = (backgroundColor: string, cardState: boolean) => {
   return {
     backgroundColor,
     borderRadius: 24,
@@ -13,7 +21,7 @@ export const container = (backgroundColor, cardState) => {
   };
 };
 
-export default {
+export default StyleSheet.create<Style>({
   containerGlue: {
     marginTop: 12,
   },
@@ -40,4 +48,4 @@ export default {
     justifyContent: "center",
     backgroundColor: "rgba(0,0,0,0.2)",
   },
-};
+});
