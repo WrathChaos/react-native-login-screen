@@ -111,6 +111,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
           {...props}
         />
         <Card
+          secureTextEntry
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
           onChangeText={passwordOnChangeText}
@@ -120,6 +121,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
           {...props}
         />
         <Card
+          secureTextEntry
           value={repasswordTextInputValue}
           placeholder={repasswordPlaceholder}
           onChangeText={repasswordOnChangeText}
