@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, StatusBar, Alert } from "react-native";
-// import LoginScreen from "react-native-login-screen";
-import LoginScreen from "./build/dist/LoginScreen";
+import LoginScreen from "react-native-login-screen";
 
 const App = () => {
   const [username, setUsername] = useState(null);
