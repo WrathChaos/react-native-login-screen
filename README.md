@@ -10,8 +10,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img alt="React Native Login Screen" src="assets/Screenshots/example.png" width="49%" height="750" />
-  <img alt="React Native Login Screen" src="assets/Screenshots/example.gif" width="49%" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/RN-Login-Screen.png"   height="650" />
+  <img alt="React Native Login Screen" src="assets/Screenshots/RN-Login-Screen.gif"  height="650" />
 </p>
 
 ## Installation
@@ -221,7 +221,12 @@ Pretty advanced and fully customizable example of login screen
 - [x] ~~Android Design Bug Fixes~~
 - [x] ~~Configuration - Props COMING SOON~~
 - [x] ~~Typescript Challenge!~~
+- [ ] Remove some dependencies
 - [ ] Write an article about the lib on Medium
+
+## Credits
+
+For the awesome photo thanks to [jcob nasyr from Unsplash](https://unsplash.com/photos/67sVPjK6Q7I)
 
 ## Author
 
