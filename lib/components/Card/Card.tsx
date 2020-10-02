@@ -1,6 +1,5 @@
 import * as React from "react";
 import { View } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
 import { TextField } from "react-native-material-textfield";
 /**
  * ? Local Imports
@@ -8,32 +7,32 @@ import { TextField } from "react-native-material-textfield";
 import styles, { _textStyle, _textInputStyle } from "./Card.style";
 
 export interface ICardProps {
+  value?: string;
   iconComponent?: any;
   placeholder?: string;
+  secureTextEntry?: boolean;
   onChangeText?: (text: string) => void;
 }
 
 const Card = (props: ICardProps) => {
-  const { placeholder, onChangeText, iconComponent } = props;
+  const {
+    value,
+    placeholder,
+    onChangeText,
+    secureTextEntry,
+    iconComponent,
+  } = props;
   return (
     <View style={styles.container}>
       <View style={styles.containerGlue}>
-        <View style={styles.iconContainer}>
-          {iconComponent || (
-            <Icon
-              size={30}
-              name="user-o"
-              color="black"
-              type="FontAwesome"
-              {...props}
-            />
-          )}
-        </View>
+        <View style={styles.iconContainer}>{iconComponent}</View>
         <View style={styles.textContainer}>
           <TextField
             {...props}
+            value={value}
             label={placeholder}
             onChangeText={onChangeText}
+            secureTextEntry={secureTextEntry}
           />
         </View>
       </View>
@@ -42,7 +41,7 @@ const Card = (props: ICardProps) => {
 };
 
 Card.defaultProps = {
-  placeholder: "John Doe",
+  placeholder: "Username",
 };
 
 export default Card;

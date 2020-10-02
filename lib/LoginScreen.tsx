@@ -11,12 +11,18 @@ import Spinner from "react-native-spinkit";
 /**
  * ? Local Imports
  */
-import Logo from "./components/Logo/Logo";
+import Logo, { ILogoProps } from "./components/Logo/Logo";
 import styles, { container } from "./LoginScreen.style";
-import BottomContainer from "./components/BottomContainer/BottomContainer";
+import BottomContainer, {
+  IBottomContainerProps,
+} from "./components/BottomContainer/BottomContainer";
+import { ICardProps } from "./components/Card/Card";
 
-export interface ILoginProps {
-  source: any;
+export interface ILoginProps
+  extends IBottomContainerProps,
+    ILogoProps,
+    ICardProps {
+  source?: any;
   loginText?: string;
   spinnerStyle?: any;
   signupText: string;

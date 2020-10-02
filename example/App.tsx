@@ -42,11 +42,16 @@ const App = () => {
         }}
         signupStyle={{
           color: "#fdfdfd",
+          fontSize: 16,
           fontFamily: "Now-Bold",
         }}
-        usernameOnChangeText={(username) => console.log("Username: ", username)}
+        usernameOnChangeText={(username: string) =>
+          console.log("Username: ", username)
+        }
         onPressSettings={() => alert("Settings Button is pressed")}
-        passwordOnChangeText={(password) => console.log("Password: ", password)}
+        passwordOnChangeText={(password: string) =>
+          console.log("Password: ", password)
+        }
         onPressLogin={() => {
           setSpinnerVisibility(true);
           setTimeout(() => {

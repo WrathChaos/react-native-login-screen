@@ -28,9 +28,6 @@ npm i react-native-login-screen
 
 ```js
 "react-native-spinkit": ">= 1.5.0",
-"react-native-vector-icons": ">= 6.6.0",
-"@freakycoder/react-native-helpers": "0.1.0",
-"react-native-dynamic-vector-icons": ">= 0.2.1",
 "react-native-material-textfield": "https://github.com/WrathChaos/react-native-material-textfield.git"
 ```
 
@@ -142,6 +139,7 @@ Pretty advanced and fully customizable example of login screen
 | disableSignupButton    |  boolean  |         false          | disable the signup button if you do not want it                              |
 | usernameIconComponent  | component |        default         | set any component instead of username icon component                         |
 | passwordIconComponent  | component |        default         | set any component instead of password icon component                         |
+| settingsIconComponent  | component |        default         | set any component instead of settings icon component                         |
 | usernameTextInputValue |   value   |        default         | set username's text input value                                              |
 | passwordTextInputValue |   value   |        default         | set password's text input value                                              |
 | usernamePlaceholder    |  string   |        Username        | change the username text input's placeholder                                 |

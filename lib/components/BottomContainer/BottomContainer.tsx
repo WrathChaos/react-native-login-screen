@@ -1,18 +1,16 @@
 import * as React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import Icon from "react-native-dynamic-vector-icons";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 /**
  * ? Local Imports
  */
 import Card from "../Card/Card";
 import styles, { container } from "./BottomContainer.style";
 
-interface IBottomContainerProps {
+export interface IBottomContainerProps {
   signupStyle?: any;
   signupText?: string;
   emailTitle?: string;
   cardState?: boolean;
-  IconComponent?: any;
   usernameTitle?: string;
   passwordTitle?: string;
   contentComponent?: any;
@@ -33,6 +31,7 @@ interface IBottomContainerProps {
   usernameTextInputValue?: string;
   passwordTextInputValue?: string;
   repasswordTextInputValue?: string;
+  settingsIconComponent?: React.ReactNode;
   onSignUpPress?: () => void;
   onPressSettings?: () => void;
   emailOnChangeText?: (text: string) => void;
@@ -45,7 +44,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
   const {
     cardState,
     onSignUpPress,
-    IconComponent,
     backgroundColor,
     onPressSettings,
     disableSettings,
@@ -58,21 +56,43 @@ const BottomContainer = (props: IBottomContainerProps) => {
     passwordIconComponent,
     usernameTextInputValue,
     passwordTextInputValue,
+    settingsIconComponent,
     signupText,
     signupStyle,
     disableSignupButton,
     loginButtonText,
-    emailTitle,
     emailPlaceholder,
     emailOnChangeText,
     emailIconComponent,
     emailTextInputValue,
-    repasswordTitle,
     repasswordTextInputValue,
     repasswordPlaceholder,
     repasswordOnChangeText,
     repasswordIconComponent,
   } = props;
+
+  const renderUserIcon = () => (
+    <Image
+      source={require("../../local-assets/user.png")}
+      style={styles.userIconImageStyle}
+    />
+  );
+
+  const renderPasswordIcon = () => (
+    <Image
+      source={require("../../local-assets/password.png")}
+      style={styles.passwordIconImageStyle}
+    />
+  );
+
+  const renderSettingsIcon = () => (
+    <View style={styles.settingsIconContainer}>
+      <Image
+        source={require("../../local-assets/settings.png")}
+        style={styles.settingsIconImageStyle}
+      />
+    </View>
+  );
 
   const renderLoginCards = () => {
     return (
@@ -81,16 +101,14 @@ const BottomContainer = (props: IBottomContainerProps) => {
           value={usernameTextInputValue}
           placeholder={usernamePlaceholder}
           onChangeText={usernameOnChangeText}
-          iconComponent={usernameIconComponent}
+          iconComponent={usernameIconComponent || renderUserIcon()}
           {...props}
         />
         <Card
-          name="key"
           secureTextEntry
-          type="FontAwesome"
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
-          iconComponent={passwordIconComponent}
+          iconComponent={passwordIconComponent || renderPasswordIcon()}
           onChangeText={(text: string) =>
             passwordOnChangeText && passwordOnChangeText(text)
           }
@@ -107,7 +125,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
           value={emailTextInputValue}
           placeholder={emailPlaceholder}
           onChangeText={emailOnChangeText}
-          iconComponent={emailIconComponent}
+          iconComponent={emailIconComponent || renderUserIcon()}
           {...props}
         />
         <Card
@@ -115,9 +133,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
           onChangeText={passwordOnChangeText}
-          iconComponent={passwordIconComponent}
-          name="key"
-          type="FontAwesome"
+          iconComponent={passwordIconComponent || renderPasswordIcon()}
           {...props}
         />
         <Card
@@ -125,9 +141,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
           value={repasswordTextInputValue}
           placeholder={repasswordPlaceholder}
           onChangeText={repasswordOnChangeText}
-          iconComponent={repasswordIconComponent}
-          name="key"
-          type="FontAwesome"
+          iconComponent={repasswordIconComponent || renderPasswordIcon()}
           {...props}
         />
       </View>
@@ -146,15 +160,9 @@ const BottomContainer = (props: IBottomContainerProps) => {
         {!disableSettings && (
           <TouchableOpacity
             onPress={onPressSettings}
-            style={{ marginRight: "auto" }}
+            style={{ marginRight: "auto", marginLeft: 12 }}
           >
-            <IconComponent
-              size={35}
-              type="Ionicons"
-              name="ios-settings"
-              color="rgba(255,255,255, 0.9)"
-              {...props}
-            />
+            {settingsIconComponent || renderSettingsIcon()}
           </TouchableOpacity>
         )}
         {!disableSignupButton && (
@@ -165,6 +173,12 @@ const BottomContainer = (props: IBottomContainerProps) => {
             <Text style={signupStyle || styles.signupTextStyle}>
               {cardState ? signupText : loginButtonText}
             </Text>
+            <View style={styles.signupButtonRightArrowContainer}>
+              <Image
+                source={require("../../local-assets/right-arrow.png")}
+                style={styles.signupButtonRightArrowImageStyle}
+              />
+            </View>
           </TouchableOpacity>
         )}
       </View>
@@ -173,7 +187,6 @@ const BottomContainer = (props: IBottomContainerProps) => {
 };
 
 BottomContainer.defaultProps = {
-  IconComponent: Icon,
   loginButtonText: "Already Have Account",
   disableSwitch: false,
   disableSettings: false,
@@ -184,7 +197,6 @@ BottomContainer.defaultProps = {
   usernamePlaceholder: "Username",
   passwordPlaceholder: "Password",
   repasswordPlaceholder: "Re-password",
-  backgroundColor: "rgba(255,255,255,0.45)",
 };
 
 export default BottomContainer;
