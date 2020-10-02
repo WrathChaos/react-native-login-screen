@@ -28,7 +28,8 @@ npm i react-native-login-screen
 
 ```js
 "react-native-spinkit": ">= 1.5.0",
-"react-native-material-textfield": "https://github.com/WrathChaos/react-native-material-textfield.git"
+"@freakycoder/react-native-helpers": ">= 0.1.3",
+"@freakycoder/react-native-material-textfield": ">= 1.0.0"
 ```
 
 ## Import
@@ -105,9 +106,9 @@ Pretty advanced and fully customizable example of login screen
 </LoginScreen>
 ```
 
-### Configuration - Props
+## Configuration - Props
 
-#### Fundamentals
+### Fundamentals
 
 | Property                   |   Type    |    Default     | Description                                                              |
 | -------------------------- | :-------: | :------------: | ------------------------------------------------------------------------ |
@@ -119,7 +120,6 @@ Pretty advanced and fully customizable example of login screen
 | loginButtonBackgroundColor |   color   |    #282828     | change the login button's background color                               |
 | loginText                  |  string   |     LOGIN      | change the login button's text                                           |
 | loginButtonTextStyle       |   style   |    default     | set your own style for the login button's text style                     |
-| logoText                   |  string   |     GITHUB     | change the logo's text                                                   |
 | logoComponent              | component |      Icon      | set your own logo component instead of default Icon                      |
 | spinnerEnable              |   bool    |     false      | set the spinner enable this is **required** to use spinner               |
 | spinnerVisibility          |   bool    |     false      | set the logic for spinner enabling / disabling for the login text button |
@@ -128,12 +128,11 @@ Pretty advanced and fully customizable example of login screen
 | spinnerType                |   bool    |     false      | change the spinner type                                                  |
 | spinnerStyle               |   bool    |     false      | set your own style for the spinner itself                                |
 
-#### Bottom Container Props
+### Bottom Container Props
 
 | Property               |   Type    |        Default         | Description                                                                  |
 | ---------------------- | :-------: | :--------------------: | ---------------------------------------------------------------------------- |
 | placeholder            |  string   |        default         | set the placeholder of the text input with both title and placeholder itself |
-| IconComponent          | component |          Icon          | set your own component instead of vector-icons' Icon component               |
 | backgroundColor        |   color   | rgba(255,255,255,0.45) | change the bottom container's background color                               |
 | disableSettings        |  boolean  |         false          | disable the settings button if you do not want it                            |
 | disableSignupButton    |  boolean  |         false          | disable the signup button if you do not want it                              |
@@ -271,7 +270,9 @@ Pretty advanced and fully customizable example of login screen
 - [x] ~~Android Design Bug Fixes~~
 - [x] ~~Configuration - Props COMING SOON~~
 - [x] ~~Typescript Challenge!~~
-- [ ] Remove some dependencies
+- [x] ~~Remove some dependencies~~
+- [ ] ImageComponent Feature Option
+- [ ] Better TextField Library Integration
 - [ ] Write an article about the lib on Medium
 
 ## Credits

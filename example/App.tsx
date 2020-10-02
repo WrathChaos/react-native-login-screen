@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StatusBar, Alert } from "react-native";
+import { View, StatusBar, Image, Text } from "react-native";
 import LoginScreen from "react-native-login-screen";
 
 const backgroundImage = {
@@ -12,6 +12,38 @@ const App = () => {
   const [switchValue, setSwitchValue] = useState(false);
   const [spinnerVisibility, setSpinnerVisibility] = useState(false);
 
+  const renderLogo = () => (
+    <View
+      style={{
+        bottom: 50,
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        resizeMode="contain"
+        source={require("./assets/logo-example.png")}
+        style={{ height: 250, width: 250 }}
+      />
+      <Text
+        style={{
+          bottom: 32,
+          color: "#fdfdfd",
+          fontFamily: "Now-Bold",
+          fontSize: 32,
+          shadowRadius: 3,
+          shadowOpacity: 0.7,
+          shadowColor: "#757575",
+          shadowOffset: {
+            width: 0,
+            height: 3,
+          },
+        }}
+      >
+        LOGO
+      </Text>
+    </View>
+  );
   return (
     <View>
       <StatusBar barStyle="light-content" />
@@ -23,6 +55,7 @@ const App = () => {
         source={backgroundImage}
         spinnerEnable
         spinnerVisibility={spinnerVisibility}
+        logoComponent={renderLogo()}
         labelTextStyle={{
           color: "#adadad",
           fontFamily: "Now-Bold",

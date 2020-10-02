@@ -1,4 +1,4 @@
-import { ViewStyle, ImageStyle, TextStyle, StyleSheet } from "react-native";
+import { ViewStyle, TextStyle, StyleSheet } from "react-native";
 import {
   isAndroid,
   ScreenWidth,
@@ -13,10 +13,10 @@ interface Style {
   imageBackgroundStyle: ViewStyle;
   blackoverlay: ViewStyle;
   safeAreaViewStyle: ViewStyle;
-  loginContainer: ViewStyle;
+  logoContainer: ViewStyle;
 }
 
-export const container = (loginButtonBackgroundColor) => {
+export const container = (loginButtonBackgroundColor: string) => {
   return {
     marginBottom: 32,
     width: ScreenWidth,
@@ -65,7 +65,7 @@ export default StyleSheet.create<Style>({
   safeAreaViewStyle: {
     flex: 1,
   },
-  loginContainer: {
-    marginTop: 24,
+  logoContainer: {
+    marginTop: 12,
   },
 });

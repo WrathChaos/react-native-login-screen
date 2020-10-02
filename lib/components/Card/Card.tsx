@@ -1,6 +1,6 @@
 import * as React from "react";
 import { View } from "react-native";
-import { TextField } from "react-native-material-textfield";
+import { TextField } from "@freakycoder/react-native-material-textfield";
 /**
  * ? Local Imports
  */

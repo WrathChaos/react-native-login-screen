@@ -11,20 +11,17 @@ import Spinner from "react-native-spinkit";
 /**
  * ? Local Imports
  */
-import Logo, { ILogoProps } from "./components/Logo/Logo";
 import styles, { container } from "./LoginScreen.style";
 import BottomContainer, {
   IBottomContainerProps,
 } from "./components/BottomContainer/BottomContainer";
 import { ICardProps } from "./components/Card/Card";
 
-export interface ILoginProps
-  extends IBottomContainerProps,
-    ILogoProps,
-    ICardProps {
+export interface ILoginProps extends IBottomContainerProps, ICardProps {
   source?: any;
   loginText?: string;
   spinnerStyle?: any;
+  logoComponent?: any;
   signupText: string;
   spinnerType?: string;
   spinnerSize?: number;
@@ -52,6 +49,7 @@ const LoginScreen = (props: ILoginProps) => {
     spinnerStyle,
     spinnerEnable,
     onPressSignup,
+    logoComponent,
     spinnerVisibility,
     loginButtonTextStyle,
     loginButtonBackgroundColor,
@@ -93,9 +91,7 @@ const LoginScreen = (props: ILoginProps) => {
         >
           <View style={styles.blackoverlay}>
             <SafeAreaView style={styles.safeAreaViewStyle}>
-              <View style={styles.loginContainer}>
-                <Logo {...props} />
-              </View>
+              <View style={styles.logoContainer}>{logoComponent}</View>
               <BottomContainer
                 {...props}
                 cardState={cardState}
