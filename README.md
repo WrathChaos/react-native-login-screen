@@ -148,25 +148,34 @@ Pretty advanced and fully customizable example of login screen
 
 # Changelog
 
-## [Unreleased](https://github.com/WrathChaos/react-native-login-screen/tree/HEAD)
+## [2.1.1](https://github.com/WrathChaos/react-native-login-screen/tree/2.1.1) (2020-10-02)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.3...HEAD)
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.3...2.1.1)
+
+**Implemented enhancements:**
+
+- Support custom props for TextInput [\#9](https://github.com/WrathChaos/react-native-login-screen/issues/9)
 
 **Fixed bugs:**
 
+- TypeError: undefined is not an object \(evaluating '\_reactNative.Animated.Text.propTypes.style'\) [\#17](https://github.com/WrathChaos/react-native-login-screen/issues/17)
 - onPressSignup breaks the card swap functionality [\#13](https://github.com/WrathChaos/react-native-login-screen/issues/13)
+
+**Closed issues:**
+
+- Icons don't show up [\#18](https://github.com/WrathChaos/react-native-login-screen/issues/18)
 
 ## [2.0.3](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.3) (2020-09-20)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.0...2.0.3)
-
-## [2.0.0](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.0) (2020-09-20)
-
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.2...2.0.0)
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.2...2.0.3)
 
 ## [2.0.2](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.2) (2020-09-20)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/1.0.0...2.0.2)
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.0...2.0.2)
+
+## [2.0.0](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.0) (2020-09-20)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/1.0.0...2.0.0)
 
 **Implemented enhancements:**
 
@@ -273,6 +282,7 @@ Pretty advanced and fully customizable example of login screen
 - [x] ~~Remove some dependencies~~
 - [ ] ImageComponent Feature Option
 - [ ] Better TextField Library Integration
+- [ ] Animation Feature for Changing Login/SignUp
 - [ ] Write an article about the lib on Medium
 
 ## Credits
