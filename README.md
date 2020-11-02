@@ -148,6 +148,21 @@ Pretty advanced and fully customizable example of login screen
 
 # Changelog
 
+## [2.1.2](https://github.com/WrathChaos/react-native-login-screen/tree/2.1.2) (2020-11-02)
+
+⚠️ Breaking Change: `react-native-helpers` dependency version upgrade ⚠️
+
+Simply install:
+`"@freakycoder/react-native-helpers" : ">= 1.0.0"`
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.1.1...2.1.2)
+
+**Merged pull requests:**
+
+- Bump @react-native-community/eslint-config from 0.0.5 to 2.0.0 [\#21](https://github.com/WrathChaos/react-native-login-screen/pull/21) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump eslint from 6.8.0 to 7.10.0 [\#20](https://github.com/WrathChaos/react-native-login-screen/pull/20) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+- Bump typescript from 3.9.7 to 4.0.3 [\#19](https://github.com/WrathChaos/react-native-login-screen/pull/19) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
+
 ## [2.1.1](https://github.com/WrathChaos/react-native-login-screen/tree/2.1.1) (2020-10-02)
 
 [Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.3...2.1.1)
@@ -167,15 +182,15 @@ Pretty advanced and fully customizable example of login screen
 
 ## [2.0.3](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.3) (2020-09-20)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.2...2.0.3)
-
-## [2.0.2](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.2) (2020-09-20)
-
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.0...2.0.2)
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.0...2.0.3)
 
 ## [2.0.0](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.0) (2020-09-20)
 
-[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/1.0.0...2.0.0)
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/2.0.2...2.0.0)
+
+## [2.0.2](https://github.com/WrathChaos/react-native-login-screen/tree/2.0.2) (2020-09-20)
+
+[Full Changelog](https://github.com/WrathChaos/react-native-login-screen/compare/1.0.0...2.0.2)
 
 **Implemented enhancements:**
 
