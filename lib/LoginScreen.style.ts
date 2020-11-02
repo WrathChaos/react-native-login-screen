@@ -3,7 +3,7 @@ import {
   isAndroid,
   ScreenWidth,
   ScreenHeight,
-  isIPhoneXFamily,
+  isIPhoneNotchFamily,
 } from "@freakycoder/react-native-helpers";
 
 interface Style {
@@ -34,7 +34,7 @@ export default StyleSheet.create<Style>({
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-    bottom: isIPhoneXFamily() ? 24 : 12,
+    bottom: isIPhoneNotchFamily() ? 24 : 12,
   },
   loginButtonStyle: {
     left: 0,
@@ -44,7 +44,7 @@ export default StyleSheet.create<Style>({
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-    bottom: isAndroid ? 24 : isIPhoneXFamily() ? 24 : 12,
+    bottom: isAndroid ? 24 : isIPhoneNotchFamily() ? 24 : 12,
   },
   loginButtonTextStyle: {
     color: "white",
