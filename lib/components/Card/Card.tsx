@@ -8,6 +8,7 @@ import styles, { _textStyle, _textInputStyle } from "./Card.style";
 
 export interface ICardProps {
   value?: string;
+  label?: string;
   iconComponent?: any;
   placeholder?: string;
   secureTextEntry?: boolean;
@@ -17,6 +18,7 @@ export interface ICardProps {
 const Card = (props: ICardProps) => {
   const {
     value,
+    label,
     placeholder,
     onChangeText,
     secureTextEntry,
@@ -30,7 +32,8 @@ const Card = (props: ICardProps) => {
           <TextField
             {...props}
             value={value}
-            label={placeholder}
+            label={label}
+            placeholder={placeholder}
             onChangeText={onChangeText}
             secureTextEntry={secureTextEntry}
           />

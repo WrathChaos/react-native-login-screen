@@ -44,6 +44,8 @@ const BottomContainer = (props: IBottomContainerProps) => {
   const {
     cardState,
     onSignUpPress,
+    usernameTitle,
+    passwordTitle,
     backgroundColor,
     onPressSettings,
     disableSettings,
@@ -98,6 +100,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
     return (
       <View>
         <Card
+          label={usernameTitle}
           value={usernameTextInputValue}
           placeholder={usernamePlaceholder}
           onChangeText={usernameOnChangeText}
@@ -106,6 +109,7 @@ const BottomContainer = (props: IBottomContainerProps) => {
         />
         <Card
           secureTextEntry
+          label={passwordTitle}
           value={passwordTextInputValue}
           placeholder={passwordPlaceholder}
           iconComponent={passwordIconComponent || renderPasswordIcon()}
