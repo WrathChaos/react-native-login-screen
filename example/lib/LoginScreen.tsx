@@ -8,7 +8,6 @@ import {
   StatusBar,
   TextStyle,
   ImageStyle,
-  Dimensions,
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
@@ -18,8 +17,6 @@ import TextInput from "react-native-text-input-interactive";
  */
 import styles from "./LoginScreen.style";
 import SocialLogin from "./components/social-login/SocialLogin";
-
-const { width: ScreenWidth } = Dimensions.get("screen");
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 type CustomImageStyleProp =
@@ -59,6 +56,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onHaveAccountPress,
   onChangeEmail,
   onChangePassword,
+  children,
 }) => {
   const Logo = () => (
     <Image
@@ -103,6 +101,36 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const Divider = () => <View style={[styles.dividerStyle, dividerStyle]} />;
 
+  const DefaultSocialLoginButtons = () => (
+    <>
+      <SocialLogin
+        text="Continue with Facebook"
+        textStyle={{ color: "#4267B2" }}
+        onPress={() => {}}
+      />
+      <SocialLogin
+        text="Continue with Twitter"
+        style={{ marginTop: 16 }}
+        textStyle={{ color: "#56bfe8" }}
+        imageSource={require("./local-assets/twitter.png")}
+        onPress={() => {}}
+      />
+      <SocialLogin
+        text="Continue with Apple"
+        style={{ marginTop: 16 }}
+        imageSource={require("./local-assets/apple.png")}
+        onPress={() => {}}
+      />
+      <SocialLogin
+        text="Continue with Discord"
+        style={{ marginTop: 16 }}
+        textStyle={{ color: "#5865F2" }}
+        imageSource={require("./local-assets/discord.png")}
+        onPress={() => {}}
+      />
+    </>
+  );
+
   return (
     <SafeAreaView style={[styles.container, style]}>
       <StatusBar barStyle="dark-content" />
@@ -111,34 +139,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       <LoginButton />
       <AlreadyHaveAccount />
       <Divider />
-      <View
-        style={styles.socialLoginContainer}
-      >
-        <SocialLogin
-          text="Continue with Facebook"
-          textStyle={{ color: "#4267B2" }}
-          onPress={() => {}}
-        />
-        <SocialLogin
-          text="Continue with Twitter"
-          style={{ marginTop: 16 }}
-          textStyle={{ color: "#56bfe8" }}
-          imageSource={require("./local-assets/twitter.png")}
-          onPress={() => {}}
-        />
-        <SocialLogin
-          text="Continue with Apple"
-          style={{ marginTop: 16 }}
-          imageSource={require("./local-assets/apple.png")}
-          onPress={() => {}}
-        />
-        <SocialLogin
-          text="Continue with Discord"
-          style={{ marginTop: 16 }}
-          textStyle={{ color: "#5865F2" }}
-          imageSource={require("./local-assets/discord.png")}
-          onPress={() => {}}
-        />
+      <View style={styles.socialLoginContainer}>
+        {children || <DefaultSocialLoginButtons />}
       </View>
     </SafeAreaView>
   );
