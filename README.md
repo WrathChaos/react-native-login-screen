@@ -304,6 +304,8 @@ Simply install:
 
 For the awesome photo thanks to [jcob nasyr from Unsplash](https://unsplash.com/photos/67sVPjK6Q7I)
 
+https://www.flaticon.com/packs/social-media-163
+
 ## Author
 
 FreakyCoder, kurayogun@gmail.com
