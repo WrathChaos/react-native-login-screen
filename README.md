@@ -15,7 +15,7 @@
 
 # 🥳 Version 3
 
-Version 3 with the complete new UI
+Version 3 with the completely new UI
 
 - Whole new UI / UX
 - Simplistic Design
@@ -127,6 +127,18 @@ import LoginScreen, { SocialButton } from "react-native-login-screen";
 | onTwitterPress  | function | undefined | set your own function for the `Twitter` social button press  |
 | onApplePress    | function | undefined | set your own function for the `Apple` social button press    |
 | onDiscordPress  | function | undefined | set your own function for the `Discord` social button press  |
+
+# Version 2 is still available
+
+if you do not like the new design, you can still use the old design :)
+
+<p align="center">
+  <img alt="React Native Login Screen" src="assets/Screenshots/react-native-login-screen-v2.gif"  height="650" />
+</p>
+
+```js
+npm i react-native-login-screen@2.1.4
+```
 
 ### Roadmap
 
