@@ -132,13 +132,13 @@ import LoginScreen, { SocialButton } from "react-native-login-screen";
 
 if you do not like the new design, you can still use the old design :)
 
-<p align="center">
-  <img alt="React Native Login Screen" src="assets/Screenshots/react-native-login-screen-v2.gif"  height="650" />
-</p>
-
 ```js
 npm i react-native-login-screen@2.1.4
 ```
+
+<p align="left">
+  <img alt="React Native Login Screen" src="assets/Screenshots/react-native-login-screen-v2.gif"  height="650" />
+</p>
 
 ### Roadmap
 
