@@ -1,127 +1,163 @@
-import * as React from "react";
+import React from "react";
 import {
-  Text,
+  Image,
   View,
+  Text,
+  StyleProp,
+  ViewStyle,
+  StatusBar,
+  TextStyle,
+  ImageStyle,
   SafeAreaView,
-  ImageBackground,
   TouchableOpacity,
-  KeyboardAvoidingView,
 } from "react-native";
-import Spinner from "react-native-spinkit";
+import TextInput from "react-native-text-input-interactive";
 /**
  * ? Local Imports
  */
-import styles, { container } from "./LoginScreen.style";
-import BottomContainer, {
-  IBottomContainerProps,
-} from "./components/BottomContainer/BottomContainer";
-import { ICardProps } from "./components/Card/Card";
+import styles from "./LoginScreen.style";
+import SocialLogin from "./components/social-login/SocialLogin";
 
-export interface ILoginProps extends IBottomContainerProps, ICardProps {
-  source?: any;
-  loginText?: string;
-  spinnerStyle?: any;
-  logoComponent?: any;
-  signupText: string;
-  spinnerType?: string;
-  spinnerSize?: number;
-  spinnerColor?: string;
-  spinnerEnable?: boolean;
-  onPressLogin?: () => void;
-  onPressSignup?: () => void;
-  loginButtonTextStyle?: any;
-  spinnerVisibility?: boolean;
-  loginButtonBackgroundColor?: any;
+type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomImageStyleProp =
+  | StyleProp<ImageStyle>
+  | Array<StyleProp<ImageStyle>>;
+type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
+
+const dummyFunction = () => {};
+interface ILoginScreenProps {
+  haveAccountText?: string;
+  disableDivider?: boolean;
+  logoImageSource?: any;
+  disableSocialButtons?: boolean;
+  style?: CustomStyleProp;
+  dividerStyle?: CustomStyleProp;
+  logoImageStyle?: CustomImageStyleProp;
+  textInputContainerStyle?: CustomStyleProp;
+  loginButtonStyle?: CustomStyleProp;
+  loginTextStyle?: CustomTextStyleProp;
+  haveAccountButtonStyle?: CustomStyleProp;
+  haveAccountTextStyle?: CustomTextStyleProp;
+  onLoginPress: () => void;
+  onHaveAccountPress: () => void;
+  onEmailChange: (email: string) => void;
+  onPasswordChange: (password: string) => void;
+  onFacebookPress?: () => void;
+  onTwitterPress?: () => void;
+  onApplePress?: () => void;
+  onDiscordPress?: () => void;
 }
 
-const defaultBackground =
-  "https://images.unsplash.com/photo-1543637005-4d639a4e16de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1481&q=80";
+const LoginScreen: React.FC<ILoginScreenProps> = ({
+  style,
+  dividerStyle,
+  logoImageStyle,
+  loginTextStyle,
+  loginButtonStyle,
+  haveAccountTextStyle,
+  haveAccountButtonStyle,
+  textInputContainerStyle,
+  haveAccountText = "Already have an account?",
+  disableDivider,
+  logoImageSource,
+  onLoginPress,
+  disableSocialButtons,
+  onHaveAccountPress,
+  onEmailChange,
+  onPasswordChange,
+  onFacebookPress = dummyFunction,
+  onTwitterPress = dummyFunction,
+  onApplePress = dummyFunction,
+  onDiscordPress = dummyFunction,
+  children,
+}) => {
+  const Logo = () => (
+    <Image
+      resizeMode="contain"
+      source={logoImageSource}
+      style={[styles.logoImageStyle, logoImageStyle]}
+    />
+  );
 
-const LoginScreen = (props: ILoginProps) => {
-  const {
-    source,
-    loginText,
-    signupText,
-    spinnerType,
-    spinnerSize,
-    spinnerColor,
-    onPressLogin,
-    spinnerStyle,
-    spinnerEnable,
-    onPressSignup,
-    logoComponent,
-    spinnerVisibility,
-    loginButtonTextStyle,
-    loginButtonBackgroundColor,
-  } = props;
-
-  const [cardState, setCardState] = React.useState(true);
-
-  const renderSpinner = () => (
-    <View style={styles.spinnerStyle}>
-      <Spinner
-        size={spinnerSize}
-        type={spinnerType}
-        style={spinnerStyle}
-        color={spinnerColor}
-        isVisible={spinnerVisibility}
-      />
+  const TextInputContainer = () => (
+    <View style={[styles.textInputContainer, textInputContainerStyle]}>
+      <TextInput placeholder="Email" onChangeText={onEmailChange} />
+      <View style={styles.passwordTextInputContainer}>
+        <TextInput
+          placeholder="Password"
+          secureTextEntry
+          onChangeText={onPasswordChange}
+        />
+      </View>
     </View>
   );
 
-  const renderLoginButton = () => (
-    <TouchableOpacity style={styles.loginButtonStyle} onPress={onPressLogin}>
-      <Text style={loginButtonTextStyle}>
-        {cardState ? loginText : signupText.toUpperCase()}
+  const LoginButton = () => (
+    <TouchableOpacity
+      style={[styles.loginButtonStyle, loginButtonStyle]}
+      onPress={onLoginPress}
+    >
+      <Text style={[styles.loginTextStyle, loginTextStyle]}>Login</Text>
+    </TouchableOpacity>
+  );
+
+  const AlreadyHaveAccount = () => (
+    <TouchableOpacity
+      style={[styles.haveAccountButtonStyle, haveAccountButtonStyle]}
+      onPress={onHaveAccountPress}
+    >
+      <Text style={[styles.haveAccountTextStyle, haveAccountTextStyle]}>
+        {haveAccountText}
       </Text>
     </TouchableOpacity>
   );
 
-  return (
-    <KeyboardAvoidingView
-      behavior="position"
-      style={container(loginButtonBackgroundColor)}
-    >
-      <View style={container(loginButtonBackgroundColor)}>
-        <ImageBackground
-          source={source}
-          borderRadius={24}
-          resizeMode="cover"
-          style={styles.imageBackgroundStyle}
-        >
-          <View style={styles.blackoverlay}>
-            <SafeAreaView style={styles.safeAreaViewStyle}>
-              <View style={styles.logoContainer}>{logoComponent}</View>
-              <BottomContainer
-                {...props}
-                cardState={cardState}
-                onSignUpPress={() => {
-                  setCardState(!cardState);
-                  onPressSignup && onPressSignup();
-                }}
-              />
-            </SafeAreaView>
-          </View>
-        </ImageBackground>
-        {spinnerEnable && spinnerVisibility
-          ? renderSpinner()
-          : renderLoginButton()}
-      </View>
-    </KeyboardAvoidingView>
-  );
-};
+  const Divider = () => <View style={[styles.dividerStyle, dividerStyle]} />;
 
-LoginScreen.defaultProps = {
-  spinnerSize: 30,
-  loginText: "LOGIN",
-  spinnerEnable: false,
-  spinnerColor: "#fdfdfd",
-  signupText: "Sign Me Up",
-  spinnerVisibility: false,
-  spinnerType: "ThreeBounce",
-  source: { uri: defaultBackground },
-  loginButtonBackgroundColor: "#282828",
-  loginButtonTextStyle: styles.loginButtonTextStyle,
+  const DefaultSocialLoginButtons = () =>
+    !disableSocialButtons ? (
+      <>
+        <SocialLogin
+          text="Continue with Facebook"
+          textStyle={styles.facebookSocialButtonTextStyle}
+          onPress={onFacebookPress}
+        />
+        <SocialLogin
+          text="Continue with Twitter"
+          style={styles.socialButtonStyle}
+          textStyle={styles.twitterSocialButtonTextStyle}
+          imageSource={require("./local-assets/twitter.png")}
+          onPress={onTwitterPress}
+        />
+        <SocialLogin
+          text="Continue with Apple"
+          style={styles.socialButtonStyle}
+          imageSource={require("./local-assets/apple.png")}
+          onPress={onApplePress}
+        />
+        <SocialLogin
+          text="Continue with Discord"
+          style={styles.socialButtonStyle}
+          textStyle={styles.discordSocialButtonTextStyle}
+          imageSource={require("./local-assets/discord.png")}
+          onPress={onDiscordPress}
+        />
+      </>
+    ) : null;
+
+  return (
+    <SafeAreaView style={[styles.container, style]}>
+      <StatusBar barStyle="dark-content" />
+      <Logo />
+      <TextInputContainer />
+      <LoginButton />
+      <AlreadyHaveAccount />
+      {!disableDivider && <Divider />}
+      <View style={styles.socialLoginContainer}>
+        {children || <DefaultSocialLoginButtons />}
+      </View>
+    </SafeAreaView>
+  );
 };
 
 export default LoginScreen;

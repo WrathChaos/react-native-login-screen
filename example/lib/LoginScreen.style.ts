@@ -18,6 +18,10 @@ interface Style {
   haveAccountTextStyle: TextStyle;
   dividerStyle: ViewStyle;
   socialLoginContainer: ViewStyle;
+  facebookSocialButtonTextStyle: TextStyle;
+  twitterSocialButtonTextStyle: TextStyle;
+  discordSocialButtonTextStyle: TextStyle;
+  socialButtonStyle: ViewStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -70,9 +74,10 @@ export default StyleSheet.create<Style>({
     color: "#acabb0",
   },
   dividerStyle: {
-    height: 1,
-    marginTop: 32,
-    marginBottom: 16,
+    height: 0.5,
+    marginTop: 24,
+    marginBottom: 12,
+    borderRadius: 16,
     width: ScreenWidth * 0.8,
     alignSelf: "center",
     backgroundColor: "#ccc",
@@ -81,5 +86,18 @@ export default StyleSheet.create<Style>({
     marginTop: 16,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  facebookSocialButtonTextStyle: {
+    color: "#4267B2",
+  },
+  twitterSocialButtonTextStyle: {
+    color: "#56bfe8",
+  },
+  discordSocialButtonTextStyle: {
+    color: "#5865F2",
+  },
+  socialButtonStyle: {
+    marginTop: 16,
   },
 });

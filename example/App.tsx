@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, StatusBar } from "react-native";
-import LoginScreen from "./lib/LoginScreen";
+import LoginScreen, { SocialLogin } from "./lib/index";
 
 const App = () => {
   const [username, setUsername] = useState(null);
@@ -14,6 +14,8 @@ const App = () => {
         logoImageSource={require("./assets/logo-example.png")}
         onLoginPress={() => {}}
         onHaveAccountPress={() => {}}
+        onEmailChange={(email: string) => {}}
+        onPasswordChange={(password: string) => {}}
       />
     </View>
   );

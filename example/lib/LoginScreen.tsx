@@ -24,8 +24,12 @@ type CustomImageStyleProp =
   | Array<StyleProp<ImageStyle>>;
 type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
+const dummyFunction = () => {};
 interface ILoginScreenProps {
   haveAccountText?: string;
+  disableDivider?: boolean;
+  logoImageSource?: any;
+  disableSocialButtons?: boolean;
   style?: CustomStyleProp;
   dividerStyle?: CustomStyleProp;
   logoImageStyle?: CustomImageStyleProp;
@@ -34,11 +38,14 @@ interface ILoginScreenProps {
   loginTextStyle?: CustomTextStyleProp;
   haveAccountButtonStyle?: CustomStyleProp;
   haveAccountTextStyle?: CustomTextStyleProp;
-  logoImageSource?: any;
   onLoginPress: () => void;
   onHaveAccountPress: () => void;
-  onChangeEmail: (email: string) => void;
-  onChangePassword: (password: string) => void;
+  onEmailChange: (email: string) => void;
+  onPasswordChange: (password: string) => void;
+  onFacebookPress?: () => void;
+  onTwitterPress?: () => void;
+  onApplePress?: () => void;
+  onDiscordPress?: () => void;
 }
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({
@@ -51,11 +58,17 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   haveAccountButtonStyle,
   textInputContainerStyle,
   haveAccountText = "Already have an account?",
+  disableDivider,
   logoImageSource,
   onLoginPress,
+  disableSocialButtons,
   onHaveAccountPress,
-  onChangeEmail,
-  onChangePassword,
+  onEmailChange,
+  onPasswordChange,
+  onFacebookPress = dummyFunction,
+  onTwitterPress = dummyFunction,
+  onApplePress = dummyFunction,
+  onDiscordPress = dummyFunction,
   children,
 }) => {
   const Logo = () => (
@@ -68,12 +81,12 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const TextInputContainer = () => (
     <View style={[styles.textInputContainer, textInputContainerStyle]}>
-      <TextInput placeholder="Email" onChangeText={onChangeEmail} />
+      <TextInput placeholder="Email" onChangeText={onEmailChange} />
       <View style={styles.passwordTextInputContainer}>
         <TextInput
           placeholder="Password"
           secureTextEntry
-          onChangeText={onChangePassword}
+          onChangeText={onPasswordChange}
         />
       </View>
     </View>
@@ -101,35 +114,36 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const Divider = () => <View style={[styles.dividerStyle, dividerStyle]} />;
 
-  const DefaultSocialLoginButtons = () => (
-    <>
-      <SocialLogin
-        text="Continue with Facebook"
-        textStyle={{ color: "#4267B2" }}
-        onPress={() => {}}
-      />
-      <SocialLogin
-        text="Continue with Twitter"
-        style={{ marginTop: 16 }}
-        textStyle={{ color: "#56bfe8" }}
-        imageSource={require("./local-assets/twitter.png")}
-        onPress={() => {}}
-      />
-      <SocialLogin
-        text="Continue with Apple"
-        style={{ marginTop: 16 }}
-        imageSource={require("./local-assets/apple.png")}
-        onPress={() => {}}
-      />
-      <SocialLogin
-        text="Continue with Discord"
-        style={{ marginTop: 16 }}
-        textStyle={{ color: "#5865F2" }}
-        imageSource={require("./local-assets/discord.png")}
-        onPress={() => {}}
-      />
-    </>
-  );
+  const DefaultSocialLoginButtons = () =>
+    !disableSocialButtons ? (
+      <>
+        <SocialLogin
+          text="Continue with Facebook"
+          textStyle={styles.facebookSocialButtonTextStyle}
+          onPress={onFacebookPress}
+        />
+        <SocialLogin
+          text="Continue with Twitter"
+          style={styles.socialButtonStyle}
+          textStyle={styles.twitterSocialButtonTextStyle}
+          imageSource={require("./local-assets/twitter.png")}
+          onPress={onTwitterPress}
+        />
+        <SocialLogin
+          text="Continue with Apple"
+          style={styles.socialButtonStyle}
+          imageSource={require("./local-assets/apple.png")}
+          onPress={onApplePress}
+        />
+        <SocialLogin
+          text="Continue with Discord"
+          style={styles.socialButtonStyle}
+          textStyle={styles.discordSocialButtonTextStyle}
+          imageSource={require("./local-assets/discord.png")}
+          onPress={onDiscordPress}
+        />
+      </>
+    ) : null;
 
   return (
     <SafeAreaView style={[styles.container, style]}>
@@ -138,7 +152,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       <TextInputContainer />
       <LoginButton />
       <AlreadyHaveAccount />
-      <Divider />
+      {!disableDivider && <Divider />}
       <View style={styles.socialLoginContainer}>
         {children || <DefaultSocialLoginButtons />}
       </View>

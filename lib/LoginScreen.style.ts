@@ -1,71 +1,103 @@
-import { ViewStyle, TextStyle, StyleSheet } from "react-native";
 import {
-  isAndroid,
-  ScreenWidth,
-  ScreenHeight,
-  isIPhoneNotchFamily,
-} from "@freakycoder/react-native-helpers";
+  ViewStyle,
+  ImageStyle,
+  Dimensions,
+  StyleSheet,
+  TextStyle,
+} from "react-native";
+const { width: ScreenWidth } = Dimensions.get("screen");
 
 interface Style {
-  spinnerStyle: ViewStyle;
+  container: ViewStyle;
+  logoImageStyle: ImageStyle;
+  textInputContainer: ViewStyle;
+  passwordTextInputContainer: ViewStyle;
   loginButtonStyle: ViewStyle;
-  loginButtonTextStyle: TextStyle;
-  imageBackgroundStyle: ViewStyle;
-  blackoverlay: ViewStyle;
-  safeAreaViewStyle: ViewStyle;
-  logoContainer: ViewStyle;
+  loginTextStyle: TextStyle;
+  haveAccountButtonStyle: ViewStyle;
+  haveAccountTextStyle: TextStyle;
+  dividerStyle: ViewStyle;
+  socialLoginContainer: ViewStyle;
+  facebookSocialButtonTextStyle: TextStyle;
+  twitterSocialButtonTextStyle: TextStyle;
+  discordSocialButtonTextStyle: TextStyle;
+  socialButtonStyle: ViewStyle;
 }
 
-export const container = (loginButtonBackgroundColor: string) => {
-  return {
-    marginBottom: 32,
-    width: ScreenWidth,
-    height: ScreenHeight,
-    backgroundColor: loginButtonBackgroundColor,
-  };
-};
-
 export default StyleSheet.create<Style>({
-  spinnerStyle: {
-    left: 0,
-    right: 0,
-    zIndex: 9,
-    height: 50,
-    position: "absolute",
+  container: {
+    flex: 1,
+    backgroundColor: "#f7f7f7",
+  },
+  logoImageStyle: {
+    width: 200,
+    height: 200,
+    alignSelf: "center",
+  },
+  textInputContainer: {
+    marginTop: 12,
     alignItems: "center",
     justifyContent: "center",
-    bottom: isIPhoneNotchFamily() ? 24 : 12,
+  },
+  passwordTextInputContainer: {
+    marginTop: 16,
   },
   loginButtonStyle: {
-    left: 0,
-    right: 0,
-    zIndex: 9,
-    height: 50,
-    position: "absolute",
+    height: 40,
+    width: ScreenWidth * 0.9,
+    backgroundColor: "#25a9e2",
+    borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
-    bottom: isAndroid ? 24 : isIPhoneNotchFamily() ? 24 : 12,
+    alignSelf: "center",
+    marginTop: 32,
+    elevation: 5,
+    shadowRadius: 8,
+    shadowOpacity: 0.3,
+    shadowColor: "#166080",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
   },
-  loginButtonTextStyle: {
-    color: "white",
-    fontSize: 15,
+  loginTextStyle: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
-  imageBackgroundStyle: {
-    flex: 1,
-    zIndex: -1,
-    width: ScreenWidth,
-    height: ScreenHeight * 0.9,
-    ...StyleSheet.absoluteFillObject,
+  haveAccountButtonStyle: {
+    marginTop: 32,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  blackoverlay: {
-    width: ScreenWidth,
-    height: ScreenHeight,
-    backgroundColor: "rgba(0,0,0,0.1)",
+  haveAccountTextStyle: {
+    color: "#acabb0",
   },
-  safeAreaViewStyle: {
-    flex: 1,
+  dividerStyle: {
+    height: 0.5,
+    marginTop: 24,
+    marginBottom: 12,
+    borderRadius: 16,
+    width: ScreenWidth * 0.8,
+    alignSelf: "center",
+    backgroundColor: "#ccc",
   },
-  logoContainer: {
-    marginTop: 12,
+  socialLoginContainer: {
+    marginTop: 16,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  facebookSocialButtonTextStyle: {
+    color: "#4267B2",
+  },
+  twitterSocialButtonTextStyle: {
+    color: "#56bfe8",
+  },
+  discordSocialButtonTextStyle: {
+    color: "#5865F2",
+  },
+  socialButtonStyle: {
+    marginTop: 16,
   },
 });
