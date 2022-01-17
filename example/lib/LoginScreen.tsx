@@ -16,7 +16,7 @@ import TextInput from "react-native-text-input-interactive";
  * ? Local Imports
  */
 import styles from "./LoginScreen.style";
-import SocialLogin from "./components/social-login/SocialLogin";
+import SocialButton from "./components/social-button/SocialButton";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 type CustomImageStyleProp =
@@ -117,25 +117,25 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   const DefaultSocialLoginButtons = () =>
     !disableSocialButtons ? (
       <>
-        <SocialLogin
+        <SocialButton
           text="Continue with Facebook"
           textStyle={styles.facebookSocialButtonTextStyle}
           onPress={onFacebookPress}
         />
-        <SocialLogin
+        <SocialButton
           text="Continue with Twitter"
           style={styles.socialButtonStyle}
           textStyle={styles.twitterSocialButtonTextStyle}
           imageSource={require("./local-assets/twitter.png")}
           onPress={onTwitterPress}
         />
-        <SocialLogin
+        <SocialButton
           text="Continue with Apple"
           style={styles.socialButtonStyle}
           imageSource={require("./local-assets/apple.png")}
           onPress={onApplePress}
         />
-        <SocialLogin
+        <SocialButton
           text="Continue with Discord"
           style={styles.socialButtonStyle}
           textStyle={styles.discordSocialButtonTextStyle}

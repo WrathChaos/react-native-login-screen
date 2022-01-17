@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, StatusBar } from "react-native";
-import LoginScreen, { SocialLogin } from "./lib/index";
+import LoginScreen, { SocialButton } from "./lib/index";
 
 const App = () => {
   const [username, setUsername] = useState(null);
