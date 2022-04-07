@@ -35,7 +35,7 @@
     "react-native-text-input-interactive": ">= 0.1.3"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
+    "@types/react": "^18.0.0",
     "@types/react-native": "^0.67.0",
     "react-native-typescript-transformer": "^1.2.13",
     "typescript": "^4.0.3",
