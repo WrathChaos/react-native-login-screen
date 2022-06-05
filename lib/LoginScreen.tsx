@@ -26,23 +26,24 @@ type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 const dummyFunction = () => {};
 export interface ILoginScreenProps {
-  haveAccountText?: string;
+  signupText?: string;
   disableDivider?: boolean;
   logoImageSource: any;
   disableSocialButtons?: boolean;
   emailPlaceholder?: string;
   passwordPlaceholer?: string;
+  disableSignup?: boolean;
   style?: CustomStyleProp;
   dividerStyle?: CustomStyleProp;
   logoImageStyle?: CustomImageStyleProp;
   textInputContainerStyle?: CustomStyleProp;
   loginButtonStyle?: CustomStyleProp;
   loginTextStyle?: CustomTextStyleProp;
-  haveAccountButtonStyle?: CustomStyleProp;
-  haveAccountTextStyle?: CustomTextStyleProp;
+  signupStyle?: CustomStyleProp;
+  signupTextStyle?: CustomTextStyleProp;
   children?: any;
   onLoginPress: () => void;
-  onHaveAccountPress: () => void;
+  onSignupPress: () => void;
   onEmailChange: (email: string) => void;
   onPasswordChange: (password: string) => void;
   onFacebookPress?: () => void;
@@ -57,15 +58,15 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   logoImageStyle,
   loginTextStyle,
   loginButtonStyle,
-  haveAccountTextStyle,
-  haveAccountButtonStyle,
+  signupTextStyle,
+  signupStyle,
   textInputContainerStyle,
-  haveAccountText = "Already have an account?",
+  signupText = "Create an account",
   disableDivider,
   logoImageSource,
   onLoginPress,
   disableSocialButtons,
-  onHaveAccountPress,
+  onSignupPress,
   onEmailChange,
   onPasswordChange,
   onFacebookPress = dummyFunction,
@@ -74,6 +75,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onDiscordPress = dummyFunction,
   emailPlaceholder = "Email",
   passwordPlaceholer = "Password",
+  disableSignup = false,
   children,
 }) => {
   const Logo = () => (
@@ -106,13 +108,13 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     </TouchableOpacity>
   );
 
-  const AlreadyHaveAccount = () => (
+  const SignUp = () => (
     <TouchableOpacity
-      style={[styles.haveAccountButtonStyle, haveAccountButtonStyle]}
-      onPress={onHaveAccountPress}
+      style={[styles.signupStyle, signupStyle]}
+      onPress={onSignupPress}
     >
-      <Text style={[styles.haveAccountTextStyle, haveAccountTextStyle]}>
-        {haveAccountText}
+      <Text style={[styles.signupTextStyle, signupTextStyle]}>
+        {signupText}
       </Text>
     </TouchableOpacity>
   );
@@ -156,7 +158,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       <Logo />
       <TextInputContainer />
       <LoginButton />
-      <AlreadyHaveAccount />
+      {!disableSignup && <SignUp />}
       {!disableDivider && <Divider />}
       <View style={styles.socialLoginContainer}>
         {children || <DefaultSocialLoginButtons />}

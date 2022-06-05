@@ -14,8 +14,8 @@ interface Style {
   passwordTextInputContainer: ViewStyle;
   loginButtonStyle: ViewStyle;
   loginTextStyle: TextStyle;
-  haveAccountButtonStyle: ViewStyle;
-  haveAccountTextStyle: TextStyle;
+  signupStyle: ViewStyle;
+  signupTextStyle: TextStyle;
   dividerStyle: ViewStyle;
   socialLoginContainer: ViewStyle;
   facebookSocialButtonTextStyle: TextStyle;
@@ -65,12 +65,12 @@ export default StyleSheet.create<Style>({
     fontSize: 16,
     fontWeight: "bold",
   },
-  haveAccountButtonStyle: {
+  signupStyle: {
     marginTop: 32,
     alignItems: "center",
     justifyContent: "center",
   },
-  haveAccountTextStyle: {
+  signupTextStyle: {
     color: "#acabb0",
   },
   dividerStyle: {
