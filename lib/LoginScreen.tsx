@@ -30,6 +30,8 @@ export interface ILoginScreenProps {
   disableDivider?: boolean;
   logoImageSource: any;
   disableSocialButtons?: boolean;
+  emailPlaceholder?: string;
+  passwordPlaceholer?: string;
   style?: CustomStyleProp;
   dividerStyle?: CustomStyleProp;
   logoImageStyle?: CustomImageStyleProp;
@@ -38,6 +40,7 @@ export interface ILoginScreenProps {
   loginTextStyle?: CustomTextStyleProp;
   haveAccountButtonStyle?: CustomStyleProp;
   haveAccountTextStyle?: CustomTextStyleProp;
+  children?: any;
   onLoginPress: () => void;
   onHaveAccountPress: () => void;
   onEmailChange: (email: string) => void;
@@ -69,6 +72,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onTwitterPress = dummyFunction,
   onApplePress = dummyFunction,
   onDiscordPress = dummyFunction,
+  emailPlaceholder = "Email",
+  passwordPlaceholer = "Password",
   children,
 }) => {
   const Logo = () => (
@@ -81,10 +86,10 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const TextInputContainer = () => (
     <View style={[styles.textInputContainer, textInputContainerStyle]}>
-      <TextInput placeholder="Email" onChangeText={onEmailChange} />
+      <TextInput placeholder={emailPlaceholder} onChangeText={onEmailChange} />
       <View style={styles.passwordTextInputContainer}>
         <TextInput
-          placeholder="Password"
+          placeholder={passwordPlaceholer}
           secureTextEntry
           onChangeText={onPasswordChange}
         />

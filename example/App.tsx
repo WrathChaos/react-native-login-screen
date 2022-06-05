@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { View, StatusBar } from "react-native";
-import LoginScreen, { SocialButton } from "react-native-login-screen";
+import React, {useState} from 'react';
+import {View, StatusBar} from 'react-native';
+import {LoginScreen, SocialButton} from 'react-native-login-screen';
 
 const App = () => {
   const [username, setUsername] = useState(null);
@@ -8,10 +8,10 @@ const App = () => {
   const [spinnerVisibility, setSpinnerVisibility] = useState(false);
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{flex: 1}}>
       <StatusBar barStyle="light-content" />
       <LoginScreen
-        logoImageSource={require("./assets/logo-example.png")}
+        logoImageSource={require('./assets/logo-example.png')}
         onLoginPress={() => {}}
         onHaveAccountPress={() => {}}
         onEmailChange={(email: string) => {}}
