@@ -111,6 +111,8 @@ import LoginScreen, { SocialButton } from "react-native-login-screen";
 | disableSignup           |  boolean   |        false        | disable the signup if you do not want to use it     |
 | disableDivider          |  boolean   |        false        | disable the divider if you do not want to use it    |
 | disableSocialButtons    |  boolean   |        false        | disable the all social buttons                      |
+| emailPlaceholder        |   string   |       "Email"       | change email placeholder text                       |
+| passwordPlaceholder     |   string   |     "Password"      | change password placeholder text                    |
 | style                   | ViewStyle  |       default       | set/override the default style for the container    |
 | dividerStyle            | ViewStyle  |       default       | set/override the default divider style              |
 | logoImageStyle          | ImageStyle |       default       | set/override the default image style                |
