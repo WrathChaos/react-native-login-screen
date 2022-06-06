@@ -13,9 +13,9 @@
   <img alt="React Native Login Screen" src="assets/Screenshots/react-native-login-screen.gif"  height="1050" width="600" />
 </p>
 
-# 🥳 Version 3
+# 🥳 Version 4
 
-Version 3 with the completely new UI
+Version 4 with the completely new UI
 
 - Whole new UI / UX
 - Simplistic Design
