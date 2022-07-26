@@ -31,7 +31,7 @@ export interface ILoginScreenProps {
   logoImageSource: any;
   disableSocialButtons?: boolean;
   emailPlaceholder?: string;
-  passwordPlaceholer?: string;
+  passwordPlaceholder?: string;
   disableSignup?: boolean;
   disablePasswordInput?: boolean;
   loginButtonText?: string;
@@ -68,7 +68,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   logoImageSource,
   onLoginPress,
   disableSocialButtons,
-  disablePasswordInput,
+  disablePasswordInput = false,
   loginButtonText = "Login",
   onSignupPress,
   onEmailChange,
@@ -78,7 +78,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onApplePress = dummyFunction,
   onDiscordPress = dummyFunction,
   emailPlaceholder = "Email",
-  passwordPlaceholer = "Password",
+  passwordPlaceholder = "Password",
   disableSignup = false,
   children,
 }) => {
@@ -93,10 +93,10 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   const TextInputContainer = () => (
     <View style={[styles.textInputContainer, textInputContainerStyle]}>
       <TextInput placeholder={emailPlaceholder} onChangeText={onEmailChange} />
-      {disablePasswordInput && (
+      {!disablePasswordInput && (
         <View style={styles.passwordTextInputContainer}>
           <TextInput
-            placeholder={passwordPlaceholer}
+            placeholder={passwordPlaceholder}
             secureTextEntry
             onChangeText={onPasswordChange}
           />

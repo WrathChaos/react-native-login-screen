@@ -1,5 +1,5 @@
 import LoginScreen from "./LoginScreen";
-import SocialLogin from "./components/social-button/SocialButton";
+import SocialButton from "./components/social-button/SocialButton";
 
 export default LoginScreen;
-export { SocialLogin };
+export { SocialButton };
