@@ -33,6 +33,8 @@ export interface ILoginScreenProps {
   emailPlaceholder?: string;
   passwordPlaceholer?: string;
   disableSignup?: boolean;
+  disablePasswordInput?: boolean;
+  loginButtonText?: string;
   style?: CustomStyleProp;
   dividerStyle?: CustomStyleProp;
   logoImageStyle?: CustomImageStyleProp;
@@ -66,6 +68,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   logoImageSource,
   onLoginPress,
   disableSocialButtons,
+  disablePasswordInput,
+  loginButtonText = "Login",
   onSignupPress,
   onEmailChange,
   onPasswordChange,
@@ -89,13 +93,15 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   const TextInputContainer = () => (
     <View style={[styles.textInputContainer, textInputContainerStyle]}>
       <TextInput placeholder={emailPlaceholder} onChangeText={onEmailChange} />
-      <View style={styles.passwordTextInputContainer}>
-        <TextInput
-          placeholder={passwordPlaceholer}
-          secureTextEntry
-          onChangeText={onPasswordChange}
-        />
-      </View>
+      {disablePasswordInput && (
+        <View style={styles.passwordTextInputContainer}>
+          <TextInput
+            placeholder={passwordPlaceholer}
+            secureTextEntry
+            onChangeText={onPasswordChange}
+          />
+        </View>
+      )}
     </View>
   );
 
@@ -104,7 +110,9 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       style={[styles.loginButtonStyle, loginButtonStyle]}
       onPress={onLoginPress}
     >
-      <Text style={[styles.loginTextStyle, loginTextStyle]}>Login</Text>
+      <Text style={[styles.loginTextStyle, loginTextStyle]}>
+        {loginButtonText}
+      </Text>
     </TouchableOpacity>
   );
 
