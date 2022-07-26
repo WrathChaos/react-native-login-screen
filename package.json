@@ -28,7 +28,7 @@
     "react-native-text-input-interactive": ">= 0.1.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^15.0.0",
+    "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^15.0.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/react": "^16.9.53",
