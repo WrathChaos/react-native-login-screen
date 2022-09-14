@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {View, StatusBar} from 'react-native';
-import LoginScreen, {SocialButton} from 'react-native-login-screen';
+import LoginScreen from 'react-native-login-screen';
 
 const App = () => {
-  const [username, setUsername] = useState(null);
-  const [switchValue, setSwitchValue] = useState(false);
-  const [spinnerVisibility, setSpinnerVisibility] = useState(false);
+  let username = '';
 
   return (
     <View style={{flex: 1}}>
@@ -14,7 +12,10 @@ const App = () => {
         logoImageSource={require('./assets/logo-example.png')}
         onLoginPress={() => {}}
         onSignupPress={() => {}}
-        onEmailChange={(email: string) => {}}
+        onEmailChange={(value: string) => {
+          username = value;
+          console.log('username: ', username);
+        }}
         onPasswordChange={(password: string) => {}}
       />
     </View>
