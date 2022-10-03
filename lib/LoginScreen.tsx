@@ -11,7 +11,9 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
-import TextInput from "react-native-text-input-interactive";
+import TextInput, {
+  IInteractiveTextInputProps,
+} from "react-native-text-input-interactive";
 /**
  * ? Local Imports
  */
@@ -43,6 +45,7 @@ export interface ILoginScreenProps {
   loginTextStyle?: CustomTextStyleProp;
   signupStyle?: CustomStyleProp;
   signupTextStyle?: CustomTextStyleProp;
+  textInputProps?: IInteractiveTextInputProps;
   children?: any;
   onLoginPress: () => void;
   onSignupPress: () => void;
@@ -81,6 +84,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   passwordPlaceholder = "Password",
   disableSignup = false,
   children,
+  textInputProps,
 }) => {
   const Logo = () => (
     <Image
@@ -92,13 +96,18 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const TextInputContainer = () => (
     <View style={[styles.textInputContainer, textInputContainerStyle]}>
-      <TextInput placeholder={emailPlaceholder} onChangeText={onEmailChange} />
+      <TextInput
+        placeholder={emailPlaceholder}
+        onChangeText={onEmailChange}
+        {...textInputProps}
+      />
       {!disablePasswordInput && (
         <View style={styles.passwordTextInputContainer}>
           <TextInput
             placeholder={passwordPlaceholder}
             secureTextEntry
             onChangeText={onPasswordChange}
+            {...textInputProps}
           />
         </View>
       )}

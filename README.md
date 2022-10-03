@@ -105,24 +105,25 @@ import LoginScreen, { SocialButton } from "react-native-login-screen";
 
 ### Customizations (Optional)
 
-| Property                |    Type    |       Default       | Description                                         |
-| ----------------------- | :--------: | :-----------------: | --------------------------------------------------- |
-| signupText              |   string   | "Create an account" | change the sign up text                             |
-| disableSignup           |  boolean   |        false        | disable the signup if you do not want to use it     |
-| disableDivider          |  boolean   |        false        | disable the divider if you do not want to use it    |
-| disableSocialButtons    |  boolean   |        false        | disable the all social buttons                      |
-| disablePasswordInput    |  boolean   |        false        | disable the password text input                     |
-| emailPlaceholder        |   string   |       "Email"       | change email placeholder text                       |
-| passwordPlaceholder     |   string   |      "Password"     | change password placeholder text                    |
-| loginButtonText         |   string   |       "Login"       | change login button's text                          |
-| style                   | ViewStyle  |       default       | set/override the default style for the container    |
-| dividerStyle            | ViewStyle  |       default       | set/override the default divider style              |
-| logoImageStyle          | ImageStyle |       default       | set/override the default image style                |
-| textInputContainerStyle | ViewStyle  |       default       | set/override the default text input container style |
-| loginButtonStyle        | ViewStyle  |       default       | set/override the default login button style         |
-| loginTextStyle          | TextStyle  |       default       | set/override the default login text style           |
-| signupStyle             | ViewStyle  |       default       | set/override the default signup button style        |
-| signupTextStyle         | TextStyle  |       default       | set/override the default signup text style          |
+| Property                |                                                          Type                                                           |       Default       | Description                                         |
+| ----------------------- | :---------------------------------------------------------------------------------------------------------------------: | :-----------------: | --------------------------------------------------- |
+| signupText              |                                                         string                                                          | "Create an account" | change the sign up text                             |
+| disableSignup           |                                                         boolean                                                         |        false        | disable the signup if you do not want to use it     |
+| disableDivider          |                                                         boolean                                                         |        false        | disable the divider if you do not want to use it    |
+| disableSocialButtons    |                                                         boolean                                                         |        false        | disable the all social buttons                      |
+| disablePasswordInput    |                                                         boolean                                                         |        false        | disable the password text input                     |
+| emailPlaceholder        |                                                         string                                                          |       "Email"       | change email placeholder text                       |
+| passwordPlaceholder     |                                                         string                                                          |     "Password"      | change password placeholder text                    |
+| loginButtonText         |                                                         string                                                          |       "Login"       | change login button's text                          |
+| style                   |                                                        ViewStyle                                                        |       default       | set/override the default style for the container    |
+| dividerStyle            |                                                        ViewStyle                                                        |       default       | set/override the default divider style              |
+| logoImageStyle          |                                                       ImageStyle                                                        |       default       | set/override the default image style                |
+| textInputContainerStyle |                                                        ViewStyle                                                        |       default       | set/override the default text input container style |
+| loginButtonStyle        |                                                        ViewStyle                                                        |       default       | set/override the default login button style         |
+| loginTextStyle          |                                                        TextStyle                                                        |       default       | set/override the default login text style           |
+| signupStyle             |                                                        ViewStyle                                                        |       default       | set/override the default signup button style        |
+| signupTextStyle         |                                                        TextStyle                                                        |       default       | set/override the default signup text style          |
+| textInputProps          | [IInteractiveTextInputProps](https://github.com/WrathChaos/react-native-text-input-interactive#customization-optionals) |       default       | set/override the default textinput props            |
 
 ### Default Social Login Buttons (Optional)
 

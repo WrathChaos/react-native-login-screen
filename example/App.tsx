@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StatusBar} from 'react-native';
 import LoginScreen from 'react-native-login-screen';
 
@@ -17,6 +17,11 @@ const App = () => {
           console.log('username: ', username);
         }}
         onPasswordChange={(password: string) => {}}
+        textInputProps={{
+          textInputStyle: {
+            backgroundColor: '#ccc',
+          },
+        }}
       />
     </View>
   );
