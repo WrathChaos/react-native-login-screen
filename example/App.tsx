@@ -17,11 +17,6 @@ const App = () => {
           console.log('username: ', username);
         }}
         onPasswordChange={(password: string) => {}}
-        textInputProps={{
-          textInputStyle: {
-            backgroundColor: '#ccc',
-          },
-        }}
       />
     </View>
   );
