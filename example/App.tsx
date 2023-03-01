@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
-import LoginScreen from 'react-native-login-screen';
+// import LoginScreen from 'react-native-login-screen';
+import LoginScreen from './lib/LoginScreen';
 
 const App = () => {
   let username = '';
