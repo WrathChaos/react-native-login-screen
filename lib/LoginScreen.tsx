@@ -34,10 +34,12 @@ export interface ILoginScreenProps {
   style?: StyleProp<ViewStyle>;
   dividerStyle?: StyleProp<ViewStyle>;
   logoImageStyle?: StyleProp<ImageStyle>;
+  eyeIconStyle?: StyleProp<ImageStyle>;
   textInputContainerStyle?: StyleProp<ViewStyle>;
   loginButtonStyle?: StyleProp<ViewStyle>;
   loginTextStyle?: StyleProp<TextStyle>;
   signupStyle?: StyleProp<ViewStyle>;
+  eyeIconContainer?: StyleProp<ViewStyle>;
   signupTextStyle?: StyleProp<TextStyle>;
   emailTextInputProps?: IInteractiveTextInputProps;
   passwordTextInputProps?: IInteractiveTextInputProps;
@@ -47,6 +49,7 @@ export interface ILoginScreenProps {
   customSignupButton?: React.ReactNode;
   customTextInputs?: React.ReactNode;
   textInputChildren?: React.ReactNode;
+  customEyeIcon?: React.ReactNode;
   customLogo?: React.ReactNode;
   customDivider?: React.ReactNode;
   onLoginPress: () => void;
@@ -57,6 +60,7 @@ export interface ILoginScreenProps {
   onTwitterPress?: () => void;
   onApplePress?: () => void;
   onDiscordPress?: () => void;
+  onEyePress?: () => void;
 }
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({
@@ -72,6 +76,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   disableDivider,
   logoImageSource,
   onLoginPress,
+  eyeIconStyle,
   disableSocialButtons,
   disablePasswordInput = false,
   loginButtonText = "Login",
@@ -92,10 +97,20 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   customLoginButton,
   customSignupButton,
   customDivider,
-  children,
   emailTextInputProps,
   passwordTextInputProps,
+  eyeIconContainer,
+  customEyeIcon,
+  onEyePress,
+  children,
 }) => {
+  const [isPasswordVisible, setPasswordVisible] = React.useState(false);
+
+  const handleEyePress = () => {
+    setPasswordVisible((oldValue) => !oldValue);
+    onEyePress?.();
+  };
+
   const renderLogo = () =>
     customLogo || (
       <Image
@@ -106,11 +121,25 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     );
 
   const renderEyeIcon = () => {
+    const eyeIcon = isPasswordVisible
+      ? require(`./local-assets/eye.png`)
+      : require(`./local-assets/eye-off.png`);
     return (
-      <Image
-        source={require("./local-assets/eye.png")}
-        style={[styles.eyeIcon]}
-      />
+      customEyeIcon || (
+        <TouchableOpacity
+          style={[styles.eyeIconContainer, eyeIconContainer]}
+          onPress={handleEyePress}
+        >
+          <Image
+            style={[
+              styles.eyeIcon,
+              { tintColor: isPasswordVisible ? "#101010" : "#ccc" },
+              eyeIconStyle,
+            ]}
+            source={eyeIcon}
+          />
+        </TouchableOpacity>
+      )
     );
   };
 
@@ -120,14 +149,16 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
         <TextInput
           placeholder={emailPlaceholder}
           onChangeText={onEmailChange}
+          autoCapitalize="none"
           {...emailTextInputProps}
         />
         {!disablePasswordInput && (
           <View style={styles.passwordTextInputContainer}>
             <TextInput
               placeholder={passwordPlaceholder}
-              secureTextEntry
+              secureTextEntry={!isPasswordVisible}
               onChangeText={onPasswordChange}
+              autoCapitalize="none"
               {...passwordTextInputProps}
             />
             {renderEyeIcon()}
@@ -208,6 +239,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       <View style={styles.socialLoginContainer}>
         {customSocialLoginButtons || renderDefaultSocialLoginButtons()}
       </View>
+      {children}
     </SafeAreaView>
   );
 };

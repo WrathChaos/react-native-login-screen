@@ -22,6 +22,7 @@ interface Style {
   twitterSocialButtonTextStyle: TextStyle;
   discordSocialButtonTextStyle: TextStyle;
   socialButtonStyle: ViewStyle;
+  eyeIconContainer: ViewStyle;
   eyeIcon: ImageStyle;
 }
 
@@ -101,8 +102,14 @@ export default StyleSheet.create<Style>({
   socialButtonStyle: {
     marginTop: 16,
   },
+  eyeIconContainer: {
+    right: 16,
+    top: 14,
+    position: "absolute",
+  },
   eyeIcon: {
     width: 24,
     height: 24,
+    tintColor: "#ccc",
   },
 });
