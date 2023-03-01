@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Image,
   View,
@@ -10,15 +10,15 @@ import {
   ImageStyle,
   SafeAreaView,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 import TextInput, {
   IInteractiveTextInputProps,
-} from "react-native-text-input-interactive";
+} from 'react-native-text-input-interactive';
 /**
  * ? Local Imports
  */
-import styles from "./LoginScreen.style";
-import SocialButton from "./components/social-button/SocialButton";
+import styles from './LoginScreen.style';
+import SocialButton from './components/social-button/SocialButton';
 
 const dummyFunction = () => {};
 export interface ILoginScreenProps {
@@ -34,10 +34,12 @@ export interface ILoginScreenProps {
   style?: StyleProp<ViewStyle>;
   dividerStyle?: StyleProp<ViewStyle>;
   logoImageStyle?: StyleProp<ImageStyle>;
+  eyeIconStyle?: StyleProp<ImageStyle>;
   textInputContainerStyle?: StyleProp<ViewStyle>;
   loginButtonStyle?: StyleProp<ViewStyle>;
   loginTextStyle?: StyleProp<TextStyle>;
   signupStyle?: StyleProp<ViewStyle>;
+  eyeIconContainer?: StyleProp<ViewStyle>;
   signupTextStyle?: StyleProp<TextStyle>;
   emailTextInputProps?: IInteractiveTextInputProps;
   passwordTextInputProps?: IInteractiveTextInputProps;
@@ -47,6 +49,7 @@ export interface ILoginScreenProps {
   customSignupButton?: React.ReactNode;
   customTextInputs?: React.ReactNode;
   textInputChildren?: React.ReactNode;
+  customEyeIcon?: React.ReactNode;
   customLogo?: React.ReactNode;
   customDivider?: React.ReactNode;
   onLoginPress: () => void;
@@ -57,6 +60,7 @@ export interface ILoginScreenProps {
   onTwitterPress?: () => void;
   onApplePress?: () => void;
   onDiscordPress?: () => void;
+  onEyePress?: () => void;
 }
 
 const LoginScreen: React.FC<ILoginScreenProps> = ({
@@ -68,13 +72,14 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   signupTextStyle,
   signupStyle,
   textInputContainerStyle,
-  signupText = "Create an account",
+  signupText = 'Create an account',
   disableDivider,
   logoImageSource,
   onLoginPress,
+  eyeIconStyle,
   disableSocialButtons,
   disablePasswordInput = false,
-  loginButtonText = "Login",
+  loginButtonText = 'Login',
   onSignupPress,
   onEmailChange,
   onPasswordChange,
@@ -82,8 +87,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onTwitterPress = dummyFunction,
   onApplePress = dummyFunction,
   onDiscordPress = dummyFunction,
-  emailPlaceholder = "Email",
-  passwordPlaceholder = "Password",
+  emailPlaceholder = 'Email',
+  passwordPlaceholder = 'Password',
   disableSignup = false,
   customSocialLoginButtons,
   customLogo,
@@ -92,10 +97,19 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   customLoginButton,
   customSignupButton,
   customDivider,
-  children,
   emailTextInputProps,
   passwordTextInputProps,
+  eyeIconContainer,
+  customEyeIcon,
+  onEyePress,
 }) => {
+  const [isPasswordVisible, setPasswordVisible] = React.useState(false);
+
+  const handleEyePress = () => {
+    setPasswordVisible(oldValue => !oldValue);
+    onEyePress?.();
+  };
+
   const renderLogo = () =>
     customLogo || (
       <Image
@@ -104,6 +118,28 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
         style={[styles.logoImageStyle, logoImageStyle]}
       />
     );
+
+  const renderEyeIcon = () => {
+    const eyeIcon = isPasswordVisible
+      ? require(`./local-assets/eye-off.png`)
+      : require(`./local-assets/eye.png`);
+    return (
+      customEyeIcon || (
+        <TouchableOpacity
+          style={[styles.eyeIconContainer, eyeIconContainer]}
+          onPress={handleEyePress}>
+          <Image
+            style={[
+              styles.eyeIcon,
+              {tintColor: isPasswordVisible ? '#ccc' : '#101010'},
+              eyeIconStyle,
+            ]}
+            source={eyeIcon}
+          />
+        </TouchableOpacity>
+      )
+    );
+  };
 
   const renderTextInputContainer = () =>
     customTextInputs || (
@@ -117,10 +153,11 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
           <View style={styles.passwordTextInputContainer}>
             <TextInput
               placeholder={passwordPlaceholder}
-              secureTextEntry
+              secureTextEntry={isPasswordVisible}
               onChangeText={onPasswordChange}
               {...passwordTextInputProps}
             />
+            {renderEyeIcon()}
           </View>
         )}
         {textInputChildren}
@@ -131,8 +168,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     customLoginButton || (
       <TouchableOpacity
         style={[styles.loginButtonStyle, loginButtonStyle]}
-        onPress={onLoginPress}
-      >
+        onPress={onLoginPress}>
         <Text style={[styles.loginTextStyle, loginTextStyle]}>
           {loginButtonText}
         </Text>
@@ -144,8 +180,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     (!disableSignup && (
       <TouchableOpacity
         style={[styles.signupStyle, signupStyle]}
-        onPress={onSignupPress}
-      >
+        onPress={onSignupPress}>
         <Text style={[styles.signupTextStyle, signupTextStyle]}>
           {signupText}
         </Text>
@@ -168,20 +203,20 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
           text="Continue with Twitter"
           style={styles.socialButtonStyle}
           textStyle={styles.twitterSocialButtonTextStyle}
-          imageSource={require("./local-assets/twitter.png")}
+          imageSource={require('./local-assets/twitter.png')}
           onPress={onTwitterPress}
         />
         <SocialButton
           text="Continue with Apple"
           style={styles.socialButtonStyle}
-          imageSource={require("./local-assets/apple.png")}
+          imageSource={require('./local-assets/apple.png')}
           onPress={onApplePress}
         />
         <SocialButton
           text="Continue with Discord"
           style={styles.socialButtonStyle}
           textStyle={styles.discordSocialButtonTextStyle}
-          imageSource={require("./local-assets/discord.png")}
+          imageSource={require('./local-assets/discord.png')}
           onPress={onDiscordPress}
         />
       </>

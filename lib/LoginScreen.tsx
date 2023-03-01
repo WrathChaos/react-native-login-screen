@@ -105,6 +105,15 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       />
     );
 
+  const renderEyeIcon = () => {
+    return (
+      <Image
+        source={require("./local-assets/eye.png")}
+        style={[styles.eyeIcon]}
+      />
+    );
+  };
+
   const renderTextInputContainer = () =>
     customTextInputs || (
       <View style={[styles.textInputContainer, textInputContainerStyle]}>
@@ -121,6 +130,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
               onChangeText={onPasswordChange}
               {...passwordTextInputProps}
             />
+            {renderEyeIcon()}
           </View>
         )}
         {textInputChildren}

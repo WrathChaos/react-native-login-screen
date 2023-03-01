@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StatusBar} from 'react-native';
 // import LoginScreen from 'react-native-login-screen';
 import LoginScreen from './lib/LoginScreen';
+import TextInput from 'react-native-text-input-interactive';
 
 const App = () => {
   let username = '';
@@ -17,6 +18,15 @@ const App = () => {
           username = value;
           console.log('username: ', username);
         }}
+        textInputChildren={
+          <View style={{marginTop: 16}}>
+            <TextInput
+              placeholder="Re-Password"
+              secureTextEntry
+              onChangeText={(value: string) => {}}
+            />
+          </View>
+        }
         onPasswordChange={(password: string) => {}}
       />
     </View>

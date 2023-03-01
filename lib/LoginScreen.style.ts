@@ -22,6 +22,7 @@ interface Style {
   twitterSocialButtonTextStyle: TextStyle;
   discordSocialButtonTextStyle: TextStyle;
   socialButtonStyle: ViewStyle;
+  eyeIcon: ImageStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -99,5 +100,9 @@ export default StyleSheet.create<Style>({
   },
   socialButtonStyle: {
     marginTop: 16,
+  },
+  eyeIcon: {
+    width: 24,
+    height: 24,
   },
 });
