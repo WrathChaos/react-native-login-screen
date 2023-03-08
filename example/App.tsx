@@ -1,21 +1,20 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
 // import LoginScreen from 'react-native-login-screen';
-import LoginScreen from './build/dist/LoginScreen';
+import LoginScreen from './lib/LoginScreen';
 import TextInput from 'react-native-text-input-interactive';
 
 const App = () => {
-  let username = '';
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [repassword, setRepassword] = React.useState('');
 
   const renderSignupLoginScreen = () => (
     <LoginScreen
       logoImageSource={require('./assets/logo-example.png')}
       onLoginPress={() => {}}
       onSignupPress={() => {}}
-      onEmailChange={(value: string) => {
-        username = value;
-        console.log('username: ', username);
-      }}
+      onEmailChange={setUsername}
       loginButtonText={'Create an account'}
       disableSignup
       customEyeIcon={<View />}
@@ -24,11 +23,11 @@ const App = () => {
           <TextInput
             placeholder="Re-Password"
             secureTextEntry
-            onChangeText={(value: string) => {}}
+            onChangeText={setRepassword}
           />
         </View>
       }
-      onPasswordChange={(password: string) => {}}
+      onPasswordChange={setPassword}
     />
   );
 
@@ -37,11 +36,8 @@ const App = () => {
       logoImageSource={require('./assets/logo-example.png')}
       onLoginPress={() => {}}
       onSignupPress={() => {}}
-      onEmailChange={(value: string) => {
-        username = value;
-        console.log('username: ', username);
-      }}
-      onPasswordChange={(password: string) => {}}
+      onEmailChange={setUsername}
+      onPasswordChange={setPassword}
     />
   );
 

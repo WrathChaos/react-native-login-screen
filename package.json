@@ -24,7 +24,8 @@
   "repository": "git@github.com:WrathChaos/react-native-login-screen.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
-  "peerDependencies": {
+  "dependencies": {
+    "react-native-shake-text": "^0.1.1",
     "react-native-text-input-interactive": ">= 0.1.3"
   },
   "devDependencies": {

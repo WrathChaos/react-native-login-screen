@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Image,
   ImageStyle,
@@ -10,19 +10,19 @@ import {
   TouchableOpacity,
   View,
   ViewStyle,
-} from "react-native";
+} from 'react-native';
 import TextInput, {
   IInteractiveTextInputProps,
-} from "react-native-text-input-interactive";
-import Tooltip, { Placement } from "react-native-tooltip-2";
+} from 'react-native-text-input-interactive';
+import Tooltip, {Placement} from 'react-native-tooltip-2';
 /**
  * ? Local Imports
  */
-import styles from "./LoginScreen.style";
-import SocialButton from "./components/social-button/SocialButton";
-import useStateWithCallback from "./helpers/useStateWithCallback";
-import emailValidator from "./helpers/emailValidator";
-import passwordValidator from "./helpers/passwordValidator";
+import styles from './LoginScreen.style';
+import SocialButton from './components/social-button/SocialButton';
+import useStateWithCallback from './helpers/useStateWithCallback';
+import emailValidator from './helpers/emailValidator';
+import passwordValidator from './helpers/passwordValidator';
 
 const dummyFunction = () => {};
 export interface ILoginScreenProps {
@@ -78,13 +78,13 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   signupTextStyle,
   signupStyle,
   textInputContainerStyle,
-  signupText = "Create an account",
+  signupText = 'Create an account',
   disableDivider,
   logoImageSource,
   onLoginPress,
   disableSocialButtons,
   disablePasswordInput = false,
-  loginButtonText = "Login",
+  loginButtonText = 'Login',
   onSignupPress,
   onEmailChange,
   onPasswordChange,
@@ -92,8 +92,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   onTwitterPress = dummyFunction,
   onApplePress = dummyFunction,
   onDiscordPress = dummyFunction,
-  emailPlaceholder = "Email",
-  passwordPlaceholder = "Password",
+  emailPlaceholder = 'Email',
+  passwordPlaceholder = 'Password',
   disableSignup = false,
   customSocialLoginButtons,
   customLogo,
@@ -113,8 +113,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   children,
 }) => {
   const [isPasswordVisible, setPasswordVisible] = React.useState(false);
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
   const [isEmailShakeVisible, setEmailShakeVisible] =
     useStateWithCallback(false);
@@ -132,7 +132,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   };
 
   const handleEyePress = () => {
-    setPasswordVisible((oldValue) => !oldValue);
+    setPasswordVisible(oldValue => !oldValue);
     onEyePress?.();
   };
 
@@ -174,8 +174,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
 
   const renderTextInputContainer = () => {
     const eyeIcon = isPasswordVisible
-      ? require("./local-assets/eye.png")
-      : require("./local-assets/eye-off.png");
+      ? require('./local-assets/eye.png')
+      : require('./local-assets/eye-off.png');
     return (
       customTextInputs || (
         <View style={[styles.textInputContainer, textInputContainerStyle]}>
@@ -185,28 +185,26 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
               <View
                 style={{
                   padding: 12,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Text style={{ fontSize: 16 }}>
-                  That{" "}
-                  <Text style={{ fontWeight: "bold", color: "red" }}>
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <Text style={{fontSize: 16}}>
+                  That{' '}
+                  <Text style={{fontWeight: 'bold', color: 'red'}}>
                     email address
-                  </Text>{" "}
+                  </Text>{' '}
                   doesn't look right.
                 </Text>
               </View>
             }
             contentStyle={{
               borderRadius: 12,
-              alignItems: "center",
-              justifyContent: "center",
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
-            backgroundStyle={{ backgroundColor: "transparent" }}
+            backgroundStyle={{backgroundColor: 'transparent'}}
             placement={Placement.TOP}
-            onClose={() => setEmailShakeVisible(false)}
-          >
+            onClose={() => setEmailShakeVisible(false)}>
             <TextInput
               placeholder={emailPlaceholder}
               onChangeText={handleEmailChange}
@@ -218,18 +216,17 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
             <View style={styles.passwordTextInputContainer}>
               <Tooltip
                 isVisible={isPasswordShakeVisible}
-                style={{ marginTop: 30 }}
+                style={{marginTop: 30}}
                 content={
                   <View
                     style={{
                       padding: 12,
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Text style={{ fontSize: 16 }}>
-                      Incorrect{" "}
-                      <Text style={{ fontWeight: "bold", color: "red" }}>
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}>
+                    <Text style={{fontSize: 16}}>
+                      Incorrect{' '}
+                      <Text style={{fontWeight: 'bold', color: 'red'}}>
                         password
                       </Text>
                     </Text>
@@ -237,13 +234,12 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
                 }
                 contentStyle={{
                   borderRadius: 12,
-                  alignItems: "center",
-                  justifyContent: "center",
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
-                backgroundStyle={{ backgroundColor: "transparent" }}
+                backgroundStyle={{backgroundColor: 'transparent'}}
                 placement={Placement.TOP}
-                onClose={() => setPasswordShakeVisible(false)}
-              >
+                onClose={() => setPasswordShakeVisible(false)}>
                 <TextInput
                   placeholder={passwordPlaceholder}
                   secureTextEntry={!isPasswordVisible}
@@ -271,8 +267,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
           handleEmailValidation();
           handlePasswordValidation();
           onLoginPress?.();
-        }}
-      >
+        }}>
         <Text style={[styles.loginTextStyle, loginTextStyle]}>
           {loginButtonText}
         </Text>
@@ -284,8 +279,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     (!disableSignup && (
       <TouchableOpacity
         style={[styles.signupStyle, signupStyle]}
-        onPress={onSignupPress}
-      >
+        onPress={onSignupPress}>
         <Text style={[styles.signupTextStyle, signupTextStyle]}>
           {signupText}
         </Text>
@@ -308,20 +302,20 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
           text="Continue with Twitter"
           style={styles.socialButtonStyle}
           textStyle={styles.twitterSocialButtonTextStyle}
-          imageSource={require("./local-assets/twitter.png")}
+          imageSource={require('./local-assets/twitter.png')}
           onPress={onTwitterPress}
         />
         <SocialButton
           text="Continue with Apple"
           style={styles.socialButtonStyle}
-          imageSource={require("./local-assets/apple.png")}
+          imageSource={require('./local-assets/apple.png')}
           onPress={onApplePress}
         />
         <SocialButton
           text="Continue with Discord"
           style={styles.socialButtonStyle}
           textStyle={styles.discordSocialButtonTextStyle}
-          imageSource={require("./local-assets/discord.png")}
+          imageSource={require('./local-assets/discord.png')}
           onPress={onDiscordPress}
         />
       </>
