@@ -100,7 +100,9 @@ import LoginScreen, { SocialButton } from "react-native-login-screen";
 | onLoginPress     | function | undefined | set your own function when the `login button` is pressed      |
 | onSignupPress    | function | undefined | set your own function when the `Create an account` is pressed |
 | onEmailChange    | function | undefined | set your own function when `email` textinput has a change     |
+| emailValue       | string   | undefined | control the 'email' textInput to use your 'email' value       |
 | onPasswordChange | function | undefined | set your own function when `password` textinput has a change  |
+| passwordValue    | string   | undefined | control the 'password' textInput to use your 'password' value |
 | logoImageSource  |  source  | undefined | set your own logo                                             |
 
 ### Customizations (Optional)
