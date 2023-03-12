@@ -50,7 +50,9 @@ export interface ILoginScreenProps {
   onLoginPress: () => void;
   onSignupPress: () => void;
   onEmailChange: (email: string) => void;
+  emailValue?: string;
   onPasswordChange: (password: string) => void;
+  passwordValue?: string;
   onFacebookPress?: () => void;
   onTwitterPress?: () => void;
   onApplePress?: () => void;
@@ -75,7 +77,9 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   loginButtonText = "Login",
   onSignupPress,
   onEmailChange,
+  emailValue,
   onPasswordChange,
+  passwordValue,
   onFacebookPress = dummyFunction,
   onTwitterPress = dummyFunction,
   onApplePress = dummyFunction,
@@ -99,6 +103,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       <TextInput
         placeholder={emailPlaceholder}
         onChangeText={onEmailChange}
+        value={emailValue}
         {...textInputProps}
       />
       {!disablePasswordInput && (
@@ -107,6 +112,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
             placeholder={passwordPlaceholder}
             secureTextEntry
             onChangeText={onPasswordChange}
+            value={passwordValue}
             {...textInputProps}
           />
         </View>
