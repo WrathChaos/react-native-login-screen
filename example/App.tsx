@@ -17,7 +17,6 @@ const App = () => {
       onEmailChange={setUsername}
       loginButtonText={'Create an account'}
       disableSignup
-      customEyeIcon={<View />}
       textInputChildren={
         <View style={{marginTop: 16}}>
           <TextInput
@@ -38,6 +37,7 @@ const App = () => {
       onSignupPress={() => {}}
       onEmailChange={setUsername}
       onPasswordChange={setPassword}
+      enablePasswordValidation
     />
   );
 

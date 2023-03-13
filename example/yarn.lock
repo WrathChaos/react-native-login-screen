@@ -1727,7 +1727,7 @@
   dependencies:
     "@types/react" "^17"
 
-"@types/react@^17", "@types/react@>=16.8.24 <18":
+"@types/react@^17":
   "integrity" "sha512-YfhQ22Lah2e3CHPsb93tRwIGNiSwkuz1/blk4e6QrWS0jQzCSNbGLtOEYhPg02W0yGTTmpajp7dCTbBAMN3qsg=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.45.tgz"
   "version" "17.0.45"
@@ -6013,7 +6013,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@*", "prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@^15.8.1":
+"prop-types@*", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -6058,16 +6058,6 @@
     "shell-quote" "^1.6.1"
     "ws" "^7"
 
-"react-fast-compare@^2.0.4":
-  "integrity" "sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw=="
-  "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz"
-  "version" "2.0.4"
-
-"react-fast-compare@>= 3.2.0":
-  "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
-  "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
-  "version" "3.2.0"
-
 "react-is@^16.12.0 || ^17.0.0", "react-is@^17.0.1", "react-is@^17.0.2":
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
@@ -6077,13 +6067,6 @@
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
-
-"react-native-animatable@1.3.3":
-  "integrity" "sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w=="
-  "resolved" "https://registry.npmjs.org/react-native-animatable/-/react-native-animatable-1.3.3.tgz"
-  "version" "1.3.3"
-  dependencies:
-    "prop-types" "^15.7.2"
 
 "react-native-codegen@^0.0.17":
   "integrity" "sha512-7GIEUmAemH9uWwB6iYXNNsPoPgH06pxzGRmdBzK98TgFBdYJZ7CBuZFPMe4jmHQTPOkQazKZ/w5O6/71JBixmw=="
@@ -6105,35 +6088,12 @@
   "resolved" "https://registry.npmjs.org/react-native-login-screen/-/react-native-login-screen-4.2.0.tgz"
   "version" "4.2.0"
 
-"react-native-modal@^13.0.1":
-  "integrity" "sha512-UB+mjmUtf+miaG/sDhOikRfBOv0gJdBU2ZE1HtFWp6UixW9jCk/bhGdHUgmZljbPpp0RaO/6YiMmQSSK3kkMaw=="
-  "resolved" "https://registry.npmjs.org/react-native-modal/-/react-native-modal-13.0.1.tgz"
-  "version" "13.0.1"
-  dependencies:
-    "prop-types" "^15.6.2"
-    "react-native-animatable" "1.3.3"
-
 "react-native-text-input-interactive@^0.1.3", "react-native-text-input-interactive@>= 0.1.3":
   "integrity" "sha512-tPhP7HVDmS7RmMJwq2RQIAWkgX5t3BNJt0IaJi+0rW8JsizcT7nhP6/sHQXMV9TxoP6dLTysCE9gFy/Me5kJfg=="
   "resolved" "https://registry.npmjs.org/react-native-text-input-interactive/-/react-native-text-input-interactive-0.1.3.tgz"
   "version" "0.1.3"
 
-"react-native-tooltip-2@^0.1.1":
-  "integrity" "sha512-6Ik+/x3g3TC8ARgAvJprc7VhKlvit7cs+bhQ5ZghuAo+y8qpe1KiV6Mg5dx7+SXrsZJmUA9TERa3xakIOoOoCw=="
-  "resolved" "https://registry.npmjs.org/react-native-tooltip-2/-/react-native-tooltip-2-0.1.1.tgz"
-  "version" "0.1.1"
-  dependencies:
-    "react-fast-compare" ">= 3.2.0"
-
-"react-native-walkthrough-tooltip@^1.5.0":
-  "integrity" "sha512-xzpTs3JQkUMkmurc7WJDSAWaH2KRiRL2YoTXVCRqEEWxIvLQTn9eQv0jBzs1geR0wL+ezRpjkBEGAlfQ6eMimw=="
-  "resolved" "https://registry.npmjs.org/react-native-walkthrough-tooltip/-/react-native-walkthrough-tooltip-1.5.0.tgz"
-  "version" "1.5.0"
-  dependencies:
-    "prop-types" "^15.6.1"
-    "react-fast-compare" "^2.0.4"
-
-"react-native@*", "react-native@>=0.65.0", "react-native@0.68.2":
+"react-native@*", "react-native@0.68.2":
   "integrity" "sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz"
   "version" "0.68.2"
@@ -6194,7 +6154,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@17.0.2":
+"react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
