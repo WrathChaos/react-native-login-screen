@@ -211,6 +211,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
               placeholder={emailPlaceholder}
               onChangeText={handleEmailChange}
               autoCapitalize="none"
+              value={email}
               {...emailTextInputProps}
             />
           </Tooltip>
@@ -252,6 +253,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
                   iconImageSource={eyeIcon}
                   autoCapitalize="none"
                   onIconPress={handleEyePress}
+                  value={password}
                   {...passwordTextInputProps}
                 />
               </Tooltip>
