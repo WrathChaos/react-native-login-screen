@@ -25,6 +25,18 @@ interface Style {
   eyeIconContainer: ViewStyle;
   eyeIcon: ImageStyle;
   shakeText: TextStyle;
+  emailTextInputContainer: ViewStyle;
+  emailTooltipContainer: ViewStyle;
+  emailTooltipTextStyle: TextStyle;
+  emailTooltipRedTextStyle: TextStyle;
+  emailTooltipContentStyle: ViewStyle;
+  emailTooltipBackgroundStyle: ViewStyle;
+  passwordTooltipStyle: ViewStyle;
+  passwordTooltipContainer: ViewStyle;
+  passwordTooltipContentStyle: ViewStyle;
+  passwordTooltipTextStyle: TextStyle;
+  passwordTooltipRedTextStyle: TextStyle;
+  passwordTooltipBackgroundStyle: ViewStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -44,6 +56,8 @@ export default StyleSheet.create<Style>({
   },
   passwordTextInputContainer: {
     marginTop: 16,
+    alignItems: "center",
+    justifyContent: "center",
   },
   loginButtonStyle: {
     height: 40,
@@ -118,5 +132,52 @@ export default StyleSheet.create<Style>({
     marginTop: 8,
     marginLeft: 12,
     marginRight: "auto",
+  },
+  emailTextInputContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  emailTooltipContainer: {
+    padding: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  emailTooltipTextStyle: {
+    fontSize: 16,
+  },
+  emailTooltipRedTextStyle: {
+    fontWeight: "bold",
+    color: "red",
+  },
+  emailTooltipContentStyle: {
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  emailTooltipBackgroundStyle: {
+    backgroundColor: "transparent",
+  },
+  passwordTooltipStyle: {
+    marginTop: 30,
+  },
+  passwordTooltipContainer: {
+    padding: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  passwordTooltipTextStyle: {
+    fontSize: 16,
+  },
+  passwordTooltipRedTextStyle: {
+    fontWeight: "bold",
+    color: "red",
+  },
+  passwordTooltipBackgroundStyle: {
+    backgroundColor: "transparent",
+  },
+  passwordTooltipContentStyle: {
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

@@ -1,8 +1,15 @@
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, StatusBar, UIManager, Platform} from 'react-native';
 // import LoginScreen from 'react-native-login-screen';
 import LoginScreen from './lib/LoginScreen';
 import TextInput from 'react-native-text-input-interactive';
+
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const App = () => {
   const [username, setUsername] = React.useState('');

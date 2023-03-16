@@ -25,6 +25,7 @@ interface Style {
   eyeIconContainer: ViewStyle;
   eyeIcon: ImageStyle;
   shakeText: TextStyle;
+  emailTextInputContainer: ViewStyle;
   emailTooltipContainer: ViewStyle;
   emailTooltipTextStyle: TextStyle;
   emailTooltipRedTextStyle: TextStyle;
@@ -131,6 +132,10 @@ export default StyleSheet.create<Style>({
     marginTop: 8,
     marginLeft: 12,
     marginRight: 'auto',
+  },
+  emailTextInputContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   emailTooltipContainer: {
     padding: 12,

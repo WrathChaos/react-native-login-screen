@@ -28,6 +28,7 @@ export interface ISocialButtonProps {
   imageSource?: ImageSourcePropType;
   textContainerStyle?: CustomStyleProp;
   iconImageStyle?: CustomImageStyleProp;
+  TouchableComponent?: any;
   onPress: () => void;
 }
 
@@ -37,11 +38,12 @@ const SocialButton: React.FC<ISocialButtonProps> = ({
   textStyle,
   iconImageStyle,
   textContainerStyle,
+  TouchableComponent = TouchableOpacity,
   imageSource = require("../../local-assets/facebook.png"),
   onPress,
 }) => {
   return (
-    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
+    <TouchableComponent style={[styles.container, style]} onPress={onPress}>
       <Image
         resizeMode="contain"
         source={imageSource}
@@ -50,7 +52,7 @@ const SocialButton: React.FC<ISocialButtonProps> = ({
       <View style={[styles.textContainer, textContainerStyle]}>
         <Text style={[styles.textStyle, textStyle]}>{text}</Text>
       </View>
-    </TouchableOpacity>
+    </TouchableComponent>
   );
 };
 

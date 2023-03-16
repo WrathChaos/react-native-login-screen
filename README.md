@@ -78,7 +78,6 @@ import LoginScreen from "react-native-login-screen";
   }}
   loginButtonText={'Create an account'}
   disableSignup
-  customEyeIcon={<View />}
   textInputChildren={
     <View style={{marginTop: 16}}>
       <TextInput
@@ -128,8 +127,6 @@ You can put any `children` into the LoginScreen, I recommend you to use `SocialB
 | loginTextStyle          |                                                        TextStyle                                                        |       default       | set/override the default login text style               |
 | signupStyle             |                                                        ViewStyle                                                        |       default       | set/override the default signup button style            |
 | signupTextStyle         |                                                        TextStyle                                                        |       default       | set/override the default signup text style              |
-| eyeIconContainer        |                                                        ViewStyle                                                        |       default       | set/override the default eye icon container style       |
-| eyeIconStyle            |                                                       ImageStyle                                                        |       default       | set/override the default eye icon image style           |
 | textInputProps          | [IInteractiveTextInputProps](https://github.com/WrathChaos/react-native-text-input-interactive#customization-optionals) |       default       | set/override the default textinput props                |
 
 
@@ -139,7 +136,6 @@ You can put any `children` into the LoginScreen, I recommend you to use `SocialB
 |--------------------|:---------:|:-------:|-------------------------------------------------------------|
 | customTextInputs   | Component | default | set your own custom text inputs instead of built-in ones    |
 | textInputChildren  | Component | default | set your own EXTRA custom text inputs with the current ones |
-| customEyeIcon      | Component | default | set your own custom eye icon                                |
 | customLogo         | Component | default | set your own logo                                           |
 | customLoginButton  | Component | default | set your login button                                       |
 | customSignupButton | Component | default | set your sign up button                                     |

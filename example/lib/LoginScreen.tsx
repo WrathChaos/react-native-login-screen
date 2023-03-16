@@ -38,6 +38,8 @@ export interface ILoginScreenProps {
   loginButtonText?: string;
   disableEmailValidation?: boolean;
   enablePasswordValidation?: boolean;
+  disableEmailTooltip?: boolean;
+  disablePasswordTooltip?: boolean;
   style?: StyleProp<ViewStyle>;
   dividerStyle?: StyleProp<ViewStyle>;
   logoImageStyle?: StyleProp<ImageStyle>;
@@ -107,6 +109,8 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
   passwordTextInputProps,
   disableEmailValidation = false,
   enablePasswordValidation = false,
+  disableEmailTooltip = false,
+  disablePasswordTooltip = false,
   emailContentTooltip,
   passwordContentTooltip,
   TouchableComponent = TouchableOpacity,
@@ -147,13 +151,13 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     }
 
     if (emailValidator(email)) {
-      setEmailTooltipVisible(false);
+      !disableEmailTooltip && setEmailTooltipVisible(false);
       handlePasswordValidation();
       onEmailChange(email);
       return;
     } else {
       LayoutAnimation.spring();
-      setEmailTooltipVisible(true);
+      !disableEmailTooltip && setEmailTooltipVisible(true);
       onEmailChange(email);
     }
   };
@@ -167,13 +171,13 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
       return;
     }
     if (enablePasswordValidation && passwordValidator(password)) {
-      setPasswordTooltipVisible(false);
+      !disablePasswordTooltip && setPasswordTooltipVisible(false);
       onPasswordChange(password);
       return;
     } else {
       LayoutAnimation.spring();
-      setEmailTooltipVisible(false);
-      setPasswordTooltipVisible(true);
+      !disableEmailTooltip && setEmailTooltipVisible(false);
+      !disablePasswordTooltip && setPasswordTooltipVisible(true);
       onPasswordChange(password);
     }
   };
@@ -199,13 +203,11 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
         </View>
       );
     return (
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+      <View style={styles.emailTextInputContainer}>
         <>
-          {isEmailTooltipVisible && <Tooltip>{tooltipContent()}</Tooltip>}
+          {!disableEmailTooltip && isEmailTooltipVisible && (
+            <Tooltip>{tooltipContent()}</Tooltip>
+          )}
           <TextInput
             placeholder={emailPlaceholder}
             onChangeText={handleEmailChange}
@@ -236,7 +238,7 @@ const LoginScreen: React.FC<ILoginScreenProps> = ({
     return (
       !disablePasswordInput && (
         <View style={styles.passwordTextInputContainer}>
-          {isPasswordTooltipVisible && (
+          {!disablePasswordTooltip && isPasswordTooltipVisible && (
             <Tooltip>{renderTooltipContent()}</Tooltip>
           )}
           <TextInput
