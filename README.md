@@ -57,14 +57,16 @@ import LoginScreen from "react-native-login-screen";
 # Usage
 
 ```tsx
+const [username, setUsername] = React.useState('');
+const [password, setPassword] = React.useState('');
+
 <LoginScreen
+  logoImageSource={require('./assets/logo-example.png')}
   onLoginPress={() => {}}
   onSignupPress={() => {}}
-  onEmailChange={(value: string) => {
-    username = value;
-    console.log('username: ', username);
-  }}
-  onPasswordChange={(password: string) => {}}
+  onEmailChange={setUsername}
+  onPasswordChange={setPassword}
+  enablePasswordValidation
 />
 ```
 
@@ -75,10 +77,7 @@ import LoginScreen from "react-native-login-screen";
   logoImageSource={require('./assets/logo-example.png')}
   onLoginPress={() => {}}
   onSignupPress={() => {}}
-  onEmailChange={(value: string) => {
-    username = value;
-    console.log('username: ', username);
-  }}
+  onEmailChange={setUsername}
   loginButtonText={'Create an account'}
   disableSignup
   textInputChildren={
@@ -86,11 +85,11 @@ import LoginScreen from "react-native-login-screen";
       <TextInput
         placeholder="Re-Password"
         secureTextEntry
-        onChangeText={(value: string) => {}}
+        onChangeText={setRepassword}
       />
     </View>
   }
-  onPasswordChange={(password: string) => {}}
+  onPasswordChange={setPassword}
 />
 ```
 
