@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, StatusBar, UIManager, Platform} from 'react-native';
-// import LoginScreen from 'react-native-login-screen';
-import LoginScreen from './lib/LoginScreen';
+import LoginScreen from 'react-native-login-screen';
 import TextInput from 'react-native-text-input-interactive';
 
 if (

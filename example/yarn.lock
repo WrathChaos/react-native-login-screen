@@ -6088,10 +6088,10 @@
   "resolved" "https://registry.npmjs.org/react-native-login-screen/-/react-native-login-screen-4.2.0.tgz"
   "version" "4.2.0"
 
-"react-native-text-input-interactive@^0.1.3", "react-native-text-input-interactive@>= 0.1.3":
-  "integrity" "sha512-tPhP7HVDmS7RmMJwq2RQIAWkgX5t3BNJt0IaJi+0rW8JsizcT7nhP6/sHQXMV9TxoP6dLTysCE9gFy/Me5kJfg=="
-  "resolved" "https://registry.npmjs.org/react-native-text-input-interactive/-/react-native-text-input-interactive-0.1.3.tgz"
-  "version" "0.1.3"
+"react-native-text-input-interactive@^0.1.4", "react-native-text-input-interactive@>= 0.1.3":
+  "integrity" "sha512-Y8oCZkfZ03EiSXcSV9AWns2Zr5XVNRMRQRFMFXBS5vpYvpfvR3fp9MSP4uNZ3aNi6i27qLQQOCoVXf8vZiMngg=="
+  "resolved" "https://registry.npmjs.org/react-native-text-input-interactive/-/react-native-text-input-interactive-0.1.4.tgz"
+  "version" "0.1.4"
 
 "react-native@*", "react-native@0.68.2":
   "integrity" "sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw=="
