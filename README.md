@@ -18,11 +18,14 @@
 Version 5 with the completely new UI
 
 - Whole new UI / UX Design 😍
-- Simplistic Design 
-- Better Code Quality 🚀
-- Fully Customizable
-- Ready to use `SocialButton` Component
+- Built-in Email Validation 📧
+- Built-in Password Validation 🔒
+- Built-in Email Tooltip 📧
+- Built-in Password Tooltip 🔒
 - Built-in Show/Hide Password Feature 👀
+- Fully Customizable 🎨
+- Better Code Quality 🚀
+- Ready to use `SocialButton` Component
 - `Only ONE dependency` is needed
 
 ## Installation
@@ -108,38 +111,53 @@ You can put any `children` into the LoginScreen, I recommend you to use `SocialB
 
 ### Customizations (Optional)
 
-| Property                |                                                          Type                                                           |       Default       | Description                                             |
-|-------------------------|:-----------------------------------------------------------------------------------------------------------------------:|:-------------------:|---------------------------------------------------------|
-| onEyePress              |                                                        function                                                         |      undefined      | set your own function when `eye icon` button is pressed |
-| signupText              |                                                         string                                                          | "Create an account" | change the sign up text                                 |
-| disableSignup           |                                                         boolean                                                         |        false        | disable the signup if you do not want to use it         |
-| disableDivider          |                                                         boolean                                                         |        false        | disable the divider if you do not want to use it        |
-| disableSocialButtons    |                                                         boolean                                                         |        false        | disable the all social buttons                          |
-| disablePasswordInput    |                                                         boolean                                                         |        false        | disable the password text input                         |
-| emailPlaceholder        |                                                         string                                                          |       "Email"       | change email placeholder text                           |
-| passwordPlaceholder     |                                                         string                                                          |     "Password"      | change password placeholder text                        |
-| loginButtonText         |                                                         string                                                          |       "Login"       | change login button's text                              |
-| style                   |                                                        ViewStyle                                                        |       default       | set/override the default style for the container        |
-| dividerStyle            |                                                        ViewStyle                                                        |       default       | set/override the default divider style                  |
-| logoImageStyle          |                                                       ImageStyle                                                        |       default       | set/override the default image style                    |
-| textInputContainerStyle |                                                        ViewStyle                                                        |       default       | set/override the default text input container style     |
-| loginButtonStyle        |                                                        ViewStyle                                                        |       default       | set/override the default login button style             |
-| loginTextStyle          |                                                        TextStyle                                                        |       default       | set/override the default login text style               |
-| signupStyle             |                                                        ViewStyle                                                        |       default       | set/override the default signup button style            |
-| signupTextStyle         |                                                        TextStyle                                                        |       default       | set/override the default signup text style              |
-| textInputProps          | [IInteractiveTextInputProps](https://github.com/WrathChaos/react-native-text-input-interactive#customization-optionals) |       default       | set/override the default textinput props                |
-
+| Property                |    Type    |       Default       | Description                                             |
+|-------------------------|:----------:|:-------------------:|---------------------------------------------------------|
+| onEyePress              |  function  |      undefined      | set your own function when `eye icon` button is pressed |
+| signupText              |   string   | "Create an account" | change the sign up text                                 |
+| disableSignup           |  boolean   |        false        | disable the signup if you do not want to use it         |
+| disableDivider          |  boolean   |        false        | disable the divider if you do not want to use it        |
+| disableSocialButtons    |  boolean   |        false        | disable the all social buttons                          |
+| disablePasswordInput    |  boolean   |        false        | disable the password text input                         |
+| disableEmailValidation  |  boolean   |        false        | disable built-in email validation                       |
+| disableEmailTooltip     |  boolean   |        false        | enable built-in password validation                     |
+| disablePasswordTooltip  |  boolean   |        false        | disable built-in email tooltip                          |
+| disableEmailTooltip     |  boolean   |        false        | disable built-in password tooltip                       |
+| emailPlaceholder        |   string   |       "Email"       | change email placeholder text                           |
+| passwordPlaceholder     |   string   |     "Password"      | change password placeholder text                        |
+| loginButtonText         |   string   |       "Login"       | change login button's text                              |
+| style                   | ViewStyle  |       default       | set/override the default style for the container        |
+| dividerStyle            | ViewStyle  |       default       | set/override the default divider style                  |
+| logoImageStyle          | ImageStyle |       default       | set/override the default image style                    |
+| textInputContainerStyle | ViewStyle  |       default       | set/override the default text input container style     |
+| loginButtonStyle        | ViewStyle  |       default       | set/override the default login button style             |
+| loginTextStyle          | TextStyle  |       default       | set/override the default login text style               |
+| signupStyle             | ViewStyle  |       default       | set/override the default signup button style            |
+| signupTextStyle         | TextStyle  |       default       | set/override the default signup text style              |
+| signupTextStyle         | TextStyle  |       default       | set/override the default signup text style              |
+| passwordContentTooltip  | Component  |       default       | set on your own **tooltip content** for password        |
+| emailContentTooltip     | Component  |       default       | set on your own **tooltip content** for email           |
 
 ### Advanced Customizations (Optional)
 
-| Property           |   Type    | Default | Description                                                 |
-|--------------------|:---------:|:-------:|-------------------------------------------------------------|
-| customTextInputs   | Component | default | set your own custom text inputs instead of built-in ones    |
-| textInputChildren  | Component | default | set your own EXTRA custom text inputs with the current ones |
-| customLogo         | Component | default | set your own logo                                           |
-| customLoginButton  | Component | default | set your login button                                       |
-| customSignupButton | Component | default | set your sign up button                                     |
-| customDivider      | Component | default | set your divider                                            |
+| Property                 |                                                          Type                                                           |     Default      | Description                                                            |
+|--------------------------|:-----------------------------------------------------------------------------------------------------------------------:|:----------------:|------------------------------------------------------------------------|
+| customTextInputs         |                                                        Component                                                        |     default      | set your own custom text inputs instead of built-in ones               |
+| textInputChildren        |                                                        Component                                                        |     default      | set your own EXTRA custom text inputs with the current ones            |
+| customLogo               |                                                        Component                                                        |     default      | set your own logo                                                      |
+| customLoginButton        |                                                        Component                                                        |     default      | set your login button                                                  |
+| customSignupButton       |                                                        Component                                                        |     default      | set your sign up button                                                |
+| customDivider            |                                                        Component                                                        |     default      | set your divider                                                       |
+| customLoginButton        |                                                        Component                                                        |     default      | set on your own components instead of default **login button**         |
+| customSignupButton       |                                                        Component                                                        |     default      | set on your own components instead of default **signup button**        |
+| TouchableComponent       |                                                        Pressable                                                        | TouchableOpacity | set on your own Touchable Component                                    |
+| customTextInputs         |                                                        Component                                                        |     default      | set on your own **textinputs** instead of default ones                 |
+| customSocialLoginButtons |                                                        Component                                                        |     default      | set on your own components instead of default **social login buttons** |
+| emailTextInputProps      | [IInteractiveTextInputProps](https://github.com/WrathChaos/react-native-text-input-interactive#customization-optionals) |     default      | set/override the email text input props                                |
+| passwordTextInputProps   | [IInteractiveTextInputProps](https://github.com/WrathChaos/react-native-text-input-interactive#customization-optionals) |     default      | set/override the password text input props                             |
+
+
+
 
 ### Default Social Login Buttons (Optional)
 
@@ -172,6 +190,11 @@ npm i react-native-login-screen@2.1.4
 - [x] ~~Better TextField Library Integration~~
 - [x] ~~Password show/hide~~
 - [x] ~~Customizable Components~~
+- [x] ~~Customizable Styles~~
+- [x] ~~Built-in Email Validation~~
+- [x] ~~Built-in Password Validation~~
+- [x] ~~Built-in Email Tooltip~~
+- [x] ~~Built-in Password Tooltip~~
 - [ ] Write an article about the lib on Medium
 - [ ] Write an article about the lib on DevTO
 
