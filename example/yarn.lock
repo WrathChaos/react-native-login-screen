@@ -6083,12 +6083,14 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz"
   "version" "0.0.6"
 
-"react-native-login-screen@^4.2.0":
-  "integrity" "sha512-IS/uc+47FhGNrQynsTMykp3q/RRsbLbua7zjYnqnwk1qH+r655D8BSWvyikZ/o851fLGW7fKU7FIZCF1eV6B3A=="
-  "resolved" "https://registry.npmjs.org/react-native-login-screen/-/react-native-login-screen-4.2.0.tgz"
-  "version" "4.2.0"
+"react-native-login-screen@5.0.0":
+  "integrity" "sha512-vvUPtH4gJJAMfovevakBy1RBpMem7Rl3PSuIWYh/TdC5ZWfYTYgYxyC4TOoLyVC/hlbS0F6OfYoDy0Hua7n6YA=="
+  "resolved" "https://registry.npmjs.org/react-native-login-screen/-/react-native-login-screen-5.0.0.tgz"
+  "version" "5.0.0"
+  dependencies:
+    "react-native-text-input-interactive" ">=0.1.4"
 
-"react-native-text-input-interactive@^0.1.4", "react-native-text-input-interactive@>= 0.1.3":
+"react-native-text-input-interactive@^0.1.4", "react-native-text-input-interactive@>=0.1.4":
   "integrity" "sha512-Y8oCZkfZ03EiSXcSV9AWns2Zr5XVNRMRQRFMFXBS5vpYvpfvR3fp9MSP4uNZ3aNi6i27qLQQOCoVXf8vZiMngg=="
   "resolved" "https://registry.npmjs.org/react-native-text-input-interactive/-/react-native-text-input-interactive-0.1.4.tgz"
   "version" "0.1.4"
