@@ -200,6 +200,8 @@ npm i react-native-login-screen@2.1.4
 ## Credits
 
 For the awesome photo thanks to [jcob nasyr from Unsplash](https://unsplash.com/photos/67sVPjK6Q7I)
+Thank you so much for the eye icon [Torskaya](https://www.flaticon.com/authors/torskaya)
+
 
 ## Author
 
