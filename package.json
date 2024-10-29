@@ -30,7 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@react-native/eslint-config": "^0.75.2",
+    "@react-native/eslint-config": "^0.76.1",
     "@types/react": "^18.0.17",
     "@types/react-native": "^0.72.0",
     "cpx": "^1.5.0",
