@@ -31,7 +31,7 @@
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@react-native/eslint-config": "^0.77.0",
-    "@types/react": "^18.0.17",
+    "@types/react": "^19.0.8",
     "@types/react-native": "^0.72.0",
     "cpx": "^1.5.0",
     "eslint": "^9.1.1",
